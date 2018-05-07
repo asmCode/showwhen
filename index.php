@@ -54,9 +54,9 @@ function GetDateAsString($tv_show)
 {
 	$result = '';
 
-	$day = $tv_show["release_date_day"];
-	$month = $tv_show["release_date_month"];
-	$year = $tv_show["release_date_year"];
+	$day = $tv_show["day"];
+	$month = $tv_show["month"];
+	$year = $tv_show["year"];
 
 	if (isset($month))
 	{
