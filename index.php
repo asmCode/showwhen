@@ -1,3 +1,52 @@
+<?
+
+include 'data/movies_db.php';
+include 'main_tv_show_template.php';
+
+$movies_db = json_decode($movies_db_json, true);
+
+$main_tv_shows_html = '';
+
+$tv_show = $movies_db;
+
+$main_tv_shows_html = $main_tv_show_template;
+$main_tv_shows_html = str_replace("__TITLE__", $tv_show["title"], $main_tv_shows_html);
+$main_tv_shows_html = str_replace("__SEASON__", $tv_show["season"], $main_tv_shows_html);
+$main_tv_shows_html = str_replace("__DATE__", GetDateAsString($tv_show), $main_tv_shows_html);
+
+$main_tv_shows_html = str_replace("__IMDB_SCORE__", $tv_show["imdb_score"], $main_tv_shows_html);
+$main_tv_shows_html = str_replace("__WATCH_IMG__", $tv_show["watch_img"], $main_tv_shows_html);
+
+
+function GetDateAsString($tv_show)
+{
+	$result = '';
+
+	$day = $tv_show["release_date_day"];
+	$month = $tv_show["release_date_month"];
+	$year = $tv_show["release_date_year"];
+
+	if (isset($month))
+	{
+		$date_obj = DateTime::createFromFormat('!m', $month);
+		$result .= $date_obj->format('M');
+	}
+
+	if (isset($day))
+	{
+		$date_obj = DateTime::createFromFormat('!d', $day);
+		$result .= " " . $date_obj->format('dS');
+	}
+
+	if ($result != '')
+		$result .= ", ";
+	$result .= $year;
+
+	return $result;
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,46 +73,7 @@
 	</div>
 
 	<div class="main_tv_show_container">
-		<div class="main_tv_show_bg">
-			<div class="main_tv_show_gradient"></div>
-			<div class="main_tv_show_thumbnail">
-				<div class="main_tv_show_thumbnail_gradient"></div>
-				<div class="main_tv_show_thumbnail_linear_gradient"></div>
-			</div>
-			<div class="title_and_season_group">
-				<div class="main_tv_show_title text_green">Orange is the New Black</div>
-				<div class="main_tv_show_season_number">Season 8</div>
-			</div>
-			<div class="main_tv_show_info_section">
-				<a href="http://gol24.pl" target="_blank">
-					<span id="days_left" class="main_tv_show_counter">100<span class="counter_unit">days</span>
-						<div class="main_tv_show_date">
-							May 25th, 2018
-							<img class="main_tv_show_date_info_icon" src="img/info_icon.png">
-						</div>
-						<div class="main_tv_show_info_section_separator"></div>
-					</span>
-				</a>
-				<div class="main_tv_show_date_source_placeholder">
-					<div class="date_source">
-						<div class="date_source_bg">
-							<div class="date_source_arrow"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="main_tv_show_meta_section">
-				<img class="main_tv_show_channel" src="img/hbo2.png">
-
-				<div class="main_tv_show_imdb">
-					<img class="main_tv_show_imdb_logo" src="img/imdb2.png">
-					<span class="main_tv_show_imdb_score">
-						7.2
-						<span class="main_tv_show_imdb_score_ten">/10</span>
-					</span>
-				</div>
-			</div>
-		</div>
+		<? echo $main_tv_shows_html ?>
 
 		<div class="main_tv_show_bg">
 			<div class="main_tv_show_gradient"></div>
