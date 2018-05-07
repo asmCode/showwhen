@@ -9,7 +9,7 @@ $movies_db_json = '
                 "release_date_day": 22,
                 "release_date_month": 11,
                 "release_date_year": 2018,
-                "featured": true,
+                "featured": false,
                 "thumbnail": "game_of_thrones.jpg",
                 "source_url": "onet.pl",
                 "imdb_url": "imdb.com",

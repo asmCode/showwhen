@@ -25,7 +25,10 @@ for ($i = 0; $i < count($movies_db); $i++)
 	$element_html = str_replace("__SEASON__", $tv_show["season"], $element_html);
 	$element_html = str_replace("__DATE__", GetDateAsString($tv_show), $element_html);
 	$element_html = str_replace("__IMDB_SCORE__", $tv_show["imdb_score"], $element_html);
+	$element_html = str_replace("__IMDB_URL__", $tv_show["imdb_url"], $element_html);
 	$element_html = str_replace("__WATCH_IMG__", $tv_show["watch_img"], $element_html);
+	$element_html = str_replace("__WATCH_URL__", $tv_show["watch_url"], $element_html);
+	$element_html = str_replace("__SOURCE_URL__", $tv_show["source_url"], $element_html);
 
 	if ($is_featured)
 		$main_tv_shows_html .= $element_html;

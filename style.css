@@ -28,6 +28,7 @@ body, input, a
 	margin: 0px auto;
 	width: 100%;
 	text-align: center;
+	text-decoration: none;
 }
 
 .main_canvas
@@ -149,14 +150,11 @@ body, input, a
 	position: relative;
 	width: 100%;
 	height: 30px;
-
-	text-decoration: none;
 }
 
 .contact
 {
 	position: absolute;
-	text-decoration: none;
 	left: 50%;
 	top: 50%;
 	width: auto;
