@@ -1,0 +1,236 @@
+.text_green
+{
+	color: #8CC63F;
+}
+
+.align_left
+{
+	left: 0px;
+}
+
+.align_right
+{
+	right: 0px;
+}
+
+.align_center
+{
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+body, input, a
+{
+	font-family: "Trebuchet MS";
+	font-weight: bold;
+	color: white;
+	background-color: #191919;
+	margin: 0px auto;
+	width: 100%;
+	text-align: center;
+}
+
+.main_canvas
+{
+	/* background-color: #5029bb; */
+
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 1024px;
+	min-width: 320px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+#header
+{
+	position: relative;
+	background-image: url('img/tv_noise.png');
+	background-position: 10px 20px;
+	background-size: 200px;
+	width: 100%;
+	height: 120px;
+	padding: 0px;
+	box-shadow: 0px 6px 8px #000000;
+}
+
+#header_gradient
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(ellipse 400px 400px at center, rgba(0, 0, 0, 0.816), rgba(0, 0, 0, 0));
+}
+
+#header_title
+{
+	position: absolute;
+	height: 54%;
+	width: auto;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* width: 382px;
+	height: 70px; */
+}
+
+.header_subtitle
+{
+	position: absolute;
+	text-align: center;
+	font-size: 13.0px;
+	font-weight: bold;
+	width: 100%;
+	bottom: 13px;
+}
+
+.counter_unit
+{
+	font-size: 30px;
+	margin-left: 12px;
+}
+
+.counter_unit_small
+{
+	font-size: 12px;
+	margin-left: 0px;
+}
+
+.search_bar_group
+{
+	/* background-color: #8CC63F; */
+
+	position: absolute;
+	width: 200px;
+	height: 24px;
+	right: 30px;
+	bottom: 16px;
+
+	background-color: #424242;
+	box-shadow: 2px 2px 8px #000000;
+	border-radius: 3px;
+}
+
+.search_bar
+{
+	position: absolute;
+	width: 100%;
+	/* height: 100%; */
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+
+	border-style: none;
+	outline: none;
+
+	/* background-color: rebeccapurple; */
+	background-color: transparent;
+	color: lightgray;
+	font-size: 12px;
+	padding-left: 5px;
+	text-align: left;
+}
+
+.mag
+{
+	position: absolute;
+	width: auto;
+	height: 60%;
+	right: 6px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.footer
+{
+	background-color:#2e2e2e;
+
+	position: relative;
+	width: 100%;
+	height: 30px;
+
+	text-decoration: none;
+}
+
+.contact
+{
+	position: absolute;
+	text-decoration: none;
+	left: 50%;
+	top: 50%;
+	width: auto;
+	height: auto;
+	transform: translate(-50%, -50%);
+	background-color: transparent;
+}
+
+.date_source
+{
+	visibility: hidden;
+
+	position: absolute;
+	width: 180px;
+	height: 80px;
+	z-index: 1;
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+
+	filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.548));
+}
+
+.date_source_bg
+{
+	position: absolute;
+	background-color: #4d4d4d;
+	width: 100%;
+	height: 100%;
+	/* clip-path: polygon(0px 10px, 47% 10px, 50% 0px, 53% 10px, 100% 10px, 100% 100%, 0 100%); */
+}
+
+.date_source_arrow
+{
+	position: absolute;
+	background-color: #4d4d4d;
+	width: 20px;
+	height: 20px;
+	top: -10px;
+	left: 50%;
+	transform: translateX(-50%) rotateZ(45deg);
+}
+
+.main_tv_show_date_source_placeholder
+{
+	position: absolute;
+	bottom: 35px;
+	left: 50%;
+}
+
+@media screen and (max-width: 850px)
+{
+	.search_bar_group
+	{
+		width: 270px;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 10px;
+	}
+
+	#header_title
+	{
+		height: 42%;
+		width: auto;
+		top: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.header_subtitle
+	{
+		font-size: 10.0px;
+		font-weight: bold;
+		width: 100%;
+		top: 65px;
+	}
+}
