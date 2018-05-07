@@ -2,20 +2,36 @@
 
 include 'data/movies_db.php';
 include 'main_tv_show_template.php';
+include 'tv_show_template.php';
 
 $movies_db = json_decode($movies_db_json, true);
+$movies_db = $movies_db["tv_shows"];
 
 $main_tv_shows_html = '';
+$tv_shows_html = '';
 
-$tv_show = $movies_db;
+for ($i = 0; $i < count($movies_db); $i++)
+{
+	$tv_show = $movies_db[$i];
 
-$main_tv_shows_html = $main_tv_show_template;
-$main_tv_shows_html = str_replace("__TITLE__", $tv_show["title"], $main_tv_shows_html);
-$main_tv_shows_html = str_replace("__SEASON__", $tv_show["season"], $main_tv_shows_html);
-$main_tv_shows_html = str_replace("__DATE__", GetDateAsString($tv_show), $main_tv_shows_html);
+	$is_featured = isset($tv_show["featured"]) && $tv_show["featured"] == true;
 
-$main_tv_shows_html = str_replace("__IMDB_SCORE__", $tv_show["imdb_score"], $main_tv_shows_html);
-$main_tv_shows_html = str_replace("__WATCH_IMG__", $tv_show["watch_img"], $main_tv_shows_html);
+	if ($is_featured)
+		$element_html = $main_tv_show_template;
+	else
+		$element_html = $tv_show_template;
+
+	$element_html = str_replace("__TITLE__", $tv_show["title"], $element_html);
+	$element_html = str_replace("__SEASON__", $tv_show["season"], $element_html);
+	$element_html = str_replace("__DATE__", GetDateAsString($tv_show), $element_html);
+	$element_html = str_replace("__IMDB_SCORE__", $tv_show["imdb_score"], $element_html);
+	$element_html = str_replace("__WATCH_IMG__", $tv_show["watch_img"], $element_html);
+
+	if ($is_featured)
+		$main_tv_shows_html .= $element_html;
+	else
+		$tv_shows_html .= $element_html;
+}
 
 
 function GetDateAsString($tv_show)
@@ -58,9 +74,6 @@ function GetDateAsString($tv_show)
 </head>
 <body onload="Init();">
 
-	<!-- <div style="position: relative; background-color: aqua; width: 96%; left: 50%; max-width: 400px; transform: translateX(-50%)">sss</div>
-	<div style="position: relative; background-color: green">sss</div> -->
-
 <div class="main_canvas">
 	<div id="header">
 		<div id="header_gradient"></div>
@@ -74,67 +87,11 @@ function GetDateAsString($tv_show)
 
 	<div class="main_tv_show_container">
 		<? echo $main_tv_shows_html ?>
-
-		<div class="main_tv_show_bg">
-			<div class="main_tv_show_gradient"></div>
-			<div class="main_tv_show_thumbnail">
-				<div class="main_tv_show_thumbnail_gradient"></div>
-				<div class="main_tv_show_thumbnail_linear_gradient"></div>
-			</div>
-			<div class="title_and_season_group">
-				<div class="main_tv_show_title text_green">Game Of Thrones</div>
-				<div class="main_tv_show_season_number">Season 8</div>
-			</div>
-			<div class="main_tv_show_info_section">
-				<span id="days_left" class="main_tv_show_counter">100<span class="counter_unit">days</span>
-					<div class="main_tv_show_date">May 25th, 2018</div>
-					<div class="main_tv_show_info_section_separator"></div>
-				</span>
-			</div>
-			<div class="main_tv_show_meta_section">
-				<img class="main_tv_show_channel" src="img/hbo2.png">
-
-				<div class="main_tv_show_imdb">
-					<img class="main_tv_show_imdb_logo" src="img/imdb2.png">
-					<span class="main_tv_show_imdb_score">
-						7.2
-						<span class="main_tv_show_imdb_score_ten">/10</span>
-					</span>
-				</div>
-			</div>
-		</div>
-
-		<div class="main_tv_show_bg">
-			<div class="main_tv_show_gradient"></div>
-			<div class="main_tv_show_thumbnail">
-				<div class="main_tv_show_thumbnail_gradient"></div>
-				<div class="main_tv_show_thumbnail_linear_gradient"></div>
-			</div>
-			<div class="title_and_season_group">
-				<div class="main_tv_show_title text_green">Orange is the New Black</div>
-				<div class="main_tv_show_season_number">Season 8</div>
-			</div>
-			<div class="main_tv_show_info_section">
-				<span id="days_left" class="main_tv_show_counter">100<span class="counter_unit">days</span>
-					<div class="main_tv_show_date">May 25th, 2018</div>
-					<div class="main_tv_show_info_section_separator"></div>
-				</span>
-			</div>
-			<div class="main_tv_show_meta_section">
-				<img class="main_tv_show_channel" src="img/hbo2.png">
-
-				<div class="main_tv_show_imdb">
-					<img class="main_tv_show_imdb_logo" src="img/imdb2.png">
-					<span class="main_tv_show_imdb_score">
-						7.2
-						<span class="main_tv_show_imdb_score_ten">/10</span>
-					</span>
-				</div>
-			</div>
-		</div>
 	</div>
 	
 	<div class="tv_show_list">
+		<? echo $tv_shows_html ?>
+
 		<div class="tv_show">
 			<div class="tv_show_title text_green">Orange is the New Black
 			</div>
