@@ -82,11 +82,20 @@ function GetDateAsString($tv_show)
 <!DOCTYPE html>
 <html>
 <head>
-        <title>When is the next Season?</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
-		<link rel="stylesheet" type="text/css" href="tv_show.css" />
-		<link rel="stylesheet" type="text/css" href="main_tv_show.css" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118904948-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-118904948-1');
+	</script>
+
+	<title>When is the next Season?</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="tv_show.css" />
+	<link rel="stylesheet" type="text/css" href="main_tv_show.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body onload="Init();">
 
