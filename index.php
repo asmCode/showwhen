@@ -116,6 +116,8 @@ function GetDateAsString($tv_show)
 		</div>
 	</div>
 
+	<div id="no_results_message" class="search_reslut">No results found for "<span id="no_results_phrase">dupa jasia</span>"</div>
+
 	<div class="main_tv_show_container">
 		<? echo $main_tv_shows_html ?>
 	</div>
@@ -164,35 +166,54 @@ function UpdateFilter()
 {
 	ShowAllMovies();
 
-	var searchPhrase = $("#search").val().trim();
-	FilterElements(searchPhrase);
+	var searchPhrase = $("#search").val();
+	var foundCount = FilterElements(searchPhrase.trim());
+
+	UpdateSearchResultMessage(foundCount, searchPhrase);
+}
+
+function UpdateSearchResultMessage(foundCount, searchPhrase)
+{
+	if (foundCount == 0)
+	{
+		$("#no_results_phrase").text(searchPhrase);
+		$("#no_results_message").show();
+	}
+	else
+	{
+		$("#no_results_message").hide();
+	}
 }
 
 function FilterElements(searchPhrase)
 {
-	if (searchPhrase === "")
-	{
-		SetDefaultSearchText();
-		return;
-	}
-
 	if (searchPhrase === defaultSearchText)
 	{
 		$("#search").css('color', '#888888');
-		return;
+		return -1;
 	}
 
 	searchPhrase = searchPhrase.toLowerCase();
 
 	$("#search").css('color', '#ffffff');
 
+	var foundCount = 0;
+
 	$.each(movies_db_json.tv_shows, function(index, item)
 	{
         var found = item.title.trim().toLowerCase().search(searchPhrase) != -1;
 
 		var movieId = MakeMovieElementId(index);
-		found ? $("#" + movieId).show() : $("#" + movieId).hide();
+		if (found)
+		{
+			$("#" + movieId).show();
+			foundCount++;
+		 }
+		 else
+		 	$("#" + movieId).hide();
     });
+
+	return foundCount;
 }
 
 function MakeMovieElementId(index)
@@ -229,6 +250,7 @@ function Init()
 {
     // UpdateTime();
 	SetDefaultSearchText();
+	UpdateSearchResultMessage(-1, "");
 	UpdateNoise();
 }
 
