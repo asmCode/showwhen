@@ -1,7 +1,7 @@
 <?
 
 $tv_show_template = '
-    <div class="tv_show">
+    <div id="movie_id___INDEX__" class="tv_show">
         <div class="tv_show_title text_green">__TITLE__</div>
         <a href="__SOURCE_URL__" target="_blank">
             <div class="tv_show_date">
@@ -19,7 +19,7 @@ $tv_show_template = '
             </a>
             <a href="__IMDB_URL__" target="_blank">
                 <div class="tv_show_imdb">
-                    <img class="tv_show_imdb_logo" src="img/imdb2.png">
+                    <img class="tv_show_imdb_logo" src="img/imdb.png">
                     <span class="tv_show_imdb_score">__IMDB_SCORE__</span>
                 </div>
             </a>

@@ -1,7 +1,7 @@
 <?
 
 $main_tv_show_template = '
-    <div class="main_tv_show_bg">
+    <div id="movie_id___INDEX__" class="main_tv_show_bg">
         <div class="main_tv_show_gradient"></div>
         <div class="main_tv_show_thumbnail">
             <div class="main_tv_show_thumbnail_gradient"></div>
@@ -35,7 +35,7 @@ $main_tv_show_template = '
             </a>
             <a href="__IMDB_URL__" target="_blank">
                 <div class="main_tv_show_imdb">
-                    <img class="main_tv_show_imdb_logo" src="img/imdb2.png">
+                    <img class="main_tv_show_imdb_logo" src="img/imdb.png">
                     <span class="main_tv_show_imdb_score">
                         __IMDB_SCORE__
                         <span class="main_tv_show_imdb_score_ten">/10</span>

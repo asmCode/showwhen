@@ -21,6 +21,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 	else
 		$element_html = $tv_show_template;
 
+	$element_html = str_replace("__INDEX__", (string)$i, $element_html);
 	$element_html = str_replace("__TITLE__", $tv_show["title"], $element_html);
 	$element_html = str_replace("__SEASON__", $tv_show["season"], $element_html);
 	$element_html = str_replace("__DATE__", GetDateAsString($tv_show), $element_html);
@@ -41,10 +42,13 @@ function GetWatchLogo($tv_show)
 	switch ($tv_show["watch_logo"])
 	{
 		case "hbo":
-			return "hbo2.png";
+			return "hbo.png";
 
 		case "netflix":
-			return "netflix2.png";
+			return "netflix.png";
+
+		case "amazon":
+			return "amazon.png";
 	}
 
 	return "";
@@ -91,6 +95,8 @@ function GetDateAsString($tv_show)
 	gtag('config', 'UA-118904948-1');
 	</script>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 	<title>When is the next Season?</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	<link rel="stylesheet" type="text/css" href="tv_show.css" />
@@ -105,7 +111,7 @@ function GetDateAsString($tv_show)
 		<img id="header_title" src="img/title.png">
 		<div class="header_subtitle text_green">WHEN IS THE NEXT SEASON OF YOUR FAVORITE TV SHOW?</div>
 		<div class="search_bar_group">
-			<input type="text" class="search_bar" value="Search...">
+			<input id="search" type="text" class="search_bar" value="Search by Title...">
 			<img class="mag" src="img/mag.png">
 		</div>
 	</div>
@@ -125,17 +131,104 @@ function GetDateAsString($tv_show)
 
 <script>
 
-	function myFunction()
+var defaultSearchText = "Search by Title...";
+var movies_db_json = <? echo $movies_db_json ?>
+
+$("#search").keyup(function()
+{
+	UpdateFilter();
+});
+
+$("#search").change(function()
+{
+	UpdateFilter();
+});
+
+$("#search").focusin(function()
+{
+	var search = $("#search");
+	if (search.val() === defaultSearchText)
+		search.val("");
+	else
+		search.select();
+});
+
+$("#search").focusout(function()
+{
+	var search = $("#search");
+	if (search.val() === "")
+		SetDefaultSearchText();
+});
+
+function UpdateFilter()
+{
+	ShowAllMovies();
+
+	var searchPhrase = $("#search").val().trim();
+	FilterElements(searchPhrase);
+}
+
+function FilterElements(searchPhrase)
+{
+	if (searchPhrase === "")
 	{
-		var inner_span = dupa.childNodes[3];
-		var score = inner_span.textContent;
-		score = score.substr(0, score.length - 3).trim();
-		alert(score);
+		SetDefaultSearchText();
+		return;
 	}
+
+	if (searchPhrase === defaultSearchText)
+	{
+		$("#search").css('color', '#888888');
+		return;
+	}
+
+	searchPhrase = searchPhrase.toLowerCase();
+
+	$("#search").css('color', '#ffffff');
+
+	$.each(movies_db_json.tv_shows, function(index, item)
+	{
+        var found = item.title.trim().toLowerCase().search(searchPhrase) != -1;
+
+		var movieId = MakeMovieElementId(index);
+		found ? $("#" + movieId).show() : $("#" + movieId).hide();
+    });
+}
+
+function MakeMovieElementId(index)
+{
+	return "movie_id_" + index;
+}
+
+function ShowAllMovies()
+{
+	for (var i = 0; i < movies_db_json.tv_shows.length; i++)
+	{
+		var movieId = MakeMovieElementId(i);
+		$("#" + movieId).show();
+    }
+}
+
+function SetDefaultSearchText()
+{
+	var search = $("#search");
+	search.val(defaultSearchText);
+	search.css('color', '#888888');
+	search.blur();
+}
+
+function myFunction()
+{
+	var inner_span = dupa.childNodes[3];
+	var score = inner_span.textContent;
+	score = score.substr(0, score.length - 3).trim();
+	alert(score);
+}
 
 function Init()
 {
     // UpdateTime();
+	SetDefaultSearchText();
 	UpdateNoise();
 }
 
