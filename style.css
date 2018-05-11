@@ -243,4 +243,9 @@ body, input, a
 		width: 100%;
 		top: 65px;
 	}
+
+	.search_bar
+	{
+		font-size: 16px;
+	}
 }
