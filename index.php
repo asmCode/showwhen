@@ -139,6 +139,18 @@ function GetDateAsString($tv_show)
 var defaultSearchText = "Search by Title...";
 var movies_db_json = <? echo $movies_db_json ?>
 
+$(".mag").click(function()
+{
+	var search = $("#search");
+	if (search.val() === defaultSearchText)
+		search.focus();
+	else
+	{
+		SetDefaultSearchText();
+		UpdateFilter();
+	}
+});
+
 $("#search").keyup(function()
 {
 	UpdateFilter();
@@ -199,6 +211,8 @@ function FilterElements(searchPhrase)
 	searchPhrase = searchPhrase.toLowerCase();
 
 	$("#search").css('color', '#ffffff');
+	var search_icon = $(".mag");
+	search_icon.attr("src", "img/cancel_search.png");
 
 	var foundCount = 0;
 
@@ -239,6 +253,9 @@ function SetDefaultSearchText()
 	search.val(defaultSearchText);
 	search.css('color', '#888888');
 	search.blur();
+
+	var search_icon = $(".mag");
+	search_icon.attr("src", "img/mag.png");
 }
 
 function myFunction()
