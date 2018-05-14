@@ -70,8 +70,11 @@ function GetDateAsString($tv_show)
 
 	if (isset($day))
 	{
-		$date_obj = DateTime::createFromFormat('!d', $day);
-		$result .= " " . $date_obj->format('dS');
+		// Below ads "st", "rd", "th" to the days, but we don't need this
+		// $date_obj = DateTime::createFromFormat('!d', $day);
+		// $result .= " " . $date_obj->format('dS');
+
+		$result .= " " . str_pad($day, 2, "0", STR_PAD_LEFT);
 	}
 
 	if ($result != '')
