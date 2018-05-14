@@ -12,7 +12,7 @@ $main_tv_show_template = '
             <div class="main_tv_show_season_number">Season __SEASON__</div>
         </div>
         <div class="main_tv_show_info_section">
-            <a href="__SOURCE_URL__" target="_blank">
+            <a href="__SOURCE_URL__" target="_blank" style="display: __COUNTER_DISPLAY__">
                 <span id="days_left" class="main_tv_show_counter">100<span class="counter_unit">days</span>
                     <div class="main_tv_show_date">
                         __DATE__
@@ -21,6 +21,8 @@ $main_tv_show_template = '
                     <div class="main_tv_show_info_section_separator"></div>
                 </span>
             </a>
+            <div class="main_tv_show_on_air" style="display: __ON_AIR_DISPLAY__">ON AIR</div>
+            <div class="main_tv_show_on_air_extra" style="display: __ON_AIR_DISPLAY__">__ON_AIR_EXTRA__</div>
             <div class="main_tv_show_date_source_placeholder">
                 <div class="date_source">
                     <div class="date_source_bg">

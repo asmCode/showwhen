@@ -15,6 +15,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 	$tv_show = $movies_db[$i];
 
 	$is_featured = isset($tv_show["featured"]) && $tv_show["featured"] == true;
+	$is_on_air = isset($tv_show["is_on_air"]) && $tv_show["is_on_air"] == true;
 
 	if ($is_featured)
 		$element_html = $main_tv_show_template;
@@ -30,6 +31,18 @@ for ($i = 0; $i < count($movies_db); $i++)
 	$element_html = str_replace("__WATCH_IMG__", GetWatchLogo($tv_show), $element_html);
 	$element_html = str_replace("__WATCH_URL__", $tv_show["watch_url"], $element_html);
 	$element_html = str_replace("__SOURCE_URL__", $tv_show["source_url"], $element_html);
+
+	if ($is_on_air)
+	{	
+		$element_html = str_replace("__ON_AIR_EXTRA__", $tv_show["on_air_extra"], $element_html);
+		$element_html = str_replace("__COUNTER_DISPLAY__", "none", $element_html);
+		$element_html = str_replace("__ON_AIR_DISPLAY__", "unset", $element_html);
+	}
+	else
+	{
+		$element_html = str_replace("__COUNTER_DISPLAY__", "unset", $element_html);
+		$element_html = str_replace("__ON_AIR_DISPLAY__", "none", $element_html);
+	}
 
 	if ($is_featured)
 		$main_tv_shows_html .= $element_html;

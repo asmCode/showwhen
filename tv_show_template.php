@@ -3,13 +3,14 @@
 $tv_show_template = '
     <div id="movie_id___INDEX__" class="tv_show">
         <div class="tv_show_title text_green">__TITLE__</div>
-        <a href="__SOURCE_URL__" target="_blank">
+        <a href="__SOURCE_URL__" target="_blank" style="display: __COUNTER_DISPLAY__">
             <div class="tv_show_date">
                 __DATE__
                 <img class="main_tv_show_date_info_icon" src="img/info_icon.png">
             </div>
         </a>
-        <div class="tv_show_counter">(67
+        <div class="tv_show_on_air" style="display: __ON_AIR_DISPLAY__">ON AIR, __ON_AIR_EXTRA__</div>
+        <div class="tv_show_counter" style="display: __COUNTER_DISPLAY__">(67
             <span class="counter_unit_small">days</span>)
         </div>
         <div class="tv_show_season">Season __SEASON__</div>

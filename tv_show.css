@@ -84,6 +84,14 @@
 	font-size: 12px;
 }
 
+.tv_show_on_air
+{
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	font-size: 12px;
+}
+
 .tv_show_counter
 {
 	position: absolute;
@@ -173,7 +181,14 @@
 
 	.tv_show_date
 	{
-		top: 16px;
+		top: 18px;
+		left: 240px;
+		font-size: 16px;
+	}
+
+	.tv_show_on_air
+	{
+		top: 18px;
 		left: 240px;
 		font-size: 16px;
 	}

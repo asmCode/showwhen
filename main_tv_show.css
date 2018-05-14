@@ -167,6 +167,35 @@
 	transform: translateX(-50%);
 }
 
+.main_tv_show_on_air
+{
+	/* background-color: yellow; */
+
+	position: absolute;
+	width: auto;
+	top: 16px;
+	height: auto;
+	font-size: 40px;
+	text-align: center;	
+	white-space: nowrap;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.main_tv_show_on_air_extra
+{
+	/* background-color: yellow; */
+
+	position: absolute;
+	width: auto;
+	top: 55px;
+	font-size: 20px;
+	text-align: center;	
+	white-space: nowrap;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
 .main_tv_show_info_section
 {
 	/* background-color: #2a0000; */
