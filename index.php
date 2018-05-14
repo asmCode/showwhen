@@ -114,7 +114,9 @@ function GetDateAsString($tv_show)
 		<img id="header_title" src="img/title.png">
 		<div class="header_subtitle text_green">WHEN IS THE NEXT SEASON OF YOUR FAVORITE TV SHOW?</div>
 		<div class="search_bar_group">
-			<input id="search" type="text" class="search_bar" value="Search by Title...">
+			<form action="javascript:void(0);">
+				<input id="search" type="search" class="search_bar" value="Search by Title...">
+			</form>
 			<img class="mag" src="img/mag.png">
 		</div>
 	</div>
