@@ -75,13 +75,13 @@ function GetDateAsString($tv_show)
 	$month = $tv_show["month"];
 	$year = $tv_show["year"];
 
-	if (isset($month))
+	if (isset($month) && is_numeric($month))
 	{
 		$date_obj = DateTime::createFromFormat('!m', $month);
 		$result .= $date_obj->format('M');
 	}
 
-	if (isset($day))
+	if (isset($day) && is_numeric($day))
 	{
 		// Below ads "st", "rd", "th" to the days, but we don't need this
 		// $date_obj = DateTime::createFromFormat('!d', $day);
