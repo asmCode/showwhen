@@ -110,7 +110,7 @@
 	height: 40px;
 	top: 50%;
 	transform: translateY(-50%);
-	width: auto;
+	width: 64px;
 	text-align: center;
 	vertical-align: middle;
 }

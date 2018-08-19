@@ -10,10 +10,10 @@ $tv_show_template = '
             </div>
         </a>
         <div class="tv_show_on_air" style="display: __ON_AIR_DISPLAY__">ON AIR, __ON_AIR_EXTRA__</div>
-        <div class="tv_show_counter" style="display: __COUNTER_DISPLAY__">(67
-            <span class="counter_unit_small">days</span>)
+        <div class="tv_show_counter" style="display: __COUNTER_DISPLAY__">__TIME_LEFT__
+            <span class="counter_unit_small">__TIME_LEFT_UNITS__</span>
         </div>
-        <div class="tv_show_season">Season __SEASON__</div>
+        <div class="tv_show_season">SE __SEASON__</div>
         <div class="tv_show_meta_group">
             <a href="__WATCH_URL__" target="_blank">
                 <img class="tv_show_channel" src="img/__WATCH_IMG__">

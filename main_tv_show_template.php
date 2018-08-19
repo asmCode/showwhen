@@ -13,7 +13,7 @@ $main_tv_show_template = '
         </div>
         <div class="main_tv_show_info_section">
             <a href="__SOURCE_URL__" target="_blank" style="display: __COUNTER_DISPLAY__">
-                <span id="days_left" class="main_tv_show_counter">100<span class="counter_unit">days</span>
+                <span id="days_left" class="main_tv_show_counter">__TIME_LEFT__<span class="counter_unit">days</span>
                     <div class="main_tv_show_date">
                         __DATE__
                         <img class="main_tv_show_date_info_icon" src="img/info_icon.png">

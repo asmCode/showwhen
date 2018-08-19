@@ -22,15 +22,29 @@ for ($i = 0; $i < count($movies_db); $i++)
 	else
 		$element_html = $tv_show_template;
 
+	$day = $tv_show["day"];
+	$month = $tv_show["month"];
+	$year = $tv_show["year"];
+	$timeLeft = GetDaysLeft($day, $month, $year);
+	$timeLeftUnits = "days";
+	if ($timeLeft == null)
+		$timeLeftUnits = "";
+
+	$score = $tv_show["imdb_score"];
+	if ($score !== "")
+		$score = sprintf("%.1f", $score);
+
 	$element_html = str_replace("__INDEX__", (string)$i, $element_html);
 	$element_html = str_replace("__TITLE__", $tv_show["title"], $element_html);
 	$element_html = str_replace("__SEASON__", $tv_show["season"], $element_html);
 	$element_html = str_replace("__DATE__", GetDateAsString($tv_show), $element_html);
-	$element_html = str_replace("__IMDB_SCORE__", $tv_show["imdb_score"], $element_html);
+	$element_html = str_replace("__IMDB_SCORE__", $score, $element_html);
 	$element_html = str_replace("__IMDB_URL__", $tv_show["imdb_url"], $element_html);
 	$element_html = str_replace("__WATCH_IMG__", GetWatchLogo($tv_show), $element_html);
 	$element_html = str_replace("__WATCH_URL__", $tv_show["watch_url"], $element_html);
 	$element_html = str_replace("__SOURCE_URL__", $tv_show["source_url"], $element_html);
+	$element_html = str_replace("__TIME_LEFT__", $timeLeft, $element_html);
+	$element_html = str_replace("__TIME_LEFT_UNITS__", $timeLeftUnits, $element_html);
 
 	if ($is_on_air)
 	{	
@@ -67,6 +81,30 @@ function GetWatchLogo($tv_show)
 	return "";
 }
 
+function GetDaysLeft($day, $month, $year)
+{
+	if (!is_numeric($month) || !is_numeric($year))
+		return NULL;
+
+	$approx = false;
+	if (!is_numeric($day))
+	{
+		$day = 15;  // Take a half of the month as an approximation.
+		$approx = true;
+	}
+
+	$currentDate = new DateTime("now");
+	$releaseDate = new DateTime();
+	$releaseDate->setDate($year, $month, $day);
+	$diff = $currentDate->diff($releaseDate);
+
+	$result = (string)$diff->days;
+	if ($approx)
+		$result = "~" . $result;
+
+	return $result;
+}
+
 function GetDateAsString($tv_show)
 {
 	$result = '';
@@ -75,13 +113,13 @@ function GetDateAsString($tv_show)
 	$month = $tv_show["month"];
 	$year = $tv_show["year"];
 
-	if (isset($month) && is_numeric($month))
+	if (is_numeric($month))
 	{
 		$date_obj = DateTime::createFromFormat('!m', $month);
 		$result .= $date_obj->format('M');
 	}
 
-	if (isset($day) && is_numeric($day))
+	if (is_numeric($day))
 	{
 		// Below ads "st", "rd", "th" to the days, but we don't need this
 		// $date_obj = DateTime::createFromFormat('!d', $day);
@@ -93,6 +131,9 @@ function GetDateAsString($tv_show)
 	if ($result != '')
 		$result .= ", ";
 	$result .= $year;
+
+	if (isset($tv_show["period"]))
+		$result = $tv_show["period"] . ' ' . $result;
 
 	return $result;
 }
