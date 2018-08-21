@@ -341,34 +341,40 @@ function pad(n, width, z) {
   return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 
-function UpdateTime()
+UpdateTime(1555308714392, "movie_id_0");
+
+function UpdateTime(timestamp, movie_id)
 {
-	var time_left = Math.abs(GetPremiereDate() - new Date());
+	var timestamp_diff = timestamp - Date.now();
 	
-	time_left /= 1000;
+	timestamp_diff /= 1000;
 	
 	var seconds_in_minute = 60;
 	var seconds_in_hour = seconds_in_minute * 60;
 	var seconds_in_day = seconds_in_hour * 24;
 	
-	var days = Math.floor(time_left / seconds_in_day);
-	time_left -= days * seconds_in_day;
+	var days = Math.floor(timestamp_diff / seconds_in_day);
+	timestamp_diff -= days * seconds_in_day;
 	
-	var hours = Math.floor(time_left / seconds_in_hour);
-	time_left -= hours * seconds_in_hour;
+	var hours = Math.floor(timestamp_diff / seconds_in_hour);
+	timestamp_diff -= hours * seconds_in_hour;
 	
-	var minutes = Math.floor(time_left / seconds_in_minute);
-	time_left -= minutes * seconds_in_minute;
+	var minutes = Math.floor(timestamp_diff / seconds_in_minute);
+	timestamp_diff -= minutes * seconds_in_minute;
 	
-	var seconds = Math.floor(time_left);
+	var seconds = Math.floor(timestamp_diff);
 
-	var days_left = document.getElementById('days_left');
-	// days_left.outerText = days + " days";
+	var days_left = document.getElementById(movie_id + '_days_left');
+	days_left.textContent = days;
 	
-	var time_left = document.getElementById('time_left');
-	// time_left.textContent = pad(hours, 2) + ":" + pad(minutes, 2) + ":" + pad(seconds, 2);
+	var time_left = document.getElementById(movie_id + '_time_left');
+	time_left.textContent = pad(hours, 2) + " : " + pad(minutes, 2) + " : " + pad(seconds, 2);
 	
-	setTimeout(UpdateTime, 1000);
+	setTimeout(function()
+	{
+		UpdateTime(timestamp, movie_id);
+	},
+	1000);
 }
 
 function UpdateNoise()
