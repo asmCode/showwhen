@@ -104,45 +104,6 @@
 	padding-left: 0.6%;
 }
 
-@media screen and (max-width: 667px)
-{
-	.main_tv_show_title
-	{
-		font-size: 22px;
-	}
-
-	.main_tv_show_season_number
-	{
-		bottom: 30px;
-	}
-}
-
-@media screen and (min-width: 667px)
-{
-	.main_tv_show_title
-	{
-		font-size: 17px;
-	}
-
-	.main_tv_show_season_number
-	{
-		bottom: 24px;
-	}
-}
-
-@media screen and (min-width: 900px)
-{
-	.main_tv_show_title
-	{
-		font-size: 22px;
-	}
-
-	.main_tv_show_season_number
-	{
-		bottom: 30px;
-	}
-}
-
 .main_tv_show_date
 {
 	position: absolute;
@@ -165,17 +126,137 @@
 
 .main_tv_show_counter
 {
-	/* background-color:rgb(100, 100, 100); */
+	/* background-color:rgb(100, 0, 0); */
 
 	position: absolute;
 	width: auto;
 	top: 35px;
 	bottom: 40px;
-	font-size: 40px;
+	font-size: 20px;
 	text-align: center;	
 	white-space: nowrap;
 	left: 50%;
 	transform: translateX(-50%);
+}
+
+.time_left_labels
+{
+	font-size: 10px;
+	text-align: right;
+}
+
+.time_left_label_days
+{
+	position: relative;
+	right: 115px;
+}
+
+.time_left_label_hrs
+{
+	position: relative;
+	right: 77px;
+}
+
+.time_left_label_mins
+{
+	position: relative;
+	right: 40px;
+}
+
+.time_left_label_secs
+{
+	position: relative;
+	right: 6px;
+}
+
+@media screen and (max-width: 640px)
+{
+	.main_tv_show_counter
+	{
+		/* background-color:rgb(100, 0, 0); */
+		font-size: 28px;
+	}
+
+	.main_tv_show_title
+	{
+		font-size: 20px;
+	}
+
+	.main_tv_show_season_number
+	{
+		font-size: 14px;
+		bottom: 28px;
+	}
+}
+
+@media screen and (min-width: 641px) and (max-width: 800px)
+{
+	.main_tv_show_counter
+	{
+		/* background-color:rgb(0, 100, 0); */
+		font-size: 20px;
+	}
+
+	.main_tv_show_title
+	{
+		font-size: 16px;
+	}
+
+	.main_tv_show_season_number
+	{
+		bottom: 24px;
+		font-size: 12px;
+	}
+
+	.time_left_labels
+	{
+		font-size: 8px;
+		text-align: right;
+	}
+
+	.time_left_label_days
+	{
+		position: relative;
+		right: 79px;
+	}
+
+	.time_left_label_hrs
+	{
+		position: relative;
+		right: 50px;
+	}
+
+	.time_left_label_mins
+	{
+		position: relative;
+		right: 26px;
+	}
+
+	.time_left_label_secs
+	{
+		position: relative;
+		right: 3px;
+	}
+}
+
+@media screen and (min-width: 801px)
+{
+	.main_tv_show_counter
+	{
+		/* background-color:rgb(0, 0, 100); */
+		font-size: 28px;
+	}
+
+	.main_tv_show_title
+	{
+		font-size: 20px;
+	}
+
+	.main_tv_show_season_number
+	{
+		font-size: 14px;
+		bottom: 28px;
+	}
 }
 
 .main_tv_show_on_air

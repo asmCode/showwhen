@@ -34,6 +34,10 @@ for ($i = 0; $i < count($movies_db); $i++)
 	if ($score !== "")
 		$score = sprintf("%.1f", $score);
 
+	$timestamp = $tv_show["timestamp"];
+	if ($is_featured && is_numeric($timestamp))
+		$updateTimeCode .= sprintf("UpdateTime(%d, \"movie_id_%d\");\n", $timestamp, $i);
+
 	$element_html = str_replace("__INDEX__", (string)$i, $element_html);
 	$element_html = str_replace("__TITLE__", $tv_show["title"], $element_html);
 	$element_html = str_replace("__SEASON__", $tv_show["season"], $element_html);
@@ -341,13 +345,13 @@ function pad(n, width, z) {
   return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 
-UpdateTime(1555308714392, "movie_id_0");
+<? echo $updateTimeCode; ?>
 
 function UpdateTime(timestamp, movie_id)
 {
 	var timestamp_diff = timestamp - Date.now();
 	
-	timestamp_diff /= 1000;
+	timestamp_diff /= 1000.0;
 	
 	var seconds_in_minute = 60;
 	var seconds_in_hour = seconds_in_minute * 60;
@@ -356,6 +360,7 @@ function UpdateTime(timestamp, movie_id)
 	var days = Math.floor(timestamp_diff / seconds_in_day);
 	timestamp_diff -= days * seconds_in_day;
 	
+	// var hours = Math.floor(timestamp_diff / seconds_in_hour);
 	var hours = Math.floor(timestamp_diff / seconds_in_hour);
 	timestamp_diff -= hours * seconds_in_hour;
 	
@@ -365,10 +370,14 @@ function UpdateTime(timestamp, movie_id)
 	var seconds = Math.floor(timestamp_diff);
 
 	var days_left = document.getElementById(movie_id + '_days_left');
-	days_left.textContent = days;
+	if (days_left != undefined)
+		days_left.textContent = days;
 	
 	var time_left = document.getElementById(movie_id + '_time_left');
-	time_left.textContent = pad(hours, 2) + " : " + pad(minutes, 2) + " : " + pad(seconds, 2);
+	if (time_left != undefined)
+		time_left.textContent = days + " : " + pad(hours, 2) + " : " + pad(minutes, 2) + " : " + pad(seconds, 2);
+
+	// time_left.textContent = "000 : 00 : 00 : 00"
 	
 	setTimeout(function()
 	{

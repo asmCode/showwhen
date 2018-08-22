@@ -13,13 +13,18 @@ $main_tv_show_template = '
         </div>
         <div class="main_tv_show_info_section">
             <a href="__SOURCE_URL__" target="_blank" style="display: __COUNTER_DISPLAY__">
-                <span class="main_tv_show_counter"><span id="movie_id___INDEX___days_left">__TIME_LEFT__</span><span class="counter_unit">days</span>
+                <span class="main_tv_show_counter"><span id="movie_id___INDEX___time_left">__TIME_LEFT__</span>
+                    <div class="time_left_labels">
+                        <span class="time_left_label_days">DAYS</span>
+                        <span class="time_left_label_hrs">HRS</span>
+                        <span class="time_left_label_mins">MINS</span>
+                        <span class="time_left_label_secs">SECS</span>
+                    </div>
                     <div class="main_tv_show_date">
                         __DATE__
                         <img class="main_tv_show_date_info_icon" src="img/info_icon.png">
                     </div>
                     <div class="main_tv_show_info_section_separator"></div>
-                    <div id="movie_id___INDEX___time_left" class="main_tv_show_time_left"></div>
                 </span>
             </a>
             <div class="main_tv_show_on_air" style="display: __ON_AIR_DISPLAY__">ON AIR</div>
