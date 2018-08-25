@@ -169,6 +169,14 @@
 	right: 6px;
 }
 
+.main_tv_show_meta_section
+{
+	position: absolute;
+	height: 8%;
+	bottom: 8px;
+	text-align: center;
+}
+
 @media screen and (max-width: 640px)
 {
 	.main_tv_show_counter
@@ -186,6 +194,13 @@
 	{
 		font-size: 14px;
 		bottom: 28px;
+	}
+
+	.main_tv_show_meta_section
+	{
+
+		left: 10%;
+		right: 10%;
 	}
 }
 
@@ -237,6 +252,12 @@
 		position: relative;
 		right: 3px;
 	}
+
+	.main_tv_show_meta_section
+	{
+		left: 2%;
+		right: 2%;
+	}
 }
 
 @media screen and (min-width: 801px)
@@ -256,6 +277,12 @@
 	{
 		font-size: 14px;
 		bottom: 28px;
+	}
+
+	.main_tv_show_meta_section
+	{
+		left: 10%;
+		right: 10%;
 	}
 }
 
@@ -297,17 +324,6 @@
 	bottom: 0px;
 	left: 4%;
 	right: 4%;	
-}
-
-.main_tv_show_meta_section
-{
-	position: absolute;
-	/* background-color: #ff0000; */
-	left: 10%;
-	right: 10%;
-	height: 8%;
-	bottom: 8px;
-	text-align: center;
 }
 
 .main_tv_show_info_section_separator
