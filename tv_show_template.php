@@ -13,7 +13,8 @@ $tv_show_template = '
         <div class="tv_show_counter" style="display: __COUNTER_DISPLAY__">__TIME_LEFT__
             <span class="counter_unit_small">__TIME_LEFT_UNITS__</span>
         </div>
-        <div class="tv_show_season">SE __SEASON__</div>
+        <div class="tv_show_season">S __SEASON__</div>
+        <div class="tv_show_episodes">__EPISODES__</div>
         <div class="tv_show_meta_group">
             <a href="__WATCH_URL__" target="_blank">
                 <img class="tv_show_channel" src="img/__WATCH_IMG__">

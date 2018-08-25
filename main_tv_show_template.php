@@ -9,7 +9,7 @@ $main_tv_show_template = '
         </div>
         <div class="title_and_season_group">
             <div class="main_tv_show_title text_green">__TITLE__</div>
-            <div class="main_tv_show_season_number">Season __SEASON__</div>
+            <div class="main_tv_show_season_number">Season __SEASON__ (__EPISODES__)</div>
         </div>
         <div class="main_tv_show_info_section">
             <a href="__SOURCE_URL__" target="_blank" style="display: __COUNTER_DISPLAY__">

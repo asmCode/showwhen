@@ -2,7 +2,7 @@
 {
 	position: relative;
 	width: 100%;
-	max-width: 700px;
+	max-width: 1024px;
 	text-align: center;
 	margin: 0 auto;
 	/* visibility: hidden; */
@@ -59,10 +59,22 @@
 
 .tv_show_season
 {
+	/* background-color: green; */
+
 	position: absolute;
 	bottom: 10px;
 	font-size: 12px;
-	left: 61%;
+	left: 65%;
+	height: auto;
+}
+
+.tv_show_episodes
+{
+	/* background-color: red; */
+	position: absolute;
+	bottom: 10px;
+	font-size: 12px;
+	left: 65%;
 }
 
 .tv_show_date_group
@@ -78,6 +90,8 @@
 
 .tv_show_date
 {
+	/* background-color: green; */
+
 	position: absolute;
 	bottom: 10px;
 	left: 10px;
@@ -94,10 +108,14 @@
 
 .tv_show_counter
 {
+	/* background-color: green; */
+
 	position: absolute;
 	bottom: 10px;
 	font-size: 12px;
-	left: 40%;
+	left: 100px;
+	width: 70px;
+	text-align: right;
 }
 
 .tv_show_meta_group
@@ -172,7 +190,7 @@
 	color: gray;
 }
 
-@media screen and (min-width: 640px)
+@media screen and (min-width: 691px)
 {
 	.tv_show_title
 	{
@@ -181,14 +199,14 @@
 
 	.tv_show_date
 	{
-		top: 18px;
+		top: 16px;
 		left: 240px;
 		font-size: 16px;
 	}
 
 	.tv_show_on_air
 	{
-		top: 18px;
+		top: 16px;
 		left: 240px;
 		font-size: 16px;
 	}
@@ -198,12 +216,67 @@
 		top: 16px;
 		left: 410px;
 		font-size: 16px;
-	}
+	}	
+}
 
+@media screen and (min-width: 801px)
+{
 	.tv_show_season
 	{
 		top: 16px;
-		left: 496px;
+		height: 16px;
+		left: 550px;
 		font-size: 16px;
+	}
+
+	.tv_show_episodes
+	{
+		top: 16px;
+		height: 16px;
+		left: 630px;
+		font-size: 16px;
+	}
+
+	.tv_show_counter
+	{
+		font-size: 16px;
+	}
+}
+
+@media screen and (min-width: 691px) and (max-width: 800px)
+{
+	.tv_show_season
+	{
+		top: 8px;
+		height: 16px;
+		left: 550px;
+		font-size: 16px;
+	}
+
+	.tv_show_episodes
+	{
+		bottom: 10px;
+		height: 16px;
+		left: 550px;
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 690px)
+{
+	.tv_show_season
+	{
+		top: 10px;
+		height: 16px;
+		left: 59%;
+		font-size: 12px;
+	}
+
+	.tv_show_episodes
+	{
+		bottom: 8px;
+		height: 16px;
+		left: 59%;
+		font-size: 12px;
 	}
 }

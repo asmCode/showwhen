@@ -22,6 +22,13 @@ for ($i = 0; $i < count($movies_db); $i++)
 	else
 		$element_html = $tv_show_template;
 
+	$episodes = trim((string)$tv_show["episodes"]);
+	if (strlen($episodes) == 0)
+		$episodes = "";
+	else
+		$episodes .= " EPS";
+
+	$season = (int)$tv_show["season"];
 	$day = $tv_show["day"];
 	$month = $tv_show["month"];
 	$year = $tv_show["year"];
@@ -40,7 +47,8 @@ for ($i = 0; $i < count($movies_db); $i++)
 
 	$element_html = str_replace("__INDEX__", (string)$i, $element_html);
 	$element_html = str_replace("__TITLE__", $tv_show["title"], $element_html);
-	$element_html = str_replace("__SEASON__", $tv_show["season"], $element_html);
+	$element_html = str_replace("__SEASON__", $season, $element_html);
+	$element_html = str_replace("__EPISODES__", $episodes, $element_html);
 	$element_html = str_replace("__DATE__", GetDateAsString($tv_show), $element_html);
 	$element_html = str_replace("__IMDB_SCORE__", $score, $element_html);
 	$element_html = str_replace("__IMDB_URL__", $tv_show["imdb_url"], $element_html);
