@@ -34,9 +34,15 @@ function ShowDownloadDialog(url)
 }
 
 function ExportToJson()
-{
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Main");
+{  
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = spreadsheet.getSheetByName("Main");
   var namedRanges = sheet.getNamedRanges();
+   
+  var hourColumnIndex = spreadsheet.getRangeByName("hour").getColumnIndex();
+  var dayColumnIndex = spreadsheet.getRangeByName("day").getColumnIndex();
+  var monthColumnIndex = spreadsheet.getRangeByName("month").getColumnIndex();
+  var yearColumnIndex = spreadsheet.getRangeByName("year").getColumnIndex();
   
   var elements = new Array();
   
@@ -50,15 +56,19 @@ function ExportToJson()
     var element = new Object();
     
     for (var i = 0; i < namedRanges.length; i++)
-    {      
+    {
       var namedRange = namedRanges[i].getRange();
       var name = namedRanges[i].getName();
-      var rowIndex = namedRange.getRowIndex();
       var columnIndex = namedRange.getColumnIndex();
+      var rowIndex = movieIndex + 2;
       
-      var value = sheet.getRange(rowIndex + 1 + movieIndex, columnIndex).getValue();
+      var value = sheet.getRange(rowIndex, columnIndex).getValue();
       
       element[name] = value;
+      
+      var timestamp = GetTimeStamp(sheet, rowIndex, hourColumnIndex, dayColumnIndex, monthColumnIndex, yearColumnIndex);
+      if (timestamp != 0)
+        element["timestamp"] = timestamp;
       
       if (name === "title" && value === "")
       {
@@ -74,6 +84,31 @@ function ExportToJson()
   }
   
   return JSON.stringify(moviesDatabase, null, "\t").replace(/'/g, "\\'");
+}
+
+function GetTimeStamp(sheet, rowIndex, hourColumnIndex, dayColumnIndex, monthColumnIndex, yearColumnIndex)
+{
+  var hour = sheet.getRange(rowIndex, hourColumnIndex).getValue();
+  if (typeof hour !== 'number')
+    hour = 0;
+  
+  var day = sheet.getRange(rowIndex, dayColumnIndex).getValue();
+  if (typeof day !== 'number')
+    return 0;
+  
+  var month = sheet.getRange(rowIndex, monthColumnIndex).getValue();
+  if (typeof month !== 'number')
+    return 0;
+  
+  var year = sheet.getRange(rowIndex, yearColumnIndex).getValue();
+  if (typeof year !== 'number')
+    return 0;
+  
+  // PST timezone offset
+  var pstOffset = 1000 * 60 * 60 * 8;
+  
+  var date = new Date(year, month - 1, day, hour);
+  return date.valueOf() + pstOffset;
 }
 
 function onOpen()
