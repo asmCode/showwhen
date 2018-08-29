@@ -10,6 +10,19 @@ $movies_db = $movies_db["tv_shows"];
 $main_tv_shows_html = '';
 $tv_shows_html = '';
 
+function CompareTvShows($a, $b)
+{
+	if ($b["timestamp"] == null)
+		return -1;
+
+	if ($a["timestamp"] == null)
+		return 1;
+
+	return $a["timestamp"] - $b["timestamp"];
+}
+
+usort($movies_db, "CompareTvShows");
+
 for ($i = 0; $i < count($movies_db); $i++)
 {
 	$tv_show = $movies_db[$i];
@@ -206,6 +219,19 @@ function GetDateAsString($tv_show)
 
 var defaultSearchText = "Search by Title...";
 var movies_db_json = <? echo $movies_db_json ?>
+
+/* Sorting tv_shows by the timestamp (It works!)
+movies_db_json.tv_shows.sort(function(a, b)
+{
+	if (typeof b.timestamp == 'undefined')
+		return -1;
+
+	if (typeof a.timestamp == 'undefined')
+		return 1;
+
+	return a.timestamp - b.timestamp
+});
+*/
 
 $(".mag").click(function()
 {
