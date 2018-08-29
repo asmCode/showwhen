@@ -9,7 +9,7 @@ $movies_db_json = '
 			"day": 14,
 			"source_url": "https://www.facebook.com/JonSnowWatcherOnTheWall/posts/1668337436582281",
 			"year": 2019,
-			"hour": "1899-12-31T04:00:00.000Z",
+			"hour": 20,
 			"featured": true,
 			"episodes": 6,
 			"title": "Game of Thrones",
@@ -21,7 +21,7 @@ $movies_db_json = '
 			"period": "",
 			"season": 8,
 			"imdb_url": "https://www.imdb.com/title/tt0944947/",
-			"timestamp": 1555254000000
+			"timestamp": 1555326000000
 		},
 		{
 			"imdb_score": 8.9,
@@ -49,7 +49,7 @@ $movies_db_json = '
 			"day": 7,
 			"source_url": "https://www.express.co.uk/showbiz/tv-radio/904555/The-Walking-Dead-season-9-release-date-series-Trailer-cast-Negan-All-Out-War",
 			"year": 2018,
-			"hour": "1899-12-31T05:00:00.000Z",
+			"hour": 21,
 			"featured": true,
 			"episodes": 16,
 			"title": "The Walking Dead",
@@ -61,7 +61,7 @@ $movies_db_json = '
 			"period": "",
 			"season": 9,
 			"imdb_url": "https://www.imdb.com/title/tt1520211/",
-			"timestamp": 1538924400000
+			"timestamp": 1539000000000
 		},
 		{
 			"imdb_score": 8.6,
@@ -69,7 +69,7 @@ $movies_db_json = '
 			"day": 28,
 			"source_url": "https://www.express.co.uk/showbiz/tv-radio/992833/vikings-season-5-part-2-release-date-uk-hb-history-amazon-prime",
 			"year": 2018,
-			"hour": "1899-12-31T05:00:00.000Z",
+			"hour": 21,
 			"featured": true,
 			"episodes": 10,
 			"title": "Vikings",
@@ -81,7 +81,7 @@ $movies_db_json = '
 			"period": "",
 			"season": "5 part II",
 			"imdb_url": "https://www.imdb.com/title/tt2306299/",
-			"timestamp": 1543420800000
+			"timestamp": 1543496400000
 		},
 		{
 			"imdb_score": 8.3,
@@ -89,7 +89,7 @@ $movies_db_json = '
 			"day": 24,
 			"source_url": "https://the-big-bang-theory.com/next-season/",
 			"year": 2018,
-			"hour": "1899-12-31T04:00:00.000Z",
+			"hour": 20,
 			"featured": false,
 			"episodes": 24,
 			"title": "The Big Bang Theory",
@@ -101,7 +101,7 @@ $movies_db_json = '
 			"period": "",
 			"season": 12,
 			"imdb_url": "https://www.imdb.com/title/tt0898266/",
-			"timestamp": 1537801200000
+			"timestamp": 1537873200000
 		},
 		{
 			"imdb_score": 7.6,
@@ -109,7 +109,7 @@ $movies_db_json = '
 			"day": 27,
 			"source_url": "http://www.digitalspy.com/tv/greys-anatomy/feature/a857146/greys-anatomy-season-15-cast-release-date-spoilers-trailer/",
 			"year": 2018,
-			"hour": "1899-12-31T04:00:00.000Z",
+			"hour": 20,
 			"featured": false,
 			"episodes": 24,
 			"title": "Grey\'s Anatomy",
@@ -121,7 +121,7 @@ $movies_db_json = '
 			"period": "",
 			"season": 15,
 			"imdb_url": "https://www.imdb.com/title/tt0413573/",
-			"timestamp": 1538060400000
+			"timestamp": 1538132400000
 		},
 		{
 			"imdb_score": 8.2,
@@ -169,8 +169,8 @@ $movies_db_json = '
 			"day": 9,
 			"source_url": "https://tvline.com/2018/06/07/shameless-season-9-premiere-date-showtime/",
 			"year": 2018,
-			"hour": "1899-12-31T05:00:00.000Z",
-			"featured": true,
+			"hour": 21,
+			"featured": false,
 			"episodes": 12,
 			"title": "Shameless",
 			"is_on_air": false,
@@ -181,7 +181,7 @@ $movies_db_json = '
 			"period": "",
 			"season": 9,
 			"imdb_url": "https://www.imdb.com/title/tt1586680/?ref_=ttep_ep_tt",
-			"timestamp": 1536505200000
+			"timestamp": 1536580800000
 		},
 		{
 			"imdb_score": 8.1,
@@ -289,8 +289,8 @@ $movies_db_json = '
 			"day": 2,
 			"source_url": "http://www.denofgeek.com/us/tv/house-of-cards/265301/house-of-cards-season-6-release-date-trailer-cast-news",
 			"year": 2018,
-			"hour": "1899-12-30T08:01:00.000Z",
-			"featured": true,
+			"hour": 0,
+			"featured": false,
 			"episodes": 8,
 			"title": "House of Cards",
 			"is_on_air": false,
@@ -390,7 +390,7 @@ $movies_db_json = '
 			"source_url": "https://www.countryliving.com/life/entertainment/a21638279/this-is-us-start-date-season-3-september/",
 			"year": 2018,
 			"hour": "",
-			"featured": true,
+			"featured": false,
 			"episodes": 18,
 			"title": "This is Us",
 			"is_on_air": false,
@@ -549,7 +549,7 @@ $movies_db_json = '
 			"day": 30,
 			"source_url": "https://tvline.com/2018/07/13/family-guy-season-17-first-look-comic-con-poster/",
 			"year": 2018,
-			"hour": "1899-12-31T05:00:00.000Z",
+			"hour": 21,
 			"featured": false,
 			"episodes": 20,
 			"title": "Family Guy",
@@ -561,7 +561,7 @@ $movies_db_json = '
 			"period": "",
 			"season": 17,
 			"imdb_url": "https://www.imdb.com/title/tt0182576/",
-			"timestamp": 1538319600000
+			"timestamp": 1538395200000
 		},
 		{
 			"imdb_score": 7.5,
@@ -969,7 +969,7 @@ $movies_db_json = '
 			"day": 31,
 			"source_url": "https://www.radiotimes.com/news/on-demand/2018-08-17/ozark-season-2-release-date-netflix-cast-plot/",
 			"year": 2018,
-			"hour": "1899-12-30T08:01:00.000Z",
+			"hour": 0,
 			"featured": false,
 			"episodes": 10,
 			"title": "Ozark",
@@ -1225,7 +1225,7 @@ $movies_db_json = '
 			"day": 26,
 			"source_url": "",
 			"year": 2018,
-			"hour": "1899-12-31T04:00:00.000Z",
+			"hour": 20,
 			"featured": false,
 			"episodes": "",
 			"title": "Empire",
@@ -1237,7 +1237,7 @@ $movies_db_json = '
 			"period": "",
 			"season": 5,
 			"imdb_url": "",
-			"timestamp": 1537974000000
+			"timestamp": 1538046000000
 		},
 		{
 			"imdb_score": "",
@@ -1340,7 +1340,7 @@ $movies_db_json = '
 			"day": 25,
 			"source_url": "",
 			"year": 2018,
-			"hour": "1899-12-31T05:00:00.000Z",
+			"hour": 21,
 			"featured": false,
 			"episodes": "",
 			"title": "Lethal Weapon",
@@ -1352,7 +1352,7 @@ $movies_db_json = '
 			"period": "",
 			"season": 3,
 			"imdb_url": "",
-			"timestamp": 1537887600000
+			"timestamp": 1537963200000
 		}
 	]
 }';

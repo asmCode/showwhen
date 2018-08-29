@@ -41,11 +41,15 @@ for ($i = 0; $i < count($movies_db); $i++)
 	else
 		$episodes .= " EPS";
 
+	$timestamp = $tv_show["timestamp"];
+	if ($is_featured && is_numeric($timestamp))
+		$updateTimeCode .= sprintf("UpdateTime(%d, \"movie_id_%d\");\n", $timestamp, $i);
+
 	$season = (int)$tv_show["season"];
 	$day = $tv_show["day"];
 	$month = $tv_show["month"];
 	$year = $tv_show["year"];
-	$timeLeft = GetDaysLeft($day, $month, $year);
+	$timeLeft = GetDaysLeft($day, $month, $year, $timestamp);
 	$timeLeftUnits = "days";
 	if ($timeLeft == null)
 		$timeLeftUnits = "";
@@ -53,10 +57,6 @@ for ($i = 0; $i < count($movies_db); $i++)
 	$score = $tv_show["imdb_score"];
 	if ($score !== "")
 		$score = sprintf("%.1f", $score);
-
-	$timestamp = $tv_show["timestamp"];
-	if ($is_featured && is_numeric($timestamp))
-		$updateTimeCode .= sprintf("UpdateTime(%d, \"movie_id_%d\");\n", $timestamp, $i);
 
 	$element_html = str_replace("__INDEX__", (string)$i, $element_html);
 	$element_html = str_replace("__TITLE__", $tv_show["title"], $element_html);
@@ -106,8 +106,30 @@ function GetWatchLogo($tv_show)
 	return "";
 }
 
-function GetDaysLeft($day, $month, $year)
+function GetDaysLeft($day, $month, $year, $timestamp)
 {
+	if (is_numeric($timestamp) && $timestamp != 0)
+	{
+		$currentDate = new DateTime("now");
+		$releaseDate = new DateTime();
+		$releaseDate->setTimestamp($timestamp / 1000);
+
+		if ($currentDate->getTimestamp() > $releaseDate->getTimestamp())
+			return NULL;
+
+		$diff = $currentDate->diff($releaseDate);
+
+		$approx = false;
+		if (!is_numeric($day))
+			$approx = true;
+
+		$result = (string)$diff->days;
+		if ($approx)
+			$result = "~" . $result;
+
+		return $result;
+	}
+
 	if (!is_numeric($month) || !is_numeric($year))
 		return NULL;
 
