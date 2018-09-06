@@ -39,7 +39,7 @@ $main_tv_show_template = '
         </div>
         <div class="main_tv_show_meta_section">
             <a href="__WATCH_URL__" target="_blank">
-                <img class="main_tv_show_channel" src="img/__WATCH_IMG__">
+                <img class="main_tv_show_channel" src="img/channels/__WATCH_IMG__">
             </a>
             <a href="__IMDB_URL__" target="_blank">
                 <div class="main_tv_show_imdb">

@@ -17,7 +17,7 @@ $tv_show_template = '
         <div class="tv_show_episodes">__EPISODES__</div>
         <div class="tv_show_meta_group">
             <a href="__WATCH_URL__" target="_blank">
-                <img class="tv_show_channel" src="img/__WATCH_IMG__">
+                <img class="tv_show_channel" src="img/channels/__WATCH_IMG__">
             </a>
             <a href="__IMDB_URL__" target="_blank">
                 <div class="tv_show_imdb">
