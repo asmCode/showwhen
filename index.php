@@ -192,7 +192,7 @@ function GetDateAsString($tv_show)
 ?>
 
 <!DOCTYPE html>
-<html>
+<html xmlns:og="http://ogp.me/ns#">
 <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118904948-1"></script>
@@ -202,6 +202,11 @@ function GetDateAsString($tv_show)
 	gtag('js', new Date());
 	gtag('config', 'UA-118904948-1');
 	</script>
+	
+	<meta property="og:type" content= "website" />
+    <meta property="og:url" content="http://showwhen.com/"/>
+    <meta property="og:site_name" content="Show When" />
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://showwhen.com/img/web_image.jpg" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -226,7 +231,7 @@ function GetDateAsString($tv_show)
 		</div>
 	</div>
 
-	<div id="no_results_message" class="search_reslut">No results found for "<span id="no_results_phrase">dupa jasia</span>"</div>
+	<div id="no_results_message" class="search_reslut">No results found for "<span id="no_results_phrase"></span>"</div>
 
 	<div class="main_tv_show_container">
 		<? echo $main_tv_shows_html ?>
