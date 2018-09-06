@@ -70,6 +70,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 	$element_html = str_replace("__SOURCE_URL__", $tv_show["source_url"], $element_html);
 	$element_html = str_replace("__TIME_LEFT__", $timeLeft, $element_html);
 	$element_html = str_replace("__TIME_LEFT_UNITS__", $timeLeftUnits, $element_html);
+	$element_html = str_replace("__THUMBNAIL__", $tv_show["thumbnail"], $element_html);
 
 	if ($is_on_air)
 	{	
@@ -101,6 +102,9 @@ function GetWatchLogo($tv_show)
 
 		case "amazon":
 			return "amazon.png";
+
+		case "amc":
+			return "amc.png";
 	}
 
 	return "";
@@ -201,10 +205,10 @@ function GetDateAsString($tv_show)
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-	<title>When is the next Season?</title>
-	<link rel="stylesheet" type="text/css" href="style.css?v=1" />
-	<link rel="stylesheet" type="text/css" href="tv_show.css?v=1" />
-	<link rel="stylesheet" type="text/css" href="main_tv_show.css?v=1" />
+	<title>When is the next season of your favorite TV Show?</title>
+	<link rel="stylesheet" type="text/css" href="style.css?v=2" />
+	<link rel="stylesheet" type="text/css" href="tv_show.css?v=2" />
+	<link rel="stylesheet" type="text/css" href="main_tv_show.css?v=2" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body onload="Init();">

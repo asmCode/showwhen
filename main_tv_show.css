@@ -52,11 +52,11 @@
 .main_tv_show_thumbnail
 {
 	position: relative;
-	background-image: url('img/tvshow_thumbnails/game_of_thrones.jpg');
 	width: 100%;
 	height: 50%;
 	left: 0px;
 	top: 0px;
+	background-size: cover;
 }
 
 .main_tv_show_thumbnail_gradient
@@ -64,7 +64,7 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: radial-gradient(ellipse 100% 100% at center, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.8) 50%);
+	background: radial-gradient(ellipse 100% 100% at center, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.8) 70%);
 }
 
 .main_tv_show_thumbnail_linear_gradient

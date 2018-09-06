@@ -3,7 +3,7 @@
 $main_tv_show_template = '
     <div id="movie_id___INDEX__" class="main_tv_show_bg">
         <div class="main_tv_show_gradient"></div>
-        <div class="main_tv_show_thumbnail">
+        <div class="main_tv_show_thumbnail" style="background-image: url(img/tvshow_thumbnails/__THUMBNAIL__);">
             <div class="main_tv_show_thumbnail_gradient"></div>
             <div class="main_tv_show_thumbnail_linear_gradient"></div>
         </div>
