@@ -202,11 +202,13 @@ function GetDateAsString($tv_show)
 	gtag('js', new Date());
 	gtag('config', 'UA-118904948-1');
 	</script>
-	
+
 	<meta property="og:type" content= "website" />
     <meta property="og:url" content="http://showwhen.com/"/>
     <meta property="og:site_name" content="Show When" />
-    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://showwhen.com/img/web_image.jpg" />
+	<meta property="og:title" content="When is the next season of your favorite TV Show?" />
+	<meta property="og:description" content="" />
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://showwhen.com/img/web_image_v3.jpg" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
