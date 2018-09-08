@@ -1,7 +1,7 @@
 <?
 
 $tv_show_template = '
-    <div id="movie_id___INDEX__" class="tv_show">
+    <div id="movie_id___ID__" class="tv_show">
         <div class="tv_show_title text_green">__TITLE__</div>
         <a href="__SOURCE_URL__" target="_blank" style="display: __COUNTER_DISPLAY__">
             <div class="tv_show_date">

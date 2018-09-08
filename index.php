@@ -43,7 +43,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 
 	$timestamp = $tv_show["timestamp"];
 	if ($is_featured && is_numeric($timestamp))
-		$updateTimeCode .= sprintf("UpdateTime(%d, \"movie_id_%d\");\n", $timestamp, $i);
+		$updateTimeCode .= sprintf("UpdateTime(%d, \"movie_id_%d\");\n", $timestamp, $tv_show["id"]);
 
 	$season = (int)$tv_show["season"];
 	$day = $tv_show["day"];
@@ -58,7 +58,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 	if ($score !== "")
 		$score = sprintf("%.1f", $score);
 
-	$element_html = str_replace("__INDEX__", (string)$i, $element_html);
+	$element_html = str_replace("__ID__", $tv_show["id"], $element_html);
 	$element_html = str_replace("__TITLE__", $tv_show["title"], $element_html);
 	$element_html = str_replace("__SEASON__", $season, $element_html);
 	$element_html = str_replace("__EPISODES__", $episodes, $element_html);
@@ -347,14 +347,15 @@ function FilterElements(searchPhrase)
 	{
         var found = item.title.trim().toLowerCase().search(searchPhrase) != -1;
 
-		var movieId = MakeMovieElementId(index);
+		var id = MakeMovieElementId(item.id);
+
 		if (found)
 		{
-			$("#" + movieId).show();
+			$("#" + id).show();
 			foundCount++;
 		 }
 		 else
-		 	$("#" + movieId).hide();
+		 	$("#" + id).hide();
     });
 
 	return foundCount;
@@ -369,7 +370,7 @@ function ShowAllMovies()
 {
 	for (var i = 0; i < movies_db_json.tv_shows.length; i++)
 	{
-		var movieId = MakeMovieElementId(i);
+		var movieId = MakeMovieElementId(movies_db_json.tv_shows[i].id);
 		$("#" + movieId).show();
     }
 }
