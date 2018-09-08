@@ -4,6 +4,7 @@ $movies_db_json = '
 {
 	"tv_shows": [
 		{
+			"id": 0,
 			"imdb_score": 9.5,
 			"watch_url": "https://www.hbo.com/game-of-thrones",
 			"day": 14,
@@ -24,6 +25,7 @@ $movies_db_json = '
 			"timestamp": 1555326000000
 		},
 		{
+			"id": 1,
 			"imdb_score": 8.9,
 			"watch_url": "https://www.netflix.com/title/80057281",
 			"day": "",
@@ -44,6 +46,7 @@ $movies_db_json = '
 			"timestamp": 1565017200000
 		},
 		{
+			"id": 2,
 			"imdb_score": 8.4,
 			"watch_url": "https://www.amc.com/livestream",
 			"day": 7,
@@ -64,6 +67,7 @@ $movies_db_json = '
 			"timestamp": 1539000000000
 		},
 		{
+			"id": 3,
 			"imdb_score": 8.6,
 			"watch_url": "https://www.history.com/topics/exploration/vikings-history/videos",
 			"day": 28,
@@ -84,6 +88,7 @@ $movies_db_json = '
 			"timestamp": 1543496400000
 		},
 		{
+			"id": 4,
 			"imdb_score": 8.3,
 			"watch_url": "https://www.cbs.com/shows/big_bang_theory/video/",
 			"day": 24,
@@ -104,6 +109,7 @@ $movies_db_json = '
 			"timestamp": 1537873200000
 		},
 		{
+			"id": 5,
 			"imdb_score": 7.6,
 			"watch_url": "https://abc.go.com/shows/greys-anatomy",
 			"day": 27,
@@ -124,6 +130,7 @@ $movies_db_json = '
 			"timestamp": 1538132400000
 		},
 		{
+			"id": 6,
 			"imdb_score": 8.2,
 			"watch_url": "https://www.netflix.com/title/80057918",
 			"day": "",
@@ -144,6 +151,7 @@ $movies_db_json = '
 			"timestamp": 1554130800000
 		},
 		{
+			"id": 7,
 			"imdb_score": 8.9,
 			"watch_url": "https://www.netflix.com/title/70264888",
 			"day": "",
@@ -164,6 +172,7 @@ $movies_db_json = '
 			"timestamp": 1538319600000
 		},
 		{
+			"id": 8,
 			"imdb_score": 8.7,
 			"watch_url": "https://www.showtime.com/?s_cid=pse-shameless-12744",
 			"day": 9,
@@ -184,6 +193,7 @@ $movies_db_json = '
 			"timestamp": 1536580800000
 		},
 		{
+			"id": 9,
 			"imdb_score": 8.1,
 			"watch_url": "https://www.nbc.com/the-blacklist",
 			"day": "",
@@ -204,6 +214,7 @@ $movies_db_json = '
 			"timestamp": 1554130800000
 		},
 		{
+			"id": 10,
 			"imdb_score": 8.8,
 			"watch_url": "https://www.bbc.co.uk/programmes/b045fz8r",
 			"day": "",
@@ -224,6 +235,7 @@ $movies_db_json = '
 			"timestamp": 1557068400000
 		},
 		{
+			"id": 11,
 			"imdb_score": 8.9,
 			"watch_url": "https://www.hbo.com/westworld",
 			"day": "",
@@ -244,6 +256,7 @@ $movies_db_json = '
 			"timestamp": 1585753200000
 		},
 		{
+			"id": 12,
 			"imdb_score": 8.1,
 			"watch_url": "https://www.netflix.com/title/80117470",
 			"day": "",
@@ -264,6 +277,7 @@ $movies_db_json = '
 			"timestamp": 1557068400000
 		},
 		{
+			"id": 13,
 			"imdb_score": 8.6,
 			"watch_url": "https://www.hbo.com/silicon-valley/",
 			"day": "",
@@ -284,6 +298,7 @@ $movies_db_json = '
 			"timestamp": 1557932400000
 		},
 		{
+			"id": 14,
 			"imdb_score": 8.9,
 			"watch_url": "https://www.netflix.com/title/70178217",
 			"day": 2,
@@ -304,6 +319,7 @@ $movies_db_json = '
 			"timestamp": 1541170800000
 		},
 		{
+			"id": 15,
 			"imdb_score": 8.3,
 			"watch_url": "https://www.netflix.com/title/80017537",
 			"day": "",
@@ -324,6 +340,7 @@ $movies_db_json = '
 			"timestamp": 1546358400000
 		},
 		{
+			"id": 16,
 			"imdb_score": 8.6,
 			"watch_url": "http://www.usanetwork.com/suits/episodes",
 			"day": 19,
@@ -344,6 +361,7 @@ $movies_db_json = '
 			"timestamp": 1532012400000
 		},
 		{
+			"id": 17,
 			"imdb_score": 8.2,
 			"watch_url": "https://www.netflix.com/title/80097140",
 			"day": "",
@@ -364,6 +382,7 @@ $movies_db_json = '
 			"timestamp": 1569855600000
 		},
 		{
+			"id": 18,
 			"imdb_score": 8.6,
 			"watch_url": "https://www.fxnetworks.com/shows/atlanta",
 			"day": "",
@@ -384,6 +403,7 @@ $movies_db_json = '
 			"timestamp": 1585753200000
 		},
 		{
+			"id": 19,
 			"imdb_score": 8.8,
 			"watch_url": "https://www.nbc.com/this-is-us",
 			"day": 25,
@@ -404,6 +424,7 @@ $movies_db_json = '
 			"timestamp": 1537887600000
 		},
 		{
+			"id": 20,
 			"imdb_score": 8.6,
 			"watch_url": "https://www.hulu.com/castle-rock",
 			"day": "",
@@ -424,6 +445,7 @@ $movies_db_json = '
 			"timestamp": 1565017200000
 		},
 		{
+			"id": 21,
 			"imdb_score": "",
 			"watch_url": "https://www.netflix.com/title/80124522",
 			"day": 21,
@@ -444,6 +466,7 @@ $movies_db_json = '
 			"timestamp": 1537542000000
 		},
 		{
+			"id": 22,
 			"imdb_score": "",
 			"watch_url": "https://www.netflix.com/title/80186863",
 			"day": "",
@@ -464,6 +487,7 @@ $movies_db_json = '
 			"timestamp": 1546358400000
 		},
 		{
+			"id": 23,
 			"imdb_score": 8.1,
 			"watch_url": "https://www.starz.com/series/counterpart/episodes",
 			"day": "",
@@ -484,6 +508,7 @@ $movies_db_json = '
 			"timestamp": 1547568000000
 		},
 		{
+			"id": 24,
 			"imdb_score": 8.1,
 			"watch_url": "https://www.amc.com/shows/the-terror",
 			"day": "",
@@ -504,6 +529,7 @@ $movies_db_json = '
 			"timestamp": 1552662000000
 		},
 		{
+			"id": 25,
 			"imdb_score": 8.7,
 			"watch_url": "https://www.fox.com/the-simpsons/",
 			"day": 30,
@@ -524,6 +550,7 @@ $movies_db_json = '
 			"timestamp": 1538319600000
 		},
 		{
+			"id": 26,
 			"imdb_score": 8.6,
 			"watch_url": "http://www.usanetwork.com/mrrobot",
 			"day": "",
@@ -544,6 +571,7 @@ $movies_db_json = '
 			"timestamp": 1541433600000
 		},
 		{
+			"id": 27,
 			"imdb_score": 8.2,
 			"watch_url": "https://www.fox.com/family-guy/",
 			"day": 30,
@@ -564,6 +592,7 @@ $movies_db_json = '
 			"timestamp": 1538395200000
 		},
 		{
+			"id": 28,
 			"imdb_score": 7.5,
 			"watch_url": "https://www.netflix.com/title/80074220",
 			"day": "",
@@ -584,6 +613,7 @@ $movies_db_json = '
 			"timestamp": 1546358400000
 		},
 		{
+			"id": 29,
 			"imdb_score": 8.7,
 			"watch_url": "https://www.netflix.com/title/80025678",
 			"day": "",
@@ -604,6 +634,7 @@ $movies_db_json = '
 			"timestamp": 1554130800000
 		},
 		{
+			"id": 30,
 			"imdb_score": 8.2,
 			"watch_url": "https://www.netflix.com/title/70242311",
 			"day": "",
@@ -624,6 +655,7 @@ $movies_db_json = '
 			"timestamp": 1560610800000
 		},
 		{
+			"id": 31,
 			"imdb_score": 8.9,
 			"watch_url": "https://www.netflix.com/title/80997085",
 			"day": "",
@@ -644,6 +676,7 @@ $movies_db_json = '
 			"timestamp": 1537023600000
 		},
 		{
+			"id": 32,
 			"imdb_score": 8,
 			"watch_url": "https://www.netflix.com/title/80105699",
 			"day": "",
@@ -664,6 +697,7 @@ $movies_db_json = '
 			"timestamp": 1544889600000
 		},
 		{
+			"id": 33,
 			"imdb_score": 7.8,
 			"watch_url": "https://www.netflix.com/title/80100929",
 			"day": 7,
@@ -684,6 +718,7 @@ $movies_db_json = '
 			"timestamp": 1536332400000
 		},
 		{
+			"id": 34,
 			"imdb_score": 6.3,
 			"watch_url": "https://www.netflix.com/title/80154610",
 			"day": "",
@@ -704,6 +739,7 @@ $movies_db_json = '
 			"timestamp": 1546358400000
 		},
 		{
+			"id": 35,
 			"imdb_score": 6.5,
 			"watch_url": "https://www.netflix.com/title/80065386",
 			"day": 14,
@@ -724,6 +760,7 @@ $movies_db_json = '
 			"timestamp": 1539529200000
 		},
 		{
+			"id": 36,
 			"imdb_score": 8,
 			"watch_url": "https://www.netflix.com/title/80027042",
 			"day": 9,
@@ -744,6 +781,7 @@ $movies_db_json = '
 			"timestamp": 1539097200000
 		},
 		{
+			"id": 37,
 			"imdb_score": 7.4,
 			"watch_url": "https://www.hbo.com/crashing",
 			"day": "",
@@ -764,6 +802,7 @@ $movies_db_json = '
 			"timestamp": 1547568000000
 		},
 		{
+			"id": 38,
 			"imdb_score": 8.1,
 			"watch_url": "https://www.netflix.com/title/80002311",
 			"day": "",
@@ -784,6 +823,7 @@ $movies_db_json = '
 			"timestamp": 1573833600000
 		},
 		{
+			"id": 39,
 			"imdb_score": 7.9,
 			"watch_url": "https://www.hbo.com/high-maintenance/",
 			"day": "",
@@ -804,6 +844,7 @@ $movies_db_json = '
 			"timestamp": 1539615600000
 		},
 		{
+			"id": 40,
 			"imdb_score": 7.3,
 			"watch_url": "https://www.hulu.com/the-chi",
 			"day": "",
@@ -824,6 +865,7 @@ $movies_db_json = '
 			"timestamp": 1546358400000
 		},
 		{
+			"id": 41,
 			"imdb_score": 7.8,
 			"watch_url": "https://www.amazon.com/dp/B00TUDD6XQ",
 			"day": "",
@@ -844,6 +886,7 @@ $movies_db_json = '
 			"timestamp": 1560610800000
 		},
 		{
+			"id": 42,
 			"imdb_score": 7.5,
 			"watch_url": "https://www.amazon.com/dp/B01AX20SDI",
 			"day": "",
@@ -864,6 +907,7 @@ $movies_db_json = '
 			"timestamp": 1546358400000
 		},
 		{
+			"id": 43,
 			"imdb_score": 7.6,
 			"watch_url": "https://www.amazon.com/dp/B07CPM85L3/DVM_PTM_AMG_US_AC_C_ACQ_ASIN_HBO",
 			"day": "",
@@ -884,6 +928,7 @@ $movies_db_json = '
 			"timestamp": 1546358400000
 		},
 		{
+			"id": 44,
 			"imdb_score": 6.3,
 			"watch_url": "https://www.amazon.com/dp/B07CVLDBFG",
 			"day": "",
@@ -904,6 +949,7 @@ $movies_db_json = '
 			"timestamp": 1546358400000
 		},
 		{
+			"id": 45,
 			"imdb_score": 8.4,
 			"watch_url": "https://www.amazon.com/gp/video/detail/B079V57Z6P?ref=dvm_us_kr_pm_amg_shoimdptpbi",
 			"day": "",
@@ -924,6 +970,7 @@ $movies_db_json = '
 			"timestamp": 1555340400000
 		},
 		{
+			"id": 46,
 			"imdb_score": 8.4,
 			"watch_url": "https://www.amazon.com/dp/B075DNLR23?ref_=imdbref_tt_wbr_aiv&tag=imdbtag_tt_wbr_aiv-20",
 			"day": "",
@@ -944,6 +991,7 @@ $movies_db_json = '
 			"timestamp": 1552662000000
 		},
 		{
+			"id": 47,
 			"imdb_score": "",
 			"watch_url": "https://www.amazon.com/PrimeVideo",
 			"day": "",
@@ -964,6 +1012,7 @@ $movies_db_json = '
 			"timestamp": 1514822400000
 		},
 		{
+			"id": 48,
 			"imdb_score": 8.3,
 			"watch_url": "https://www.netflix.com/title/80117552",
 			"day": 31,
@@ -984,6 +1033,7 @@ $movies_db_json = '
 			"timestamp": 1535727600000
 		},
 		{
+			"id": 49,
 			"imdb_score": 6.7,
 			"watch_url": "https://www.netflix.com/title/80002612",
 			"day": 7,
@@ -1004,6 +1054,7 @@ $movies_db_json = '
 			"timestamp": 1536332400000
 		},
 		{
+			"id": 50,
 			"imdb_score": 8.5,
 			"watch_url": "https://www.netflix.com/title/70300800",
 			"day": 14,
@@ -1024,6 +1075,7 @@ $movies_db_json = '
 			"timestamp": 1536937200000
 		},
 		{
+			"id": 51,
 			"imdb_score": 7.8,
 			"watch_url": "https://www.netflix.com/title/80044950",
 			"day": "",
@@ -1044,6 +1096,7 @@ $movies_db_json = '
 			"timestamp": 1554130800000
 		},
 		{
+			"id": 52,
 			"imdb_score": 7.3,
 			"watch_url": "https://www.netflix.com/title/80066429",
 			"day": 14,

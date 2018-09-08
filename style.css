@@ -68,6 +68,21 @@ body, input, a
 	display: none;
 }
 
+.sort_bar
+{
+	position: absolute;
+	left: 0px;
+	margin-top: 6px;
+}
+
+.sort_option
+{
+	margin-left: 10px;
+	margin-right: 10px;
+	color: #868686;
+	font-size: 14px;
+}
+
 #header_gradient
 {
 	position: absolute;

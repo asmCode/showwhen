@@ -248,9 +248,9 @@ function GetDateAsString($tv_show)
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<title>When is the next season of your favorite TV Show?</title>
-	<link rel="stylesheet" type="text/css" href="style.css?v=2" />
-	<link rel="stylesheet" type="text/css" href="tv_show.css?v=2" />
-	<link rel="stylesheet" type="text/css" href="main_tv_show.css?v=2" />
+	<link rel="stylesheet" type="text/css" href="style.css?v=3" />
+	<link rel="stylesheet" type="text/css" href="tv_show.css?v=3" />
+	<link rel="stylesheet" type="text/css" href="main_tv_show.css?v=3" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body onload="Init();">
@@ -266,6 +266,13 @@ function GetDateAsString($tv_show)
 			</form>
 			<img class="mag" src="img/mag.png">
 		</div>
+	</div>
+
+	<div class="sort_bar">
+		<span class="sort_option">Sort By:</span>
+		<a href="index.php"><span class="sort_option">Date</span></a>
+		<a href="index.php?sort=1"><span class="sort_option">Title</span></a>
+		<a href="index.php?sort=2"><span class="sort_option">Score</span></a>
 	</div>
 
 	<div id="no_results_message" class="search_reslut">No results found for "<span id="no_results_phrase"></span>"</div>
