@@ -10,7 +10,22 @@ $movies_db = $movies_db["tv_shows"];
 $main_tv_shows_html = '';
 $tv_shows_html = '';
 
-function CompareTvShows($a, $b)
+$sort_method = "SortByDate";
+if (isset($_GET["sort"]) && is_numeric($_GET["sort"]))
+{
+	switch ($_GET["sort"])
+	{
+		case 1:
+			$sort_method = "SortByName";
+			break;
+
+		case 2:
+			$sort_method = "SortByScore";
+			break;
+	}
+}
+
+function SortByDate($a, $b)
 {
 	if ($b["timestamp"] == null)
 		return -1;
@@ -21,7 +36,27 @@ function CompareTvShows($a, $b)
 	return $a["timestamp"] - $b["timestamp"];
 }
 
-usort($movies_db, "CompareTvShows");
+function SortByName($a, $b)
+{
+	return strcmp($a["title"], $b["title"]);
+}
+
+function sign($n) {
+    return ($n > 0) - ($n < 0);
+}
+
+function SortByScore($a, $b)
+{
+	if ($b["imdb_score"] == null)
+		return -1;
+
+	if ($a["imdb_score"] == null)
+		return 1;
+
+	return sign((float)($b["imdb_score"]) - (float)($a["imdb_score"]));
+}
+
+usort($movies_db, $sort_method);
 
 for ($i = 0; $i < count($movies_db); $i++)
 {
