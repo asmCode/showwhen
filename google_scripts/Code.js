@@ -12,17 +12,39 @@ function Export()
   var jsonCode = ExportToJson();
   var phpCode = "<?\n\n$movies_db_json = '\n" + jsonCode + "';\n\n?>";
   
-  var file = DriveApp.createFile("movies_db.php", phpCode);
+  var postData =
+  {
+    'db': Utilities.newBlob(phpCode)
+  };
+
+  var options =
+  {
+    'method' : 'post',
+    'payload' : postData
+  };
   
-  var rootFolder = DriveApp.getRootFolder();
+  UrlFetchApp.fetch('http://showwhen.com/send_db.php', options);
   
-  var dstFolderId = "1lL6fBu_TS865c8ZAFLG-2872vOxR4tUA";  // ShowWhen/MoviesDb
-  var folder = DriveApp.getFolderById(dstFolderId);
-  file.makeCopy(folder);
-  rootFolder.removeFile(file);
+  ShowResultsDialog();
+  
+  //var file = DriveApp.createFile("movies_db.php", phpCode);
+  
+  //var rootFolder = DriveApp.getRootFolder();
+  
+  // var dstFolderId = "1lL6fBu_TS865c8ZAFLG-2872vOxR4tUA";  // ShowWhen/MoviesDb
+  //var folder = DriveApp.getFolderById(dstFolderId);
+  //file.makeCopy(folder);
+  //rootFolder.removeFile(file);
  
-  ShowDownloadDialog(file.getUrl());
+  //ShowDownloadDialog(file.getUrl());
 }
+
+function ShowResultsDialog()
+{
+  var ui = SpreadsheetApp.getUi();
+  ui.alert('Success', 'Export completed.', ui.ButtonSet.OK);
+}
+
 
 function ShowDownloadDialog(url)
 {
@@ -58,6 +80,8 @@ function ExportToJson()
     var rowIndex = movieIndex + 2;
     
     var element = new Object();
+    
+    element["id"] = movieIndex;
     
     for (var i = 0; i < namedRanges.length; i++)
     {
