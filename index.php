@@ -119,6 +119,12 @@ for ($i = 0; $i < count($movies_db); $i++)
 		$element_html = str_replace("__ON_AIR_DISPLAY__", "none", $element_html);
 	}
 
+	$is_confirmed = isset($tv_show["confirmed"]) && $tv_show["confirmed"] == true;
+	if ($is_confirmed)
+		$element_html = str_replace("__CONFIRMED_DISPLAY__", "unset", $element_html);
+	else
+		$element_html = str_replace("__CONFIRMED_DISPLAY__", "none", $element_html);
+
 	if ($is_featured)
 		$main_tv_shows_html .= $element_html;
 	else

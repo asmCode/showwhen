@@ -23,6 +23,7 @@ $main_tv_show_template = '
                     <div class="main_tv_show_date">
                         __DATE__
                         <img class="main_tv_show_date_info_icon" src="img/info_icon.png">
+                        <img class="main_tv_show_date_info_icon" style="display: __CONFIRMED_DISPLAY__" src="img/confirmed.png">
                     </div>
                     <div class="main_tv_show_info_section_separator"></div>
                 </span>
