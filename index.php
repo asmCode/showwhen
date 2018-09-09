@@ -74,7 +74,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 	if (strlen($episodes) == 0)
 		$episodes = "";
 	else
-		$episodes .= " EPS";
+		$episodes .= " Episodes";
 
 	$timestamp = $tv_show["timestamp"];
 	if ($is_featured && is_numeric($timestamp))
@@ -239,9 +239,9 @@ function GetDateAsString($tv_show)
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<title>When is the next season of your favorite TV Show?</title>
-	<link rel="stylesheet" type="text/css" href="style.css?v=5" />
-	<link rel="stylesheet" type="text/css" href="tv_show.css?v=5" />
-	<link rel="stylesheet" type="text/css" href="main_tv_show.css?v=5" />
+	<link rel="stylesheet" type="text/css" href="style.css?v=6" />
+	<link rel="stylesheet" type="text/css" href="tv_show.css?v=6" />
+	<link rel="stylesheet" type="text/css" href="main_tv_show.css?v=6" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body onload="Init();">
@@ -262,7 +262,7 @@ function GetDateAsString($tv_show)
 	</div>
 
 	<div class="sort_bar">
-		<span class="sort_option">Sort By:</span>
+		<span class="sort_option">Sort by:</span>
 		<a href="index.php"><span class="sort_option">Score</span></a>
 		<a href="index.php?sort=1"><span class="sort_option">Title</span></a>
 		<a href="index.php?sort=2"><span class="sort_option">Date</span></a>

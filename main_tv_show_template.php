@@ -21,9 +21,9 @@ $main_tv_show_template = '
                         <span class="time_left_label_secs">SECS</span>
                     </div>
                     <div class="main_tv_show_date">
+                        <!--<img class="main_tv_show_date_info_icon" src="img/info_icon.png">-->
                         __DATE__
-                        <img class="main_tv_show_date_info_icon" src="img/info_icon.png">
-                        <img class="main_tv_show_date_info_icon" style="display: __CONFIRMED_DISPLAY__" src="img/confirmed.png">
+                        <img class="main_tv_show_date_info_icon" style="display: __CONFIRMED_DISPLAY__" src="img/confirmed.png" title="Release date confirmed.">
                     </div>
                     <div class="main_tv_show_info_section_separator"></div>
                 </span>
