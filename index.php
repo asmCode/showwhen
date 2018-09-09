@@ -10,7 +10,7 @@ $movies_db = $movies_db["tv_shows"];
 $main_tv_shows_html = '';
 $tv_shows_html = '';
 
-$sort_method = "SortByDate";
+$sort_method = "SortByScore";
 if (isset($_GET["sort"]) && is_numeric($_GET["sort"]))
 {
 	switch ($_GET["sort"])
@@ -20,7 +20,7 @@ if (isset($_GET["sort"]) && is_numeric($_GET["sort"]))
 			break;
 
 		case 2:
-			$sort_method = "SortByScore";
+			$sort_method = "SortByDate";
 			break;
 	}
 }
@@ -127,22 +127,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 
 function GetWatchLogo($tv_show)
 {
-	switch ($tv_show["watch_logo"])
-	{
-		case "hbo":
-			return "hbo.png";
-
-		case "netflix":
-			return "netflix.png";
-
-		case "amazon":
-			return "amazon.png";
-
-		case "amc":
-			return "amc.png";
-	}
-
-	return "";
+	return $tv_show["watch_logo"] . ".png";
 }
 
 function GetDaysLeft($day, $month, $year, $timestamp)
@@ -248,9 +233,9 @@ function GetDateAsString($tv_show)
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<title>When is the next season of your favorite TV Show?</title>
-	<link rel="stylesheet" type="text/css" href="style.css?v=3" />
-	<link rel="stylesheet" type="text/css" href="tv_show.css?v=3" />
-	<link rel="stylesheet" type="text/css" href="main_tv_show.css?v=3" />
+	<link rel="stylesheet" type="text/css" href="style.css?v=5" />
+	<link rel="stylesheet" type="text/css" href="tv_show.css?v=5" />
+	<link rel="stylesheet" type="text/css" href="main_tv_show.css?v=5" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body onload="Init();">
@@ -270,9 +255,9 @@ function GetDateAsString($tv_show)
 
 	<div class="sort_bar">
 		<span class="sort_option">Sort By:</span>
-		<a href="index.php"><span class="sort_option">Date</span></a>
+		<a href="index.php"><span class="sort_option">Score</span></a>
 		<a href="index.php?sort=1"><span class="sort_option">Title</span></a>
-		<a href="index.php?sort=2"><span class="sort_option">Score</span></a>
+		<a href="index.php?sort=2"><span class="sort_option">Date</span></a>
 	</div>
 
 	<div id="no_results_message" class="search_reslut">No results found for "<span id="no_results_phrase"></span>"</div>
