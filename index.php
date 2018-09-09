@@ -240,6 +240,8 @@ function GetDateAsString($tv_show)
 </head>
 <body onload="Init();">
 
+<div class="bg"></div>
+
 <div class="main_canvas">
 	<div id="header">
 		<div id="header_gradient"></div>
