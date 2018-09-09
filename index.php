@@ -262,7 +262,7 @@ function GetDateAsString($tv_show)
 	</div>
 
 	<div class="sort_bar">
-		<span class="sort_option">Sort by:</span>
+		<span class="sort_option_label">Sort by:</span>
 		<a href="index.php"><span class="sort_option">Score</span></a>
 		<a href="index.php?sort=1"><span class="sort_option">Title</span></a>
 		<a href="index.php?sort=2"><span class="sort_option">Date</span></a>
