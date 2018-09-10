@@ -89,7 +89,7 @@ a
 .sort_bar
 {
 	position: absolute;
-	left: 0px;
+	right: 0px;
 	margin-top: 6px;
 	background-color: rgba(0, 0, 0, 0);
 }
@@ -98,10 +98,10 @@ a
 {
 	margin-left: 3px;
 	margin-right: 3px;
-	color: #acacac;
+	color: #000000;
 	font-size: 14px;
 	border-radius: 2px;
-	background-color: rgba(94, 104, 92, 0.5);
+	background-color: rgba(139, 198, 63, 0.3);
 	padding-left: 10px;
 	padding-right: 10px;
 }
@@ -120,7 +120,7 @@ a
 
 .sort_option:hover
 {
-	background-color: rgba(94, 104, 92, 1.0);
+	background-color: rgba(139, 198, 63, 0.9);
 }
 
 #header_gradient

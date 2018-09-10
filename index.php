@@ -11,8 +11,10 @@ $main_tv_shows_html = '';
 $tv_shows_html = '';
 
 $sort_method = "SortByScore";
+$sort_id = 0;
 if (isset($_GET["sort"]) && is_numeric($_GET["sort"]))
 {
+	$sort_id = $_GET["sort"];
 	switch ($_GET["sort"])
 	{
 		case 1:
@@ -271,9 +273,9 @@ function GetDateAsString($tv_show)
 
 	<div class="sort_bar">
 		<span class="sort_option_label">Sort by:</span>
-		<a href="index.php"><span class="sort_option">Score</span></a>
-		<a href="index.php?sort=1"><span class="sort_option">Title</span></a>
-		<a href="index.php?sort=2"><span class="sort_option">Date</span></a>
+		<a href="index.php"><span id="sort_button_0" class="sort_option">Score</span></a>
+		<a href="index.php?sort=1"><span id="sort_button_1" class="sort_option">Title</span></a>
+		<a href="index.php?sort=2"><span id="sort_button_2" class="sort_option">Date</span></a>
 	</div>
 
 	<div id="no_results_message" class="search_reslut">No results found for "<span id="no_results_phrase"></span>"</div>
@@ -294,7 +296,8 @@ function GetDateAsString($tv_show)
 <script>
 
 var defaultSearchText = "Search by Title...";
-var movies_db_json = <? echo $movies_db_json ?>
+var movies_db_json = <? echo $movies_db_json . ";\n" ?>
+var sort_id = <? echo $sort_id ?>;
 
 /* Sorting tv_shows by the timestamp (It works!)
 movies_db_json.tv_shows.sort(function(a, b)
@@ -437,12 +440,25 @@ function myFunction()
 	alert(score);
 }
 
+function InitSortButtons()
+{
+	for (var i = 0; i < 3; i++)
+	{
+		var sort_button = $("#sort_button_" + i);
+		var color = "rgba(139, 198, 63, 0.3)";
+		if (i == sort_id)
+			color = "rgba(139, 198, 63, 0.9)";
+		sort_button.css('background-color', color);
+	}
+}
+
 function Init()
 {
     // UpdateTime();
 	SetDefaultSearchText();
 	UpdateSearchResultMessage(-1, "");
 	UpdateNoise();
+	InitSortButtons();
 }
 
 function GetPremiereDate()
