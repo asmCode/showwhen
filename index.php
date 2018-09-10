@@ -89,10 +89,6 @@ for ($i = 0; $i < count($movies_db); $i++)
 	if ($timeLeft == null)
 		$timeLeftUnits = "";
 
-	$approx = false;
-	if (!is_numeric($day))
-		$approx = true;
-
 	$score = $tv_show["imdb_score"];
 	if ($score !== "")
 		$score = sprintf("%.1f", $score);
@@ -110,6 +106,14 @@ for ($i = 0; $i < count($movies_db); $i++)
 	$element_html = str_replace("__TIME_LEFT__", $timeLeft, $element_html);
 	$element_html = str_replace("__TIME_LEFT_UNITS__", $timeLeftUnits, $element_html);
 	$element_html = str_replace("__THUMBNAIL__", $tv_show["thumbnail"], $element_html);
+
+	$approx = false;
+	if (!is_numeric($day))
+		$approx = true;
+	if ($approx)
+		$element_html = str_replace("__APPROX_DISPLAY__", "unset", $element_html);
+	else
+		$element_html = str_replace("__APPROX_DISPLAY__", "none", $element_html);
 
 	if ($is_on_air)
 	{	
