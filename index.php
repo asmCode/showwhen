@@ -89,6 +89,10 @@ for ($i = 0; $i < count($movies_db); $i++)
 	if ($timeLeft == null)
 		$timeLeftUnits = "";
 
+	$approx = false;
+	if (!is_numeric($day))
+		$approx = true;
+
 	$score = $tv_show["imdb_score"];
 	if ($score !== "")
 		$score = sprintf("%.1f", $score);
@@ -232,13 +236,13 @@ function GetDateAsString($tv_show)
 	<meta property="og:type" content= "website" />
     <meta property="og:url" content="http://showwhen.com/"/>
     <meta property="og:site_name" content="Show When" />
-	<meta property="og:title" content="When is the next season of your favorite TV Show?" />
+	<meta property="og:title" content="When is the next season of my favorite TV Show?" />
 	<meta property="og:description" content="" />
     <meta property="og:image" itemprop="image primaryImageOfPage" content="http://showwhen.com/img/web_image_v3.jpg" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-	<title>When is the next season of your favorite TV Show?</title>
+	<title>When is the next season of my favorite TV Show?</title>
 	<link rel="stylesheet" type="text/css" href="style.css?v=6" />
 	<link rel="stylesheet" type="text/css" href="tv_show.css?v=6" />
 	<link rel="stylesheet" type="text/css" href="main_tv_show.css?v=6" />
@@ -252,7 +256,7 @@ function GetDateAsString($tv_show)
 	<div id="header">
 		<div id="header_gradient"></div>
 		<img id="header_title" src="img/title.png">
-		<div class="header_subtitle text_green">WHEN IS THE NEXT SEASON OF YOUR FAVORITE TV SHOW?</div>
+		<div class="header_subtitle text_green">WHEN IS THE NEXT SEASON OF MY FAVORITE TV SHOW?</div>
 		<div class="search_bar_group">
 			<form action="javascript:void(0);">
 				<input id="search" type="search" class="search_bar" value="Search by Title...">
