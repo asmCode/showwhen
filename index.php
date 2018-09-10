@@ -272,7 +272,7 @@ function GetDateAsString($tv_show)
 	</div>
 
 	<div class="sort_bar">
-		<span class="sort_option_label">Sort by:</span>
+		<img class="sort_option_icon" src="img/sort.png"></img>
 		<a href="index.php"><span id="sort_button_0" class="sort_option">Score</span></a>
 		<a href="index.php?sort=1"><span id="sort_button_1" class="sort_option">Title</span></a>
 		<a href="index.php?sort=2"><span id="sort_button_2" class="sort_option">Date</span></a>
@@ -446,14 +446,17 @@ function InitSortButtons()
 	{
 		var sort_button = $("#sort_button_" + i);
 		var color = "rgba(139, 198, 63, 0.3)";
-		if (i == sort_id)
+		if (i == sort_id) {
 			color = "rgba(139, 198, 63, 0.9)";
-		sort_button.css('background-color', color);
+			sort_button.css('background-color', color);
+		}
 	}
 }
 
 function Init()
 {
+	console.log("eee");
+	
     // UpdateTime();
 	SetDefaultSearchText();
 	UpdateSearchResultMessage(-1, "");
