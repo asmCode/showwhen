@@ -6,7 +6,7 @@ $tv_show_template = '
         <a href="__SOURCE_URL__" target="_blank" style="display: __COUNTER_DISPLAY__">
             <div class="tv_show_date">
                 __DATE__
-                <img class="main_tv_show_date_info_icon" src="img/info_icon.png">
+                <img class="main_tv_show_date_info_icon" src="/img/info_icon.png">
             </div>
         </a>
         <div class="tv_show_on_air" style="display: __ON_AIR_DISPLAY__">ON AIR, __ON_AIR_EXTRA__</div>
@@ -17,11 +17,11 @@ $tv_show_template = '
         <div class="tv_show_episodes">__EPISODES__</div>
         <div class="tv_show_meta_group">
             <a href="__WATCH_URL__" target="_blank">
-                <img class="tv_show_channel" src="img/channels/__WATCH_IMG__">
+                <img class="tv_show_channel" src="/img/channels/__WATCH_IMG__">
             </a>
             <a href="__IMDB_URL__" target="_blank">
                 <div class="tv_show_imdb">
-                    <img class="tv_show_imdb_logo" src="img/imdb.png">
+                    <img class="tv_show_imdb_logo" src="/img/imdb.png">
                     <span class="tv_show_imdb_score">__IMDB_SCORE__</span>
                 </div>
             </a>

@@ -249,9 +249,9 @@ function GetDateAsString($tv_show)
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<title>When is the next season of my favorite TV Show?</title>
-	<link rel="stylesheet" type="text/css" href="style.css?v=6" />
-	<link rel="stylesheet" type="text/css" href="tv_show.css?v=6" />
-	<link rel="stylesheet" type="text/css" href="main_tv_show.css?v=6" />
+	<link rel="stylesheet" type="text/css" href="/style.css?v=6" />
+	<link rel="stylesheet" type="text/css" href="/tv_show.css?v=6" />
+	<link rel="stylesheet" type="text/css" href="/main_tv_show.css?v=6" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body onload="Init();">
@@ -261,13 +261,13 @@ function GetDateAsString($tv_show)
 <div class="main_canvas">
 	<div id="header">
 		<div id="header_gradient"></div>
-		<img id="header_title" src="img/title.png">
+		<img id="header_title" src="/img/title.png">
 		<div class="header_subtitle text_green">WHEN IS THE NEXT SEASON OF MY FAVORITE TV SHOW?</div>
 		<div class="search_bar_group">
 			<form action="javascript:void(0);">
 				<input id="search" type="search" class="search_bar" value="Search by Title...">
 			</form>
-			<img class="mag" src="img/mag.png">
+			<img class="mag" src="/img/mag.png">
 		</div>
 	</div>
 
@@ -385,7 +385,7 @@ function FilterElements(searchPhrase)
 
 	$("#search").css('color', '#ffffff');
 	var search_icon = $(".mag");
-	search_icon.attr("src", "img/cancel_search.png");
+	search_icon.attr("src", "/img/cancel_search.png");
 
 	var foundCount = 0;
 
@@ -429,7 +429,7 @@ function SetDefaultSearchText()
 	search.blur();
 
 	var search_icon = $(".mag");
-	search_icon.attr("src", "img/mag.png");
+	search_icon.attr("src", "/img/mag.png");
 }
 
 function myFunction()
