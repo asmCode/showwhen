@@ -434,7 +434,7 @@ function SetDefaultSearchText()
 
 function myFunction()
 {
-	var inner_span = dupa.childNodes[3];
+	var inner_span = zzz.childNodes[3];
 	var score = inner_span.textContent;
 	score = score.substr(0, score.length - 3).trim();
 	alert(score);
@@ -531,7 +531,7 @@ function UpdateNoise()
 </html>
 
 <!-- IMDB Plugin BEGIN-->
-<!-- <span class="imdbRatingPlugin" data-user="ur87405355" data-title="tt0944947" data-style="p4" id="dupa">
+<!-- <span class="imdbRatingPlugin" data-user="ur87405355" data-title="tt0944947" data-style="p4" id="zzz">
 		<a href="https://www.imdb.com/title/tt0944947/?ref_=plg_rt_1">
 			<img src="img/imdb2.png" alt=" Game of Thrones (2011) on IMDb" />
 		</a>
