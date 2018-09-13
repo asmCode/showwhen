@@ -58,11 +58,67 @@ function SortByScore($a, $b)
 	return sign((float)($b["imdb_score"]) - (float)($a["imdb_score"]));
 }
 
+function SimplifyTitle($title)
+{
+	$title = str_replace(" ", "-", $title);
+	$title = str_replace("'", "", $title);
+	$title = str_replace("?", "", $title);
+	$title = str_replace("!", "", $title);
+	$title = str_replace("\"", "", $title);
+	$title = str_replace("%", "", $title);
+	$title = str_replace(".", "", $title);
+
+	$title = strtolower($title);
+
+	return $title;
+}
+
+function FindTvShowBySimplifiedTitle($title)
+{
+	global $movies_db;
+
+	for ($i = 0; $i < count($movies_db); $i++)
+	{
+		$tv_show = $movies_db[$i];
+		if ($title == SimplifyTitle($tv_show["title"]))
+			return $tv_show;
+	}
+
+	return null;
+}
+
 usort($movies_db, $sort_method);
+
+$only_mode = false;
+$only = null;
+if (isset($_GET["only"]))
+{
+	$only = $_GET["only"];
+	$only_mode = true;
+}
+
+$og_image = "http://showwhen.com/img/web_image_v3.jpg";
+$og_url = "http://showwhen.com/";
+
+if ($only_mode)
+{
+	$tv_show = FindTvShowBySimplifiedTitle($only);
+	if ($tv_show != null)
+	{
+		$og_image = "http://showwhen.com/img/tvshow_thumbnails/". $tv_show["thumbnail"];
+		$og_url = "http://showwhen.com/" . $only;
+	}
+}
 
 for ($i = 0; $i < count($movies_db); $i++)
 {
 	$tv_show = $movies_db[$i];
+
+	if ($only_mode)
+	{
+		if ($only != SimplifyTitle($tv_show["title"]))
+			continue;
+	}
 
 	$is_featured = isset($tv_show["featured"]) && $tv_show["featured"] == true;
 	$is_on_air = isset($tv_show["is_on_air"]) && $tv_show["is_on_air"] == true;
@@ -240,11 +296,11 @@ function GetDateAsString($tv_show)
 	</script>
 
 	<meta property="og:type" content= "website" />
-    <meta property="og:url" content="http://showwhen.com/"/>
+    <meta property="og:url" content="<?=$og_url?>"/>
     <meta property="og:site_name" content="Show When" />
 	<meta property="og:title" content="When is the next season of my favorite TV Show?" />
 	<meta property="og:description" content="" />
-    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://showwhen.com/img/web_image_v3.jpg" />
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="<?=$og_image?>" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -454,9 +510,7 @@ function InitSortButtons()
 }
 
 function Init()
-{
-	console.log("eee");
-	
+{	
     // UpdateTime();
 	SetDefaultSearchText();
 	UpdateSearchResultMessage(-1, "");
