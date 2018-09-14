@@ -104,7 +104,7 @@ function GetShareImageFileName($title_id, $days_left)
 
 function GenerateShareImage($file_name, $bg_filename, $days_left)
 {
-	if (!file_exists($file_name))
+	if (!file_exists($bg_filename))
 		return FALSE;
 
 	putenv('GDFONTPATH=' . realpath('.'));
@@ -133,16 +133,16 @@ function GenerateShareImage($file_name, $bg_filename, $days_left)
 
 	$a = imagettftext(
 		$bg_image,
-		$font_size,             // size
-		0,              // angle
-		($width - $text_width) / 2,             // x
-		$height - 50,   // y
+		$font_size,
+		0,
+		($width - $text_width) / 2,
+		$height - 50,
 		$text_color, 'trebucbd.ttf', $text);
 
 	imagefilledrectangle($bg_image, 20, $height - 35, $width - 40, $height - 31, $text_color);
 		
 
-	imagejpeg($bg_image, $file_name);
+	imagejpeg($bg_image, $file_name, 80);
 	imagedestroy($bg_image);
 	imagedestroy($logo_image);
 
@@ -161,8 +161,10 @@ function GenerateShareImageIfNeeded($title_id, $bg_filename, $days_left)
 	return $file_name;
 }
 
-$og_image = "http://showwhen.com/img/web_image_v3.jpg";
+$og_image = "http://showwhen.com/img/web_image.jpg";
 $og_url = "http://showwhen.com/";
+$og_image_width = 800;
+$og_image_height = 420;
 
 if ($only_mode)
 {
@@ -341,6 +343,8 @@ function GetDateAsString($tv_show)
 	<meta property="og:title" content="When is the next season of my favorite TV Show?" />
 	<meta property="og:description" content="" />
     <meta property="og:image" itemprop="image primaryImageOfPage" content="<?=$og_image?>" />
+	<meta property="og:image:width" content="<?=$og_image_width?>" />
+	<meta property="og:image:height" content="<?=$og_image_height?>" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
