@@ -97,6 +97,59 @@ if (isset($_GET["only"]))
 	$only_mode = true;
 }
 
+function GetShareImageFileName($title_id, $days_left)
+{
+	return "img_gen/" . $title_id . "-" . $days_left . ".jpg";
+}
+
+function GenerateShareImage($file_name, $bg_filename, $days_left)
+{
+	putenv('GDFONTPATH=' . realpath('.'));
+
+	$logo_filename = "img/title_fb_share.png";
+
+	$bg_image = imagecreatefromjpeg($bg_filename);
+	list($width, $height, $type, $attr) = getimagesize($bg_filename);
+
+	$logo_image = imagecreatefrompng($logo_filename);
+	list($logo_width, $logo_height, $logo_type, $logo_attr) = getimagesize($logo_filename);
+
+	imagecopy($bg_image, $logo_image, $width - $logo_width - 20, 20, 0, 0, $logo_width, $logo_height);
+
+	$text_color = imagecolorallocate($logo_image, 255, 255, 255);
+
+	$font_size = 56;
+	$text = $days_left . " Days Left";
+	$dimensions = imagettfbbox($font_size , 0, 'trebucbd.ttf', $text);
+	$text_width = $dimensions[4] - $dimensions[0];
+
+	$a = imagettftext(
+		$bg_image,
+		$font_size,             // size
+		0,              // angle
+		($width - $text_width) / 2,             // x
+		$height - 50,   // y
+		$text_color, 'trebucbd.ttf', $text);
+
+	imagefilledrectangle($bg_image, 20, $height - 35, $width - 40, $height - 31, $text_color);
+		
+
+	imagejpeg($bg_image, $file_name);
+	imagedestroy($bg_image);
+	imagedestroy($logo_image);
+}
+
+function GenerateShareImageIfNeeded($title_id, $bg_filename, $days_left)
+{
+	$file_name = GetShareImageFileName($title_id, $days_left);
+	if (file_exists($file_name))
+		return $file_name;
+
+	GenerateShareImage($file_name, $bg_filename, $days_left);
+
+	return $file_name;
+}
+
 $og_image = "http://showwhen.com/img/web_image_v3.jpg";
 $og_url = "http://showwhen.com/";
 
@@ -105,7 +158,10 @@ if ($only_mode)
 	$tv_show = FindTvShowBySimplifiedTitle($only);
 	if ($tv_show != null)
 	{
-		$og_image = "http://showwhen.com/img/tvshow_thumbnails/". $tv_show["thumbnail"];
+		$thumbnail = "img/tvshow_thumbnails/" . $tv_show["thumbnail"];
+		$share_image = GenerateShareImageIfNeeded($only, $thumbnail, GetDaysLeft($tv_show["timestamp"]));
+
+		$og_image = "http://showwhen.com/". $share_image;
 		$og_url = "http://showwhen.com/" . $only;
 	}
 }
@@ -142,7 +198,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 	$day = $tv_show["day"];
 	$month = $tv_show["month"];
 	$year = $tv_show["year"];
-	$timeLeft = GetDaysLeft($day, $month, $year, $timestamp);
+	$timeLeft = GetDaysLeft($timestamp);
 	$timeLeftUnits = "days";
 	if ($timeLeft == null)
 		$timeLeftUnits = "";
@@ -202,50 +258,21 @@ function GetWatchLogo($tv_show)
 	return $tv_show["watch_logo"] . ".png";
 }
 
-function GetDaysLeft($day, $month, $year, $timestamp)
+function GetDaysLeft($timestamp)
 {
-	if (is_numeric($timestamp) && $timestamp != 0)
-	{
-		$currentDate = new DateTime("now");
-		$releaseDate = new DateTime();
-		$releaseDate->setTimestamp($timestamp / 1000);
-
-		if ($currentDate->getTimestamp() > $releaseDate->getTimestamp())
-			return NULL;
-
-		$diff = $currentDate->diff($releaseDate);
-
-		$approx = false;
-		if (!is_numeric($day))
-			$approx = true;
-
-		$result = (string)$diff->days;
-		if ($approx)
-			$result = "~" . $result;
-
-		return $result;
-	}
-
-	if (!is_numeric($month) || !is_numeric($year))
-		return NULL;
-
-	$approx = false;
-	if (!is_numeric($day))
-	{
-		$day = 15;  // Take a half of the month as an approximation.
-		$approx = true;
-	}
-
+	if (!is_numeric($timestamp) || $timestamp == 0)
+		return null;
+	
 	$currentDate = new DateTime("now");
 	$releaseDate = new DateTime();
-	$releaseDate->setDate($year, $month, $day);
+	$releaseDate->setTimestamp($timestamp / 1000);
+
+	if ($currentDate->getTimestamp() > $releaseDate->getTimestamp())
+		return null;
+
 	$diff = $currentDate->diff($releaseDate);
 
-	$result = (string)$diff->days;
-	if ($approx)
-		$result = "~" . $result;
-
-	return $result;
+	return $diff->days;
 }
 
 function GetDateAsString($tv_show)
