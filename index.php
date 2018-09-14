@@ -104,14 +104,22 @@ function GetShareImageFileName($title_id, $days_left)
 
 function GenerateShareImage($file_name, $bg_filename, $days_left)
 {
+	if (!file_exists($file_name))
+		return FALSE;
+
 	putenv('GDFONTPATH=' . realpath('.'));
 
 	$logo_filename = "img/title_fb_share.png";
 
-	$bg_image = imagecreatefromjpeg($bg_filename);
+	$bg_image = @imagecreatefromjpeg($bg_filename);
+	if ($bg_image == FALSE)
+		return FALSE;
+
 	list($width, $height, $type, $attr) = getimagesize($bg_filename);
 
 	$logo_image = imagecreatefrompng($logo_filename);
+	if ($logo_image == FALSE)
+		return FALSE;
 	list($logo_width, $logo_height, $logo_type, $logo_attr) = getimagesize($logo_filename);
 
 	imagecopy($bg_image, $logo_image, $width - $logo_width - 20, 20, 0, 0, $logo_width, $logo_height);
@@ -137,6 +145,8 @@ function GenerateShareImage($file_name, $bg_filename, $days_left)
 	imagejpeg($bg_image, $file_name);
 	imagedestroy($bg_image);
 	imagedestroy($logo_image);
+
+	return TRUE;
 }
 
 function GenerateShareImageIfNeeded($title_id, $bg_filename, $days_left)
@@ -145,7 +155,8 @@ function GenerateShareImageIfNeeded($title_id, $bg_filename, $days_left)
 	if (file_exists($file_name))
 		return $file_name;
 
-	GenerateShareImage($file_name, $bg_filename, $days_left);
+	if (!GenerateShareImage($file_name, $bg_filename, $days_left))
+		return FALSE;
 
 	return $file_name;
 }
@@ -160,9 +171,11 @@ if ($only_mode)
 	{
 		$thumbnail = "img/tvshow_thumbnails/" . $tv_show["thumbnail"];
 		$share_image = GenerateShareImageIfNeeded($only, $thumbnail, GetDaysLeft($tv_show["timestamp"]));
-
-		$og_image = "http://showwhen.com/". $share_image;
-		$og_url = "http://showwhen.com/" . $only;
+		if ($share_image != FALSE)
+		{
+			$og_image = "http://showwhen.com/". $share_image;
+			$og_url = "http://showwhen.com/" . $only;
+		}
 	}
 }
 
