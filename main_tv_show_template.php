@@ -10,7 +10,10 @@ $main_tv_show_template = '
         </div>
         <a href="__ONLY_MODE_URL__">
             <div class="title_and_season_group">
-                <div class="main_tv_show_title text_green"><div class="main_tv_show_season_number">Season __SEASON__ (__EPISODES__)</div>__TITLE__</div>
+                <div class="main_tv_show_title text_green">
+                    <div class="main_tv_show_season_number">Season __SEASON__ (__EPISODES__)</div>
+                    __TITLE__
+                </div>
             </div>
         </a>
         <div class="main_tv_show_info_section">
