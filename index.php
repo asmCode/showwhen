@@ -151,6 +151,9 @@ function GenerateShareImage($file_name, $bg_filename, $days_left)
 
 function GenerateShareImageIfNeeded($title_id, $bg_filename, $days_left)
 {
+	if (!function_exists("imagecreatefromjpeg"))
+		return FALSE;
+
 	$file_name = GetShareImageFileName($title_id, $days_left);
 	if (file_exists($file_name))
 		return $file_name;
@@ -185,9 +188,11 @@ for ($i = 0; $i < count($movies_db); $i++)
 {
 	$tv_show = $movies_db[$i];
 
+	$title_id = SimplifyTitle($tv_show["title"]);
+
 	if ($only_mode)
 	{
-		if ($only != SimplifyTitle($tv_show["title"]))
+		if ($only != $title_id)
 			continue;
 	}
 
@@ -222,8 +227,14 @@ for ($i = 0; $i < count($movies_db); $i++)
 	if ($score !== "")
 		$score = sprintf("%.1f", $score);
 
+	if (gethostname() == "DESKTOP-81KA7BE")
+		$only_mode_url = "?only=" . $title_id;
+	else
+		$only_mode_url = "/" . $title_id;
+
 	$element_html = str_replace("__ID__", $tv_show["id"], $element_html);
 	$element_html = str_replace("__TITLE__", $tv_show["title"], $element_html);
+	$element_html = str_replace("__ONLY_MODE_URL__", $only_mode_url, $element_html);
 	$element_html = str_replace("__SEASON__", $season, $element_html);
 	$element_html = str_replace("__EPISODES__", $episodes, $element_html);
 	$element_html = str_replace("__DATE__", GetDateAsString($tv_show), $element_html);

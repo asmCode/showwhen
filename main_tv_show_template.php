@@ -8,9 +8,11 @@ $main_tv_show_template = '
             <div class="main_tv_show_thumbnail_linear_gradient"></div>
             <img class="share_icon" src="/img/share.png">
         </div>
-        <div class="title_and_season_group">
-            <div class="main_tv_show_title text_green"><div class="main_tv_show_season_number">Season __SEASON__ (__EPISODES__)</div>__TITLE__</div>
-        </div>
+        <a href="__ONLY_MODE_URL__">
+            <div class="title_and_season_group">
+                <div class="main_tv_show_title text_green"><div class="main_tv_show_season_number">Season __SEASON__ (__EPISODES__)</div>__TITLE__</div>
+            </div>
+        </a>
         <div class="main_tv_show_info_section">
             <a href="__SOURCE_URL__" target="_blank" style="display: __COUNTER_DISPLAY__">
                 <span class="main_tv_show_counter"><span style="display: __APPROX_DISPLAY__">~</span><span id="movie_id___ID___time_left">__TIME_LEFT__</span>
