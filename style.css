@@ -284,6 +284,19 @@ a
 	left: 50%;
 }
 
+.share_bar
+{
+	display: flex;
+	justify-content: center;
+}
+
+.share_element
+{
+	flex: 0;
+	width: 160px;
+	margin: 10px;
+}
+
 @media screen and (max-width: 850px)
 {
 	.search_bar_group

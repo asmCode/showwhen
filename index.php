@@ -169,8 +169,12 @@ $og_url = "http://showwhen.com/";
 $og_image_width = 800;
 $og_image_height = 420;
 
+$global_title_id = "";
+
 if ($only_mode)
 {
+	$global_title_id = $only;
+
 	$tv_show = FindTvShowBySimplifiedTitle($only);
 	if ($tv_show != null)
 	{
@@ -368,6 +372,8 @@ function GetDateAsString($tv_show)
 	<meta property="og:image:width" content="<?=$og_image_width?>" />
 	<meta property="og:image:height" content="<?=$og_image_height?>" />
 
+	<meta name="twitter:card" content="summary_large_image">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<title>When is the next season of my favorite TV Show?</title>
@@ -378,23 +384,32 @@ function GetDateAsString($tv_show)
 </head>
 <body onload="Init();">
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=2009742399104407&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="bg"></div>
 
 <div class="main_canvas">
-	<a href="./">
-		<div id="header">
-			<div id="header_gradient"></div>
+	<div id="header">
+		<div id="header_gradient"></div>
+		<a href="./">
 			<img id="header_title" src="/img/title.png">
-			<div class="header_subtitle text_green">WHEN IS THE NEXT SEASON OF MY FAVORITE TV SHOW?</div>
-			<div class="search_bar_group">
-				<form action="javascript:void(0);">
-					<input id="search" type="search" class="search_bar" value="Search by Title...">
-				</form>
-				<img class="mag" src="/img/mag.png">
-			</div>
+		</a>
+		<div class="header_subtitle text_green">WHEN IS THE NEXT SEASON OF MY FAVORITE TV SHOW?</div>
+		<div class="search_bar_group">
+			<form action="javascript:void(0);">
+				<input id="search" type="search" class="search_bar" value="Search by Title...">
+			</form>
+			<img class="mag" src="/img/mag.png">
 		</div>
-	</a>
-
+	</div>
+	
 	<div class="sort_bar">
 		<span class="sort_option_label">Sort by:</span>
 		<a href="index.php"><span id="sort_button_0" class="sort_option">Score</span></a>
@@ -410,6 +425,11 @@ function GetDateAsString($tv_show)
 	
 	<div class="tv_show_list">
 		<? echo $tv_shows_html ?>
+	</div>
+
+	<div class="share_bar">
+		<div class="fb-share-button share_element" data-href="http://showwhen.com/<?=$global_title_id?>" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fshowwhen.com%2F<?=$global_title_id?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+		<div class="share_element"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-url="http://showwhen.com/<?=$global_title_id?>" data-hashtags="showwhen" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 	</div>
 
 	<div class="footer">
