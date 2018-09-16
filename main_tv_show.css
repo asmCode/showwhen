@@ -59,6 +59,16 @@
 	background-size: cover;
 }
 
+.share_icon
+{
+	position: absolute;
+	width: auto;
+	height: 20px;
+	right: 5px;
+	top: 5px;
+	opacity: 0.2;
+}
+
 .main_tv_show_thumbnail_gradient
 {
 	position: absolute;

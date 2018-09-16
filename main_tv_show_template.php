@@ -6,6 +6,7 @@ $main_tv_show_template = '
         <div class="main_tv_show_thumbnail" style="background-image: url(/img/tvshow_thumbnails/__THUMBNAIL__);">
             <div class="main_tv_show_thumbnail_gradient"></div>
             <div class="main_tv_show_thumbnail_linear_gradient"></div>
+            <img class="share_icon" src="/img/share.png">
         </div>
         <div class="title_and_season_group">
             <div class="main_tv_show_title text_green"><div class="main_tv_show_season_number">Season __SEASON__ (__EPISODES__)</div>__TITLE__</div>
