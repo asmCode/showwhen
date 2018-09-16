@@ -6,9 +6,9 @@ $main_tv_show_template = '
         <div class="main_tv_show_thumbnail" style="background-image: url(/img/tvshow_thumbnails/__THUMBNAIL__);">
             <div class="main_tv_show_thumbnail_gradient"></div>
             <div class="main_tv_show_thumbnail_linear_gradient"></div>
-            <img class="share_icon" src="/img/share.png">
+            <img class="share_icon" src="/img/share.png" style="display: __SHARE_ICON_DISPLAY__">
         </div>
-        <a href="__ONLY_MODE_URL__">
+        <a href="__ONLY_MODE_URL__" style="pointer-events: __ONLY_MODE_URL_POINTER_EVENTS__">
             <div class="title_and_season_group">
                 <div class="main_tv_show_title text_green">
                     <div class="main_tv_show_season_number">Season __SEASON__ (__EPISODES__)</div>

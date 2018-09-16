@@ -247,6 +247,17 @@ for ($i = 0; $i < count($movies_db); $i++)
 	$element_html = str_replace("__TIME_LEFT_UNITS__", $timeLeftUnits, $element_html);
 	$element_html = str_replace("__THUMBNAIL__", $tv_show["thumbnail"], $element_html);
 
+	if ($only_mode)
+	{
+		$element_html = str_replace("__SHARE_ICON_DISPLAY__", "none", $element_html);
+		$element_html = str_replace("__ONLY_MODE_URL_POINTER_EVENTS__", "none", $element_html);		
+	}
+	else
+	{
+		$element_html = str_replace("__SHARE_ICON_DISPLAY__", "unset", $element_html);
+		$element_html = str_replace("__ONLY_MODE_URL_POINTER_EVENTS__", "unset", $element_html);		
+	}
+
 	$approx = false;
 	if (!is_numeric($day))
 		$approx = true;
@@ -370,17 +381,19 @@ function GetDateAsString($tv_show)
 <div class="bg"></div>
 
 <div class="main_canvas">
-	<div id="header">
-		<div id="header_gradient"></div>
-		<img id="header_title" src="/img/title.png">
-		<div class="header_subtitle text_green">WHEN IS THE NEXT SEASON OF MY FAVORITE TV SHOW?</div>
-		<div class="search_bar_group">
-			<form action="javascript:void(0);">
-				<input id="search" type="search" class="search_bar" value="Search by Title...">
-			</form>
-			<img class="mag" src="/img/mag.png">
+	<a href="./">
+		<div id="header">
+			<div id="header_gradient"></div>
+			<img id="header_title" src="/img/title.png">
+			<div class="header_subtitle text_green">WHEN IS THE NEXT SEASON OF MY FAVORITE TV SHOW?</div>
+			<div class="search_bar_group">
+				<form action="javascript:void(0);">
+					<input id="search" type="search" class="search_bar" value="Search by Title...">
+				</form>
+				<img class="mag" src="/img/mag.png">
+			</div>
 		</div>
-	</div>
+	</a>
 
 	<div class="sort_bar">
 		<span class="sort_option_label">Sort by:</span>
@@ -400,7 +413,7 @@ function GetDateAsString($tv_show)
 	</div>
 
 	<div class="footer">
-		<a class="contact" href="mailto: contact@showwhen.com">Contact</a>
+		<a class="contact" href="mailto:contact@showwhen.com">Contact</a>
 	</div>
 </div>
 
