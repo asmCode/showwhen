@@ -305,9 +305,9 @@
 
 	position: absolute;
 	width: auto;
-	top: 16px;
+	top: 22px;
 	height: auto;
-	font-size: 40px;
+	font-size: 32px;
 	text-align: center;	
 	white-space: nowrap;
 	left: 50%;
@@ -320,8 +320,8 @@
 
 	position: absolute;
 	width: auto;
-	top: 55px;
-	font-size: 20px;
+	top: 60px;
+	font-size: 14px;
 	text-align: center;	
 	white-space: nowrap;
 	left: 50%;
@@ -343,8 +343,29 @@
 {
 	position: absolute;
 	width: 100%;
-	left: 0px;;
+	left: 0px;
 	top: -2px;
+	height: 1.5px;
+	background-color: white;
+}
+
+.on_air_group
+{
+	position: absolute;
+	width: auto;
+	left: 50%;
+	transform: translateX(-50%);
+
+	top: 10px;
+	white-space: nowrap;
+}
+
+.main_tv_show_info_section_separator_on_air
+{
+	position: relative;
+	width: 100%;
+	left: 0px;
+	top: 0px;
 	height: 1.5px;
 	background-color: white;
 }

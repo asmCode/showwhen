@@ -33,8 +33,15 @@ $main_tv_show_template = '
                     <div class="main_tv_show_info_section_separator"></div>
                 </div>
             </a>
-            <div class="main_tv_show_on_air" style="display: __ON_AIR_DISPLAY__">ON AIR</div>
-            <div class="main_tv_show_on_air_extra" style="display: __ON_AIR_DISPLAY__">__ON_AIR_EXTRA__</div>
+
+            <!-- ON AIR -->
+            <div class="on_air_group" style="display: __ON_AIR_DISPLAY__">
+                since __DATE__
+                <div class="main_tv_show_info_section_separator_on_air"></div>
+                <div class="main_tv_show_on_air" style="display: unset">ON AIR</div>
+                <div class="main_tv_show_on_air_extra" style="display: unset">__ON_AIR_EXTRA__</div>
+            </div>
+            
             <div class="main_tv_show_date_source_placeholder">
                 <div class="date_source">
                     <div class="date_source_bg">
