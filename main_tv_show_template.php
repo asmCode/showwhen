@@ -6,7 +6,7 @@ $main_tv_show_template = '
         <div class="main_tv_show_thumbnail" style="background-image: url(/img/tvshow_thumbnails/__THUMBNAIL__);">
             <div class="main_tv_show_thumbnail_gradient"></div>
             <div class="main_tv_show_thumbnail_linear_gradient"></div>
-            <img class="share_icon" src="/img/share.png" style="display: __SHARE_ICON_DISPLAY__">
+            <img class="share_icon" src="/img/share.png" style="display: __SHARE_ICON_DISPLAY__" alt="share icon" >
         </div>
         <a href="__ONLY_MODE_URL__" style="pointer-events: __ONLY_MODE_URL_POINTER_EVENTS__">
             <div class="title_and_season_group">
@@ -18,7 +18,7 @@ $main_tv_show_template = '
         </a>
         <div class="main_tv_show_info_section">
             <a href="__SOURCE_URL__" target="_blank" style="display: __COUNTER_DISPLAY__">
-                <span class="main_tv_show_counter"><span style="display: __APPROX_DISPLAY__">~</span><span id="movie_id___ID___time_left">__TIME_LEFT__</span>
+                <div class="main_tv_show_counter"><span style="display: __APPROX_DISPLAY__">~</span><span id="movie_id___ID___time_left">__TIME_LEFT__</span>
                     <div class="time_left_labels">
                         <span class="time_left_label_days">DAYS</span>
                         <span class="time_left_label_hrs">HRS</span>
@@ -28,10 +28,10 @@ $main_tv_show_template = '
                     <div class="main_tv_show_date">
                         <!--<img class="main_tv_show_date_info_icon" src="/img/info_icon.png">-->
                         __DATE__
-                        <img class="main_tv_show_date_info_icon" style="display: __CONFIRMED_DISPLAY__" src="/img/confirmed.png" title="Release date confirmed.">
+                        <img class="main_tv_show_date_info_icon" style="display: __CONFIRMED_DISPLAY__" src="/img/confirmed.png" title="Release date confirmed." alt="confirmed">
                     </div>
                     <div class="main_tv_show_info_section_separator"></div>
-                </span>
+                </div>
             </a>
             <div class="main_tv_show_on_air" style="display: __ON_AIR_DISPLAY__">ON AIR</div>
             <div class="main_tv_show_on_air_extra" style="display: __ON_AIR_DISPLAY__">__ON_AIR_EXTRA__</div>
@@ -45,11 +45,11 @@ $main_tv_show_template = '
         </div>
         <div class="main_tv_show_meta_section">
             <a href="__WATCH_URL__" target="_blank">
-                <img class="main_tv_show_channel" src="/img/channels/__WATCH_IMG__">
+                <img class="main_tv_show_channel" src="/img/channels/__WATCH_IMG__" alt="channel">
             </a>
             <a href="__IMDB_URL__" target="_blank">
                 <div class="main_tv_show_imdb">
-                    <img class="main_tv_show_imdb_logo" src="/img/imdb.png">
+                    <img class="main_tv_show_imdb_logo" src="/img/imdb.png" alt="imdb">
                     <span class="main_tv_show_imdb_score">
                         __IMDB_SCORE__
                         <span class="main_tv_show_imdb_score_ten">/10</span>

@@ -352,7 +352,7 @@ function GetDateAsString($tv_show)
 ?>
 
 <!DOCTYPE html>
-<html xmlns:og="http://ogp.me/ns#">
+<html itemscope xmlns:og="http://ogp.me/ns#" lang="en">
 <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118904948-1"></script>
@@ -363,6 +363,7 @@ function GetDateAsString($tv_show)
 	gtag('config', 'UA-118904948-1');
 	</script>
 
+	<meta charset="UTF-8">
 	<meta property="og:type" content= "website" />
     <meta property="og:url" content="<?=$og_url?>"/>
     <meta property="og:site_name" content="Show When" />
@@ -399,14 +400,14 @@ function GetDateAsString($tv_show)
 	<div id="header">
 		<div id="header_gradient"></div>
 		<a href="./">
-			<img id="header_title" src="/img/title.png">
+			<img id="header_title" src="/img/title.png" alt="header">
 		</a>
 		<div class="header_subtitle text_green">WHEN IS THE NEXT SEASON OF MY FAVORITE TV SHOW?</div>
 		<div class="search_bar_group">
 			<form action="javascript:void(0);">
 				<input id="search" type="search" class="search_bar" value="Search by Title...">
 			</form>
-			<img class="mag" src="/img/mag.png">
+			<img class="mag" src="/img/mag.png" alt="mag">
 		</div>
 	</div>
 	
@@ -429,7 +430,7 @@ function GetDateAsString($tv_show)
 
 	<div class="share_bar">
 		<div class="fb-share-button share_element" data-href="http://showwhen.com/<?=$global_title_id?>" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fshowwhen.com%2F<?=$global_title_id?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-		<div class="share_element"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-url="http://showwhen.com/<?=$global_title_id?>" data-hashtags="showwhen" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+		<div class="share_element"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-url="http://showwhen.com/<?=$global_title_id?>" data-hashtags="showwhen" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js"></script></div>
 	</div>
 
 	<div class="footer">
