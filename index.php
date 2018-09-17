@@ -188,6 +188,18 @@ if ($only_mode)
 	}
 }
 
+function IsOnAir($tv_show)
+{
+	if (isset($tv_show["is_on_air"]) && $tv_show["is_on_air"] == true)
+		return true;
+
+	$date = new DateTime();
+	$current_timestamp = $date->getTimestamp();
+
+	if (is_numeric($tv_show["timestamp"]))
+		return (Integer)$tv_show["timestamp"] / 1000 < $current_timestamp;
+}
+
 for ($i = 0; $i < count($movies_db); $i++)
 {
 	$tv_show = $movies_db[$i];
@@ -201,7 +213,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 	}
 
 	$is_featured = isset($tv_show["featured"]) && $tv_show["featured"] == true;
-	$is_on_air = isset($tv_show["is_on_air"]) && $tv_show["is_on_air"] == true;
+	$is_on_air = IsOnAir($tv_show);
 
 	if ($is_featured)
 		$element_html = $main_tv_show_template;
