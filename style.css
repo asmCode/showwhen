@@ -226,20 +226,25 @@ a
 {
 	background-color:#2e2e2e;
 
-	position: relative;
+	/* position: relative; */
 	width: 100%;
+	max-width: 1024px;
+	min-width: 320px;
 	height: 30px;
+
+	position: fixed;
+    bottom: 0;
 }
 
 .contact
 {
-	position: absolute;
+	/* position: absolute;
 	left: 50%;
 	top: 50%;
 	width: auto;
 	height: auto;
 	transform: translate(-50%, -50%);
-	background-color: transparent;
+	background-color: transparent; */
 }
 
 .date_source
@@ -294,7 +299,9 @@ a
 {
 	flex: 0;
 	width: 160px;
-	margin: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 5px;
 }
 
 @media screen and (max-width: 850px)
