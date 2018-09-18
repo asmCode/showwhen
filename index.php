@@ -102,7 +102,7 @@ function GetShareImageFileName($title_id, $days_left)
 	return "img_gen/" . $title_id . "-" . $days_left . ".jpg";
 }
 
-function GenerateShareImage($file_name, $bg_filename, $days_left)
+function GenerateShareImage($file_name, $bg_filename, $days_left, $on_air)
 {
 	if (!file_exists($bg_filename))
 		return FALSE;
@@ -120,14 +120,25 @@ function GenerateShareImage($file_name, $bg_filename, $days_left)
 	$logo_image = imagecreatefrompng($logo_filename);
 	if ($logo_image == FALSE)
 		return FALSE;
+
+	$grad_image = imagecreatefrompng("img/share_grad.png");
+	if ($grad_image == FALSE)
+		return FALSE;
+
 	list($logo_width, $logo_height, $logo_type, $logo_attr) = getimagesize($logo_filename);
 
+	imagecopy($bg_image, $grad_image, 0, 0, 0, 0, $width, $height);
 	imagecopy($bg_image, $logo_image, $width - $logo_width - 20, 20, 0, 0, $logo_width, $logo_height);
 
 	$text_color = imagecolorallocate($logo_image, 255, 255, 255);
 
 	$font_size = 56;
-	$text = $days_left . " Days Left";
+
+	if ($on_air)
+		$text = "ON AIR";
+	else
+		$text = $days_left . " Days Left";
+
 	$dimensions = imagettfbbox($font_size , 0, 'trebucbd.ttf', $text);
 	$text_width = $dimensions[4] - $dimensions[0];
 
@@ -136,20 +147,21 @@ function GenerateShareImage($file_name, $bg_filename, $days_left)
 		$font_size,
 		0,
 		($width - $text_width) / 2,
-		$height - 50,
+		$height - 54,
 		$text_color, 'trebucbd.ttf', $text);
 
-	imagefilledrectangle($bg_image, 20, $height - 35, $width - 40, $height - 31, $text_color);
+	imagefilledrectangle($bg_image, 100, $height - 35, $width - 100, $height - 31, $text_color);
 		
 
 	imagejpeg($bg_image, $file_name, 80);
 	imagedestroy($bg_image);
 	imagedestroy($logo_image);
+	imagedestroy($grad_image);
 
 	return TRUE;
 }
 
-function GenerateShareImageIfNeeded($title_id, $bg_filename, $days_left)
+function GenerateShareImageIfNeeded($title_id, $bg_filename, $days_left, $on_air)
 {
 	if (!function_exists("imagecreatefromjpeg"))
 		return FALSE;
@@ -158,7 +170,7 @@ function GenerateShareImageIfNeeded($title_id, $bg_filename, $days_left)
 	if (file_exists($file_name))
 		return $file_name;
 
-	if (!GenerateShareImage($file_name, $bg_filename, $days_left))
+	if (!GenerateShareImage($file_name, $bg_filename, $days_left, $on_air))
 		return FALSE;
 
 	return $file_name;
@@ -188,7 +200,7 @@ if ($only_mode)
 		$og_title = $tv_show["title"] . " (Season " . (int)$tv_show["season"] . ")";
 
 		$thumbnail = "img/tvshow_thumbnails/" . $tv_show["thumbnail"];
-		$share_image = GenerateShareImageIfNeeded($only, $thumbnail, GetDaysLeft($tv_show["timestamp"]));
+		$share_image = GenerateShareImageIfNeeded($only, $thumbnail, GetDaysLeft($tv_show["timestamp"]), IsOnAir($tv_show));
 		if ($share_image != FALSE)
 		{
 			$og_image = "http://showwhen.com/". $share_image;
