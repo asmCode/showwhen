@@ -171,10 +171,15 @@ $og_image_width = 800;
 $og_image_height = 420;
 
 $global_title_id = "";
+$sort_bar_group_display = "";
+$search_bar_group_display = "";
 
 if ($only_mode)
 {
 	$global_title_id = $only;
+
+	$sort_bar_group_display = "hide";
+	$search_bar_group_display = "hide";
 
 	$tv_show = FindTvShowBySimplifiedTitle($only);
 	if ($tv_show != null)
@@ -418,7 +423,7 @@ function GetDateAsString($tv_show)
 			<img id="header_title" src="/img/title.png" alt="header">
 		</a>
 		<div class="header_subtitle text_green">WHEN IS THE NEXT SEASON OF MY FAVORITE TV SHOW?</div>
-		<div class="search_bar_group">
+		<div class="search_bar_group <?=$search_bar_group_display?>">
 			<form action="javascript:void(0);">
 				<input id="search" type="search" class="search_bar" value="Search by Title...">
 			</form>
@@ -426,7 +431,7 @@ function GetDateAsString($tv_show)
 		</div>
 	</div>
 	
-	<div class="sort_bar">
+	<div class="sort_bar <?=$sort_bar_group_display?>">
 		<span class="sort_option_label">Sort by:</span>
 		<a href="index.php"><span id="sort_button_0" class="sort_option">Score</span></a>
 		<a href="index.php?sort=1"><span id="sort_button_1" class="sort_option">Title</span></a>
