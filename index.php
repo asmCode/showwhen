@@ -185,6 +185,8 @@ $og_image_height = 420;
 $global_title_id = "";
 $sort_bar_group_display = "";
 $search_bar_group_display = "";
+$hide_in_single_mode = "";
+$show_in_single_mode = "hide";
 
 if ($only_mode)
 {
@@ -192,6 +194,8 @@ if ($only_mode)
 
 	$sort_bar_group_display = "hide";
 	$search_bar_group_display = "hide";
+	$hide_in_single_mode = "hide";
+	$show_in_single_mode = "";
 
 	$tv_show = FindTvShowBySimplifiedTitle($only);
 	if ($tv_show != null)
@@ -458,6 +462,12 @@ function GetDateAsString($tv_show)
 	
 	<div class="tv_show_list">
 		<? echo $tv_shows_html ?>
+	</div>
+
+	<div class="<?=$show_in_single_mode?>" style="margin-top: 50px">
+		<a href="./">
+			Show entire list.
+		</a>
 	</div>
 
 	<!-- <div class="share_bar">
