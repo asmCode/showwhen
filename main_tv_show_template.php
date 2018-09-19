@@ -1,7 +1,7 @@
 <?
 
 $main_tv_show_template = '
-    <div id="movie_id___ID__" class="main_tv_show_bg">
+    <div id="movie_id___ID__" class="main_tv_show_bg __LARGE_TILE_CLASS__">
         <div class="main_tv_show_gradient"></div>
         <div class="main_tv_show_thumbnail" style="background-image: url(/img/tvshow_thumbnails/__THUMBNAIL__);">
             <div class="main_tv_show_thumbnail_gradient"></div>

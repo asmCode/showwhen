@@ -291,6 +291,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 	{
 		$element_html = str_replace("__SHARE_ICON_DISPLAY__", "none", $element_html);
 		$element_html = str_replace("__ONLY_MODE_URL_POINTER_EVENTS__", "none", $element_html);		
+		$element_html = str_replace("__LARGE_TILE_CLASS__", "large_tile", $element_html);		
 	}
 	else
 	{
