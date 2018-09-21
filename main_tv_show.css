@@ -444,6 +444,6 @@
 	.large_tile
 	{
 		transform-origin: top center;
-		transform: scale(2.2, 2.2);
+		transform: scale(1.8, 1.8);
 	}
 }
