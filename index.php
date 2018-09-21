@@ -102,7 +102,7 @@ function GetShareImageFileName($title_id, $days_left)
 	return "img_gen/" . $title_id . "-" . $days_left . ".jpg";
 }
 
-function GenerateShareImage($file_name, $bg_filename, $days_left, $on_air)
+function GenerateShareImage($file_name, $bg_filename, $days_left, $approx, $on_air)
 {
 	if (!file_exists($bg_filename))
 		return FALSE;
@@ -137,7 +137,11 @@ function GenerateShareImage($file_name, $bg_filename, $days_left, $on_air)
 	if ($on_air)
 		$text = "ON AIR";
 	else
+	{
 		$text = $days_left . " Days Left";
+		if ($approx)
+			$text = "~" . $text;
+	}
 
 	$dimensions = imagettfbbox($font_size , 0, 'trebucbd.ttf', $text);
 	$text_width = $dimensions[4] - $dimensions[0];
@@ -161,7 +165,7 @@ function GenerateShareImage($file_name, $bg_filename, $days_left, $on_air)
 	return TRUE;
 }
 
-function GenerateShareImageIfNeeded($title_id, $bg_filename, $days_left, $on_air)
+function GenerateShareImageIfNeeded($title_id, $bg_filename, $days_left, $approx, $on_air)
 {
 	if (!function_exists("imagecreatefromjpeg"))
 		return FALSE;
@@ -170,7 +174,7 @@ function GenerateShareImageIfNeeded($title_id, $bg_filename, $days_left, $on_air
 	if (file_exists($file_name))
 		return $file_name;
 
-	if (!GenerateShareImage($file_name, $bg_filename, $days_left, $on_air))
+	if (!GenerateShareImage($file_name, $bg_filename, $days_left, $approx, $on_air))
 		return FALSE;
 
 	return $file_name;
@@ -200,11 +204,13 @@ if ($only_mode)
 	$tv_show = FindTvShowBySimplifiedTitle($only);
 	if ($tv_show != null)
 	{
+		$approx = !is_numeric($tv_show["day"]);
+
 		$og_url = "http://showwhen.com/" . $only;
 		$og_title = $tv_show["title"] . " (Season " . (int)$tv_show["season"] . ")";
 
 		$thumbnail = "img/tvshow_thumbnails/" . $tv_show["thumbnail"];
-		$share_image = GenerateShareImageIfNeeded($only, $thumbnail, GetDaysLeft($tv_show["timestamp"]), IsOnAir($tv_show));
+		$share_image = GenerateShareImageIfNeeded($only, $thumbnail, GetDaysLeft($tv_show["timestamp"]), $approx, IsOnAir($tv_show));
 		if ($share_image != FALSE)
 		{
 			$og_image = "http://showwhen.com/". $share_image;
