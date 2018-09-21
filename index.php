@@ -288,6 +288,15 @@ for ($i = 0; $i < count($movies_db); $i++)
 	$element_html = str_replace("__THUMBNAIL__", $tv_show["thumbnail"], $element_html);
 	$element_html = str_replace("__ON_AIR_EXTRA__", $tv_show["on_air_extra"], $element_html);
 
+	if ($score > 0)
+	{
+		$element_html = str_replace("__IMDB_SCORE_DISPLAY__", "unset", $element_html);
+	}
+	else
+	{
+		$element_html = str_replace("__IMDB_SCORE_DISPLAY__", "none", $element_html);
+	}
+
 	if ($only_mode)
 	{
 		$element_html = str_replace("__SHARE_ICON_DISPLAY__", "none", $element_html);

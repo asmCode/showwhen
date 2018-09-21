@@ -57,7 +57,7 @@ $main_tv_show_template = '
             <a href="__IMDB_URL__" target="_blank">
                 <div class="main_tv_show_imdb">
                     <img class="main_tv_show_imdb_logo" src="/img/imdb.png" alt="imdb">
-                    <span class="main_tv_show_imdb_score">
+                    <span class="main_tv_show_imdb_score" style="display: __IMDB_SCORE_DISPLAY__">
                         __IMDB_SCORE__
                         <span class="main_tv_show_imdb_score_ten">/10</span>
                     </span>
