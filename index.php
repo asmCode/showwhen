@@ -483,7 +483,7 @@ function GetDateAsString($tv_show)
 		<div class="share_bar">
 			<div class="fb-share-button share_element" data-href="http://showwhen.com/<?=$global_title_id?>" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fshowwhen.com%2F<?=$global_title_id?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 			<div class="share_element"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="small" data-url="http://showwhen.com/<?=$global_title_id?>" data-hashtags="showwhen" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js"></script></div>
-			<a class="share_element" href="mailto:contact@showwhen.com">Contact</a>
+			<a class="share_element" href="mailto:contact@showwhen.com"><img style="height: 16px; margin-top: 2px;" src="/img/contact.png" alt="contact"></a>
 		</div>
 	</div>
 </div>
