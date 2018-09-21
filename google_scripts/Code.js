@@ -149,14 +149,14 @@ function GetTimeStamp(sheet, rowIndex, hourColumnIndex, dayColumnIndex, monthCol
   if (month > 0 && day == 0)
     day = 15;
   
-  // PST timezone offset
-  var pstOffset = 1000 * 60 * 60 * 8;
+  // PST timezone offset (not using right now. It used to be added to the final date in the last line.)
+  // var pstOffset = 1000 * 60 * 60 * 8;
   
   var monthIndex = month > 0 ? month - 1 : 0;
   day = day == 0 ? 1 : day
   
   var date = new Date(year, monthIndex, day, hour);
-  return date.valueOf() + pstOffset;
+  return date.valueOf();
 }
 
 function onOpen()

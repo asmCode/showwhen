@@ -286,6 +286,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 	$element_html = str_replace("__TIME_LEFT__", $timeLeft, $element_html);
 	$element_html = str_replace("__TIME_LEFT_UNITS__", $timeLeftUnits, $element_html);
 	$element_html = str_replace("__THUMBNAIL__", $tv_show["thumbnail"], $element_html);
+	$element_html = str_replace("__ON_AIR_EXTRA__", $tv_show["on_air_extra"], $element_html);
 
 	if ($only_mode)
 	{
@@ -297,6 +298,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 	{
 		$element_html = str_replace("__SHARE_ICON_DISPLAY__", "unset", $element_html);
 		$element_html = str_replace("__ONLY_MODE_URL_POINTER_EVENTS__", "unset", $element_html);		
+		$element_html = str_replace("__LARGE_TILE_CLASS__", "", $element_html);
 	}
 
 	$approx = false;
@@ -308,8 +310,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 		$element_html = str_replace("__APPROX_DISPLAY__", "none", $element_html);
 
 	if ($is_on_air)
-	{	
-		$element_html = str_replace("__ON_AIR_EXTRA__", $tv_show["on_air_extra"], $element_html);
+	{
 		$element_html = str_replace("__COUNTER_DISPLAY__", "none", $element_html);
 		$element_html = str_replace("__ON_AIR_DISPLAY__", "unset", $element_html);
 	}
@@ -671,7 +672,21 @@ function pad(n, width, z) {
 
 function UpdateTime(timestamp, movie_id)
 {
-	var timestamp_diff = timestamp - Date.now();
+	var debug_time_diff = 0;
+	// var m = 100 * 10 * 60; // minute
+	// var h = 100 * 10 * 60 * 60; // hour
+	// debug_time_diff = h * 24 * 4;
+	// debug_time_diff += h * 5;
+	// debug_time_diff += m * 5;
+
+	var timestamp_diff = timestamp - (Date.now() + debug_time_diff);
+
+	if (timestamp_diff < 0)
+	{
+		$("#" + movie_id + "_on_air").css('display', 'unset');
+		$("#" + movie_id + "_counter").css('display', 'none');
+		return;
+	}
 	
 	timestamp_diff /= 1000.0;
 	

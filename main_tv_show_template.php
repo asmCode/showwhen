@@ -17,7 +17,7 @@ $main_tv_show_template = '
             </div>
         </a>
         <div class="main_tv_show_info_section">
-            <a href="__SOURCE_URL__" target="_blank" style="display: __COUNTER_DISPLAY__">
+            <a id="movie_id___ID___counter" href="__SOURCE_URL__" target="_blank" style="display: __COUNTER_DISPLAY__">
                 <div class="main_tv_show_counter"><span style="display: __APPROX_DISPLAY__">~</span><span id="movie_id___ID___time_left">__TIME_LEFT__</span>
                     <div class="time_left_labels">
                         <span class="time_left_label_days">DAYS</span>
@@ -35,7 +35,7 @@ $main_tv_show_template = '
             </a>
 
             <!-- ON AIR -->
-            <div class="on_air_group" style="display: __ON_AIR_DISPLAY__">
+            <div id="movie_id___ID___on_air" class="on_air_group" style="display: __ON_AIR_DISPLAY__">
                 since __DATE__
                 <div class="main_tv_show_info_section_separator_on_air"></div>
                 <div class="main_tv_show_on_air" style="display: unset">ON AIR</div>

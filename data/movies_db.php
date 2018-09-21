@@ -23,7 +23,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "Spring",
 			"season": 8,
-			"timestamp": 1557140400000
+			"timestamp": 1557111600000
 		},
 		{
 			"id": 1,
@@ -45,7 +45,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "Summer",
 			"season": 3,
-			"timestamp": 1565017200000
+			"timestamp": 1564988400000
 		},
 		{
 			"id": 2,
@@ -67,7 +67,7 @@ $movies_db_json = '
 			"month": 10,
 			"period": "",
 			"season": 9,
-			"timestamp": 1539000000000
+			"timestamp": 1538971200000
 		},
 		{
 			"id": 3,
@@ -89,7 +89,7 @@ $movies_db_json = '
 			"month": 11,
 			"period": "",
 			"season": "5 part II",
-			"timestamp": 1543496400000
+			"timestamp": 1543467600000
 		},
 		{
 			"id": 4,
@@ -111,7 +111,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 12,
-			"timestamp": 1537873200000
+			"timestamp": 1537844400000
 		},
 		{
 			"id": 5,
@@ -127,13 +127,13 @@ $movies_db_json = '
 			"title": "Grey\'s Anatomy",
 			"is_on_air": false,
 			"watch_logo": "abc",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "greysanatomy.jpg",
 			"on_air_extra": "",
 			"month": 9,
 			"period": "",
 			"season": 15,
-			"timestamp": 1538060400000
+			"timestamp": 1538031600000
 		},
 		{
 			"id": 6,
@@ -155,7 +155,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "early",
 			"season": 4,
-			"timestamp": 1554130800000
+			"timestamp": 1554102000000
 		},
 		{
 			"id": 7,
@@ -177,7 +177,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "late",
 			"season": 5,
-			"timestamp": 1538319600000
+			"timestamp": 1538290800000
 		},
 		{
 			"id": 8,
@@ -195,11 +195,11 @@ $movies_db_json = '
 			"watch_logo": "showtime",
 			"featured": true,
 			"thumbnail": "shameless.jpg",
-			"on_air_extra": "since Sep 9, every Sunday",
+			"on_air_extra": "every Sunday",
 			"month": 9,
 			"period": "",
 			"season": 9,
-			"timestamp": 1536580800000
+			"timestamp": 1536552000000
 		},
 		{
 			"id": 9,
@@ -221,7 +221,7 @@ $movies_db_json = '
 			"month": 10,
 			"period": "",
 			"season": 6,
-			"timestamp": 1571151600000
+			"timestamp": 1571122800000
 		},
 		{
 			"id": 10,
@@ -243,7 +243,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "Spring",
 			"season": 5,
-			"timestamp": 1557068400000
+			"timestamp": 1557039600000
 		},
 		{
 			"id": 11,
@@ -265,7 +265,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "early",
 			"season": 3,
-			"timestamp": 1585753200000
+			"timestamp": 1585724400000
 		},
 		{
 			"id": 12,
@@ -287,7 +287,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "Spring",
 			"season": 3,
-			"timestamp": 1557068400000
+			"timestamp": 1557039600000
 		},
 		{
 			"id": 13,
@@ -309,7 +309,7 @@ $movies_db_json = '
 			"month": 5,
 			"period": "",
 			"season": 6,
-			"timestamp": 1557932400000
+			"timestamp": 1557903600000
 		},
 		{
 			"id": 14,
@@ -331,7 +331,7 @@ $movies_db_json = '
 			"month": 11,
 			"period": "",
 			"season": 6,
-			"timestamp": 1541214000000
+			"timestamp": 1541185200000
 		},
 		{
 			"id": 15,
@@ -353,7 +353,7 @@ $movies_db_json = '
 			"month": 1,
 			"period": "",
 			"season": 5,
-			"timestamp": 1547568000000
+			"timestamp": 1547539200000
 		},
 		{
 			"id": 16,
@@ -371,11 +371,11 @@ $movies_db_json = '
 			"watch_logo": "usa_network",
 			"featured": true,
 			"thumbnail": "suits.jpg",
-			"on_air_extra": "since Jul 19, every Wednesday",
+			"on_air_extra": "every Wednesday",
 			"month": 7,
 			"period": "",
 			"season": 8,
-			"timestamp": 1532012400000
+			"timestamp": 1531983600000
 		},
 		{
 			"id": 17,
@@ -397,7 +397,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "late",
 			"season": 2,
-			"timestamp": 1569855600000
+			"timestamp": 1569826800000
 		},
 		{
 			"id": 18,
@@ -419,7 +419,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "early",
 			"season": 3,
-			"timestamp": 1585753200000
+			"timestamp": 1585724400000
 		},
 		{
 			"id": 19,
@@ -441,7 +441,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 3,
-			"timestamp": 1537963200000
+			"timestamp": 1537934400000
 		},
 		{
 			"id": 20,
@@ -463,7 +463,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "Summer",
 			"season": 2,
-			"timestamp": 1565017200000
+			"timestamp": 1564988400000
 		},
 		{
 			"id": 21,
@@ -472,20 +472,20 @@ $movies_db_json = '
 			"day": 21,
 			"source_url": "https://deadline.com/2018/07/maniac-release-date-netflix-emma-stone-jonah-hill-teaser-trailer-video-tca-1202435943/",
 			"year": 2018,
-			"hour": 12,
+			"hour": 0,
 			"confirmed": true,
 			"imdb_url": "https://www.imdb.com/title/tt5580146/?ref_=ttep_ep_tt",
 			"episodes": 10,
 			"title": "Maniac",
 			"is_on_air": false,
 			"watch_logo": "netflix",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "maniac.jpg",
 			"on_air_extra": "",
 			"month": 9,
 			"period": "",
 			"season": 1,
-			"timestamp": 1537585200000
+			"timestamp": 1537513200000
 		},
 		{
 			"id": 22,
@@ -501,13 +501,13 @@ $movies_db_json = '
 			"title": "The Umbrella Academy",
 			"is_on_air": false,
 			"watch_logo": "netflix",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "The-Umbrella-Academy.jpg",
 			"on_air_extra": "",
 			"month": "",
 			"period": "early",
 			"season": 1,
-			"timestamp": 1554130800000
+			"timestamp": 1554102000000
 		},
 		{
 			"id": 23,
@@ -523,13 +523,13 @@ $movies_db_json = '
 			"title": "Counterpart",
 			"is_on_air": false,
 			"watch_logo": "netflix",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "counterpart.jpg",
 			"on_air_extra": "",
 			"month": 1,
 			"period": "",
 			"season": 2,
-			"timestamp": 1546444800000
+			"timestamp": 1546416000000
 		},
 		{
 			"id": 24,
@@ -545,13 +545,13 @@ $movies_db_json = '
 			"title": "The Terror",
 			"is_on_air": false,
 			"watch_logo": "amc",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "terror.jpg",
 			"on_air_extra": "",
 			"month": 3,
 			"period": "",
 			"season": 2,
-			"timestamp": 1552662000000
+			"timestamp": 1552633200000
 		},
 		{
 			"id": 25,
@@ -573,7 +573,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 30,
-			"timestamp": 1538319600000
+			"timestamp": 1538290800000
 		},
 		{
 			"id": 26,
@@ -595,7 +595,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "Fall",
 			"season": 4,
-			"timestamp": 1541433600000
+			"timestamp": 1541404800000
 		},
 		{
 			"id": 27,
@@ -617,7 +617,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 17,
-			"timestamp": 1538395200000
+			"timestamp": 1538366400000
 		},
 		{
 			"id": 28,
@@ -633,13 +633,13 @@ $movies_db_json = '
 			"title": "3%",
 			"is_on_air": false,
 			"watch_logo": "netflix",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "3per.jpg",
 			"on_air_extra": "",
 			"month": "",
 			"period": "",
 			"season": 3,
-			"timestamp": 1546358400000
+			"timestamp": 1546329600000
 		},
 		{
 			"id": 29,
@@ -661,7 +661,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "early",
 			"season": 3,
-			"timestamp": 1554130800000
+			"timestamp": 1554102000000
 		},
 		{
 			"id": 30,
@@ -683,7 +683,7 @@ $movies_db_json = '
 			"month": 7,
 			"period": "",
 			"season": 7,
-			"timestamp": 1563202800000
+			"timestamp": 1563174000000
 		},
 		{
 			"id": 31,
@@ -705,7 +705,7 @@ $movies_db_json = '
 			"month": 11,
 			"period": "",
 			"season": 4,
-			"timestamp": 1542427200000
+			"timestamp": 1542398400000
 		},
 		{
 			"id": 32,
@@ -721,13 +721,13 @@ $movies_db_json = '
 			"title": "Travelers",
 			"is_on_air": false,
 			"watch_logo": "netflix",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "travelers.jpg",
 			"on_air_extra": "",
 			"month": 12,
 			"period": "",
 			"season": 3,
-			"timestamp": 1544889600000
+			"timestamp": 1544860800000
 		},
 		{
 			"id": 33,
@@ -743,13 +743,13 @@ $movies_db_json = '
 			"title": "Cable Girls",
 			"is_on_air": true,
 			"watch_logo": "netflix",
-			"featured": false,
-			"thumbnail": "",
-			"on_air_extra": "all epis available since Sep 9th",
+			"featured": true,
+			"thumbnail": "cable_girls.jpg",
+			"on_air_extra": "all episodes available",
 			"month": 9,
 			"period": "",
 			"season": 3,
-			"timestamp": 1536332400000
+			"timestamp": 1536303600000
 		},
 		{
 			"id": 34,
@@ -765,13 +765,13 @@ $movies_db_json = '
 			"title": "The Rain",
 			"is_on_air": false,
 			"watch_logo": "netflix",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "the-rain.jpg",
 			"on_air_extra": "",
 			"month": "",
 			"period": "",
 			"season": 2,
-			"timestamp": 1546358400000
+			"timestamp": 1546329600000
 		},
 		{
 			"id": 35,
@@ -787,13 +787,13 @@ $movies_db_json = '
 			"title": "Supergirl",
 			"is_on_air": false,
 			"watch_logo": "netflix",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "supergirl.jpg",
 			"on_air_extra": "",
 			"month": 10,
 			"period": "",
 			"season": 4,
-			"timestamp": 1539572400000
+			"timestamp": 1539543600000
 		},
 		{
 			"id": 36,
@@ -806,16 +806,16 @@ $movies_db_json = '
 			"confirmed": false,
 			"imdb_url": "https://www.imdb.com/title/tt3107288/?ref_=ttep_ep_tt",
 			"episodes": 23,
-			"title": "Flash",
+			"title": "The Flash",
 			"is_on_air": false,
 			"watch_logo": "netflix",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "flash.jpeg",
 			"on_air_extra": "",
 			"month": 10,
 			"period": "",
 			"season": 5,
-			"timestamp": 1539097200000
+			"timestamp": 1539068400000
 		},
 		{
 			"id": 37,
@@ -828,16 +828,16 @@ $movies_db_json = '
 			"confirmed": false,
 			"imdb_url": "https://www.imdb.com/title/tt5037914/",
 			"episodes": 8,
-			"title": "Crashing",
+			"title": "The Crashing",
 			"is_on_air": false,
 			"watch_logo": "hbo",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "crashing.jpeg",
 			"on_air_extra": "",
 			"month": 1,
 			"period": "",
 			"season": 3,
-			"timestamp": 1547568000000
+			"timestamp": 1547539200000
 		},
 		{
 			"id": 38,
@@ -853,13 +853,13 @@ $movies_db_json = '
 			"title": "Marvel\'s Jessica Jones",
 			"is_on_air": false,
 			"watch_logo": "netflix",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "jessica-jones.jpg",
 			"on_air_extra": "",
 			"month": 11,
 			"period": "",
 			"season": 3,
-			"timestamp": 1573833600000
+			"timestamp": 1573804800000
 		},
 		{
 			"id": 39,
@@ -875,13 +875,13 @@ $movies_db_json = '
 			"title": "High Maintenance",
 			"is_on_air": false,
 			"watch_logo": "hbo",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "high_maintenance.jpeg",
 			"on_air_extra": "",
 			"month": "",
 			"period": "early",
 			"season": 3,
-			"timestamp": 1554130800000
+			"timestamp": 1554102000000
 		},
 		{
 			"id": 40,
@@ -897,13 +897,13 @@ $movies_db_json = '
 			"title": "The Chi",
 			"is_on_air": false,
 			"watch_logo": "showtime",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "the-chi.jpg",
 			"on_air_extra": "",
 			"month": "",
 			"period": "",
 			"season": 2,
-			"timestamp": 1546358400000
+			"timestamp": 1546329600000
 		},
 		{
 			"id": 41,
@@ -919,13 +919,13 @@ $movies_db_json = '
 			"title": "Younger",
 			"is_on_air": false,
 			"watch_logo": "tv_land",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "younger.jpg",
 			"on_air_extra": "",
 			"month": 6,
 			"period": "",
 			"season": 6,
-			"timestamp": 1560610800000
+			"timestamp": 1560582000000
 		},
 		{
 			"id": 42,
@@ -941,13 +941,13 @@ $movies_db_json = '
 			"title": "Baskets",
 			"is_on_air": false,
 			"watch_logo": "fx",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "baskets.jpg",
 			"on_air_extra": "",
 			"month": "",
 			"period": "",
 			"season": 4,
-			"timestamp": 1546358400000
+			"timestamp": 1546329600000
 		},
 		{
 			"id": 43,
@@ -963,13 +963,13 @@ $movies_db_json = '
 			"title": "Succesion",
 			"is_on_air": false,
 			"watch_logo": "amazon",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "succesion.jpg",
 			"on_air_extra": "",
 			"month": "",
 			"period": "early Summer",
 			"season": 2,
-			"timestamp": 1561129200000
+			"timestamp": 1561100400000
 		},
 		{
 			"id": 44,
@@ -985,13 +985,13 @@ $movies_db_json = '
 			"title": "Dear White People",
 			"is_on_air": false,
 			"watch_logo": "netflix",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "dear-white-people.jpg",
 			"on_air_extra": "",
 			"month": "",
 			"period": "early Summer",
 			"season": 3,
-			"timestamp": 1561129200000
+			"timestamp": 1561100400000
 		},
 		{
 			"id": 45,
@@ -1013,7 +1013,7 @@ $movies_db_json = '
 			"month": 4,
 			"period": "",
 			"season": 4,
-			"timestamp": 1555340400000
+			"timestamp": 1555311600000
 		},
 		{
 			"id": 46,
@@ -1035,7 +1035,7 @@ $movies_db_json = '
 			"month": 3,
 			"period": "",
 			"season": 3,
-			"timestamp": 1552662000000
+			"timestamp": 1552633200000
 		},
 		{
 			"id": 47,
@@ -1053,11 +1053,11 @@ $movies_db_json = '
 			"watch_logo": "netflix",
 			"featured": true,
 			"thumbnail": "ozark1.jpg",
-			"on_air_extra": "since Aug 31 (all)",
+			"on_air_extra": "all episodes available",
 			"month": 8,
 			"period": "",
 			"season": 2,
-			"timestamp": 1535727600000
+			"timestamp": 1535698800000
 		},
 		{
 			"id": 48,
@@ -1073,13 +1073,13 @@ $movies_db_json = '
 			"title": "Iron Fist",
 			"is_on_air": true,
 			"watch_logo": "netflix",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "iron-fist.jpeg",
 			"on_air_extra": "all episodes available",
 			"month": 9,
 			"period": "",
 			"season": 2,
-			"timestamp": 1536375600000
+			"timestamp": 1536346800000
 		},
 		{
 			"id": 49,
@@ -1093,15 +1093,15 @@ $movies_db_json = '
 			"imdb_url": "https://www.imdb.com/title/tt3398228/",
 			"episodes": 12,
 			"title": "BoJack Horseman",
-			"is_on_air": false,
+			"is_on_air": true,
 			"watch_logo": "netflix",
 			"featured": true,
 			"thumbnail": "bojack_horseman.jpg",
-			"on_air_extra": "",
+			"on_air_extra": "all episodes available",
 			"month": 9,
 			"period": "",
 			"season": 5,
-			"timestamp": 1536937200000
+			"timestamp": 1536908400000
 		},
 		{
 			"id": 50,
@@ -1117,13 +1117,13 @@ $movies_db_json = '
 			"title": "The OA",
 			"is_on_air": false,
 			"watch_logo": "netflix",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "the-oa.jpg",
 			"on_air_extra": "",
 			"month": "",
 			"period": "early",
 			"season": 2,
-			"timestamp": 1554130800000
+			"timestamp": 1554102000000
 		},
 		{
 			"id": 51,
@@ -1139,13 +1139,13 @@ $movies_db_json = '
 			"title": "Ingobernable",
 			"is_on_air": false,
 			"watch_logo": "netflix",
-			"featured": false,
-			"thumbnail": "",
+			"featured": true,
+			"thumbnail": "Ingobernable.jpg",
 			"on_air_extra": "",
 			"month": 9,
 			"period": "",
 			"season": 2,
-			"timestamp": 1568516400000
+			"timestamp": 1568487600000
 		},
 		{
 			"id": 52,
@@ -1167,7 +1167,7 @@ $movies_db_json = '
 			"month": 10,
 			"period": "",
 			"season": 3,
-			"timestamp": 1538751600000
+			"timestamp": 1538722800000
 		},
 		{
 			"id": 53,
@@ -1189,7 +1189,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 13,
-			"timestamp": 1536238800000
+			"timestamp": 1536210000000
 		},
 		{
 			"id": 54,
@@ -1211,7 +1211,7 @@ $movies_db_json = '
 			"month": 1,
 			"period": "",
 			"season": 3,
-			"timestamp": 1547568000000
+			"timestamp": 1547539200000
 		}
 	]
 }';
