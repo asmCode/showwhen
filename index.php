@@ -425,6 +425,7 @@ function GetDateAsString($tv_show)
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<title>When is the next season of my favorite TV Show?</title>
+	<link rel="icon" type="image/png" href="http://showwhen.com/img/icon.png">
 	<link rel="stylesheet" type="text/css" href="/style.css?v=6" />
 	<link rel="stylesheet" type="text/css" href="/tv_show.css?v=6" />
 	<link rel="stylesheet" type="text/css" href="/main_tv_show.css?v=6" />
