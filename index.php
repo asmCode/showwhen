@@ -453,13 +453,13 @@ function GetDateAsString($tv_show)
 <body onload="Init();">
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=2009742399104407&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
 <div class="bg"></div>
 
@@ -510,7 +510,7 @@ function GetDateAsString($tv_show)
 
 	<div class="footer">
 		<div class="share_bar">
-			<div class="fb-share-button share_element" data-href="http://showwhen.com/<?=$global_title_id?>" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fshowwhen.com%2F<?=$global_title_id?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+			<div class="fb-share-button share_element" data-href="http://showwhen.com/<?=$global_title_id?>" data-layout="button"></div>
 			<div class="share_element"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="small" data-url="http://showwhen.com/<?=$global_title_id?>" data-hashtags="showwhen" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js"></script></div>
 			<a class="share_element" href="mailto:contact@showwhen.com"><img style="height: 16px; margin-top: 2px;" src="/img/contact.png" alt="contact"></a>
 		</div>
