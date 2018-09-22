@@ -183,6 +183,7 @@ function GenerateShareImageIfNeeded($title_id, $bg_filename, $days_left, $approx
 $og_image = "http://showwhen.com/img/web_image.jpg";
 $og_url = "http://showwhen.com/";
 $og_title = "When is the next season of my favorite TV Show?";
+$og_description = "";
 $og_image_width = 800;
 $og_image_height = 420;
 
@@ -206,11 +207,23 @@ if ($only_mode)
 	{
 		$approx = !is_numeric($tv_show["day"]);
 
+
+		$on_air = IsOnAir($tv_show);
+
+		if ($on_air)
+		{
+			$og_description = "On air";
+			if (isset($tv_show["on_air_extra"]))
+				$og_description .= ": " . $tv_show["on_air_extra"];
+		}
+		else
+			$og_description = "Release: " . GetDateAsString($tv_show);
+
 		$og_url = "http://showwhen.com/" . $only;
 		$og_title = $tv_show["title"] . " (Season " . (int)$tv_show["season"] . ")";
 
 		$thumbnail = "img/tvshow_thumbnails/" . $tv_show["thumbnail"];
-		$share_image = GenerateShareImageIfNeeded($only, $thumbnail, GetDaysLeft($tv_show["timestamp"]), $approx, IsOnAir($tv_show));
+		$share_image = GenerateShareImageIfNeeded($only, $thumbnail, GetDaysLeft($tv_show["timestamp"]), $approx, $on_air);
 		if ($share_image != FALSE)
 		{
 			$og_image = "http://showwhen.com/". $share_image;
@@ -421,7 +434,7 @@ function GetDateAsString($tv_show)
     <meta property="og:url" content="<?=$og_url?>"/>
     <meta property="og:site_name" content="Show When" />
 	<meta property="og:title" content="<?=$og_title?>" />
-	<meta property="og:description" content="" />
+	<meta property="og:description" content="<?=$og_description?>" />
     <meta property="og:image" itemprop="image primaryImageOfPage" content="<?=$og_image?>" />
 	<meta property="og:image:width" content="<?=$og_image_width?>" />
 	<meta property="og:image:height" content="<?=$og_image_height?>" />
