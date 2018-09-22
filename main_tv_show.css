@@ -441,9 +441,30 @@
 
 @media screen and (min-width: 1000px)
 {
-	.large_tile
+	@media screen and (max-height: 579px)
 	{
-		transform-origin: top center;
-		transform: scale(1.8, 1.8);
+		.large_tile
+		{
+			transform-origin: top center;
+			transform: scale(1.25, 1.25);
+		}
+	}
+
+	@media screen and (min-height: 580px) and (max-height: 649px)
+	{
+		.large_tile
+		{
+			transform-origin: top center;
+			transform: scale(1.5, 1.5);
+		}
+	}
+
+	@media screen and (min-height: 650px)
+	{
+		.large_tile
+		{
+			transform-origin: top center;
+			transform: scale(1.8, 1.8);
+		}
 	}
 }
