@@ -761,6 +761,11 @@ function UpdateNoise()
 	setTimeout(UpdateNoise, 90);
 }
 
+// window.addEventListener("scroll", function (event) {
+//     var scroll = this.scrollY;
+//     console.log(scroll)
+// });
+
 </script>
 
 </body>
