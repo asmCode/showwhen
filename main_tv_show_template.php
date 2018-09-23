@@ -35,7 +35,7 @@ $main_tv_show_template = '
             </a>
 
             <!-- ON AIR -->
-            <div id="movie_id___ID___on_air" class="on_air_group" style="display: __ON_AIR_DISPLAY__">
+            <div id="movie_id___ID___on_air" class="on_air_group on_air_date" style="display: __ON_AIR_DISPLAY__">
                 since __DATE__
                 <div class="main_tv_show_info_section_separator_on_air"></div>
                 <div class="main_tv_show_on_air" style="display: unset">ON AIR</div>
