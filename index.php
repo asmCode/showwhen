@@ -27,6 +27,9 @@ if (isset($_GET["sort"]) && is_numeric($_GET["sort"]))
 	}
 }
 
+$hide_unconfirmed = $_GET["hide_unconfirmed"] == 1;
+$hide_on_air = $_GET["hide_on_air"] == 1;
+
 function SortByDate($a, $b)
 {
 	if ($b["timestamp"] == null)
@@ -207,7 +210,6 @@ if ($only_mode)
 	{
 		$approx = !is_numeric($tv_show["day"]);
 
-
 		$on_air = IsOnAir($tv_show);
 
 		if ($on_air)
@@ -247,6 +249,14 @@ for ($i = 0; $i < count($movies_db); $i++)
 {
 	$tv_show = $movies_db[$i];
 
+	$is_confirmed = isset($tv_show["confirmed"]) && $tv_show["confirmed"] == true;
+	if ($hide_unconfirmed && !$is_confirmed)
+		continue;
+
+	$is_on_air = IsOnAir($tv_show);
+	if ($hide_on_air && $is_on_air)
+		continue;
+
 	$title_id = SimplifyTitle($tv_show["title"]);
 
 	if ($only_mode)
@@ -256,7 +266,6 @@ for ($i = 0; $i < count($movies_db); $i++)
 	}
 
 	$is_featured = isset($tv_show["featured"]) && $tv_show["featured"] == true;
-	$is_on_air = IsOnAir($tv_show);
 
 	if ($is_featured)
 		$element_html = $main_tv_show_template;
@@ -348,7 +357,6 @@ for ($i = 0; $i < count($movies_db); $i++)
 		$element_html = str_replace("__ON_AIR_DISPLAY__", "none", $element_html);
 	}
 
-	$is_confirmed = isset($tv_show["confirmed"]) && $tv_show["confirmed"] == true;
 	if ($is_confirmed)
 		$element_html = str_replace("__CONFIRMED_DISPLAY__", "unset", $element_html);
 	else
