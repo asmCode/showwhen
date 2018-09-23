@@ -145,8 +145,14 @@ function GetTimeStamp(sheet, rowIndex, hourColumnIndex, dayColumnIndex, monthCol
     }    
   }
   
+  // If we know only the year, assume the middle of the year.
+  if (year > 0 && month == 0 && day == 0)
+  {
+    day = 1;
+    month = 7;
+  }
   // If we know the month but not the day, assume the middle of the month.
-  if (month > 0 && day == 0)
+  else if (month > 0 && day == 0)
     day = 15;
   
   // PST timezone offset (not using right now. It used to be added to the final date in the last line.)
