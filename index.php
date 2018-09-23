@@ -10,6 +10,12 @@ $movies_db = $movies_db["tv_shows"];
 $main_tv_shows_html = '';
 $tv_shows_html = '';
 
+$hide_unconfirmed = $_POST["hide_unconfirmed"] == 1 ? 1 : 0;
+$hide_on_air = $_POST["hide_on_air"] == 1 ? 1 : 0;
+
+echo "hide_unconfirmed: " . $hide_unconfirmed . "<br>";
+echo "hide_on_air: " . $hide_on_air . "<br>";
+
 $sort_method = "SortByScore";
 $sort_id = 0;
 if (isset($_GET["sort"]) && is_numeric($_GET["sort"]))
@@ -26,9 +32,6 @@ if (isset($_GET["sort"]) && is_numeric($_GET["sort"]))
 			break;
 	}
 }
-
-$hide_unconfirmed = $_GET["hide_unconfirmed"] == 1;
-$hide_on_air = $_GET["hide_on_air"] == 1;
 
 function SortByDate($a, $b)
 {
@@ -493,6 +496,13 @@ function GetDateAsString($tv_show)
 		<a href="index.php?sort=2"><span id="sort_button_2" class="sort_option">Date</span></a>
 	</div>
 
+	<div class="filters_bar <?=$sort_bar_group_display?>">
+		<span class="sort_option_label">Filter:</span>
+		<!-- <a href="index.php"><span id="sort_button_0" class="sort_option">On Air</span></a> -->
+		<a href="javascript: filter_on_air();"><span id="filter_button_hide_on_air" class="sort_option">On Air</span></a>
+		<a href="javascript: filter_unconfirmed();"><span id="filter_button_hide_unconfirmed" class="sort_option">Unconfirmed</span></a>
+	</div>
+
 	<div id="no_results_message" class="search_reslut">No results found for "<span id="no_results_phrase"></span>"</div>
 
 	<div class="main_tv_show_container">
@@ -525,11 +535,18 @@ function GetDateAsString($tv_show)
 	</div>
 </div>
 
+<form method="post" action="index.php" id="filters_form">
+	<input type="hidden" name="hide_on_air" value="1" id="filters_form_hide_on_air" />
+	<input type="hidden" name="hide_unconfirmed" value="1" id="filters_form_hide_unconfirmed" />
+</form>
+
 <script>
 
 var defaultSearchText = "Search by Title...";
 var movies_db_json = <? echo $movies_db_json . ";\n" ?>
 var sort_id = <? echo $sort_id ?>;
+var global_hide_on_air = <?=$hide_on_air?>;
+var global_hide_unconfirmed = <?=$hide_unconfirmed?>;
 
 /* Sorting tv_shows by the timestamp (It works!)
 movies_db_json.tv_shows.sort(function(a, b)
@@ -685,6 +702,15 @@ function InitSortButtons()
 	}
 }
 
+function InitFilterButtons()
+{
+	var color = "rgba(139, 198, 63, 0.3)";
+	var colorActive = "rgba(139, 198, 63, 0.9)";
+
+	$("#filter_button_hide_on_air").css("background-color", global_hide_on_air == 1 ? color : colorActive);
+	$("#filter_button_hide_unconfirmed").css("background-color", global_hide_unconfirmed == 1 ? color : colorActive);
+}
+
 function Init()
 {	
     // UpdateTime();
@@ -692,6 +718,7 @@ function Init()
 	UpdateSearchResultMessage(-1, "");
 	UpdateNoise();
 	InitSortButtons();
+	InitFilterButtons();
 }
 
 function GetPremiereDate()
@@ -767,6 +794,31 @@ function UpdateNoise()
 	header.style.backgroundPositionY = Math.random() * 200 + "px";
 
 	setTimeout(UpdateNoise, 90);
+}
+
+function ToggleFilterValue(filter)
+{
+	if (filter == 1)
+		return 0;
+	else
+		return 1;
+}
+
+function ApplyFilter(hide_on_air, hide_unconfirmed)
+{
+	document.getElementById("filters_form_hide_on_air").value = hide_on_air;
+	document.getElementById("filters_form_hide_unconfirmed").value = hide_unconfirmed;
+	document.getElementById("filters_form").submit();
+}
+
+function filter_on_air()
+{
+	ApplyFilter(ToggleFilterValue(global_hide_on_air), global_hide_unconfirmed);
+}
+
+function filter_unconfirmed()
+{
+	ApplyFilter(global_hide_on_air, ToggleFilterValue(global_hide_unconfirmed));
 }
 
 // window.addEventListener("scroll", function (event) {

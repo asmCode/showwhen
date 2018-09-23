@@ -95,6 +95,15 @@ a
 	background-color: rgba(0, 0, 0, 0);
 }
 
+.filters_bar
+{
+	position: absolute;
+	right: 0px;
+	margin-top: 26px;
+	margin-right: 6px;
+	background-color: rgba(0, 0, 0, 0);
+}
+
 .sort_option
 {
 	margin-left: 3px;
