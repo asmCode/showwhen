@@ -235,13 +235,11 @@ a
 {
 	background-color:#2e2e2e;
 
-	/* position: relative; */
+	position: relative;
 	width: 100%;
-	max-width: 1024px;
-	min-width: 320px;
 	height: 30px;
 
-	position: fixed;
+	/* position: fixed; */
     bottom: 0;
 }
 

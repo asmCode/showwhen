@@ -546,7 +546,7 @@ function GetDateAsString($tv_show)
 
 	<div style="height: 30px"></div>
 
-	<div class="footer">
+	<div class="footer <?=$hide_in_single_mode?>">
 		<div class="share_bar">
 			<div class="fb-share-button share_element" data-href="http://showwhen.com/<?=$global_title_id?>" data-layout="button"></div>
 			<div class="share_element"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="small" data-url="http://showwhen.com/<?=$global_title_id?>" data-hashtags="showwhen" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js"></script></div>
