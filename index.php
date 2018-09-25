@@ -211,6 +211,7 @@ $og_title = "When is the next season of my favorite TV Show?";
 $og_description = "";
 $og_image_width = 800;
 $og_image_height = 420;
+$page_title = $og_title;
 
 $global_title_id = "";
 $sort_bar_group_display = "";
@@ -245,6 +246,7 @@ if ($only_mode)
 
 		$og_url = "http://showwhen.com/" . $only;
 		$og_title = $tv_show["title"] . " (Season " . (int)$tv_show["season"] . ")";
+		$page_title = "When is the next season of " . $tv_show["title"];
 
 		$thumbnail = "img/tvshow_thumbnails/" . $tv_show["thumbnail"];
 		$share_image = GenerateShareImageIfNeeded($only, $thumbnail, GetDaysLeft($tv_show["timestamp"]), $approx, $on_air);
@@ -473,7 +475,7 @@ function GetDateAsString($tv_show)
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-	<title>When is the next season of my favorite TV Show?</title>
+	<title><?=$page_title?></title>
 	<link rel="icon" type="image/png" href="http://showwhen.com/img/icon.png">
 	<link rel="stylesheet" type="text/css" href="/style.css?v=6" />
 	<link rel="stylesheet" type="text/css" href="/tv_show.css?v=6" />
