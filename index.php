@@ -10,27 +10,46 @@ $movies_db = $movies_db["tv_shows"];
 $main_tv_shows_html = '';
 $tv_shows_html = '';
 
-$hide_unconfirmed = $_POST["hide_unconfirmed"] == 1 ? 1 : 0;
-$hide_on_air = $_POST["hide_on_air"] == 1 ? 1 : 0;
+$hide_unconfirmed = 0;
+$hide_on_air = 0;
+$sort_id = 0;
 
-echo "hide_unconfirmed: " . $hide_unconfirmed . "<br>";
-echo "hide_on_air: " . $hide_on_air . "<br>";
+function DecodeFilterValue()
+{
+	global $hide_unconfirmed;
+	global $hide_on_air;
+	global $sort_id;
+
+	if (!isset($_GET["f"]) || !is_numeric($_GET["f"]))
+		return;
+
+	$filter = (int)$_GET["f"];
+
+	$mask_on_air = 1 << 7;
+	$mask_unconfirmed = 1 << 6;
+	$mask_sort_id = 0x0F;
+
+	$hide_on_air = ($filter & $mask_on_air) == $mask_on_air ? 1 : 0;
+	$hide_unconfirmed = ($filter & $mask_unconfirmed) == $mask_unconfirmed ? 1 : 0;
+	$sort_id = (int)($filter & $mask_sort_id);
+}
+
+DecodeFilterValue();
+
+// echo "hide_unconfirmed: " . $hide_unconfirmed . "<br>";
+// echo "hide_on_air: " . $hide_on_air . "<br>";
+// echo "sort: " . $sort_id . "<br>";
 
 $sort_method = "SortByScore";
-$sort_id = 0;
-if (isset($_GET["sort"]) && is_numeric($_GET["sort"]))
+switch ($sort_id)
 {
-	$sort_id = $_GET["sort"];
-	switch ($_GET["sort"])
-	{
-		case 1:
-			$sort_method = "SortByName";
-			break;
+	case 1:
+		$sort_method = "SortByName";
+		break;
 
-		case 2:
-			$sort_method = "SortByDate";
-			break;
-	}
+	case 2:
+		$sort_method = "SortByDate";
+		break;
 }
 
 function SortByDate($a, $b)
@@ -491,14 +510,13 @@ function GetDateAsString($tv_show)
 	
 	<div class="sort_bar <?=$sort_bar_group_display?>">
 		<span class="sort_option_label">Sort by:</span>
-		<a href="index.php"><span id="sort_button_0" class="sort_option">Score</span></a>
-		<a href="index.php?sort=1"><span id="sort_button_1" class="sort_option">Title</span></a>
-		<a href="index.php?sort=2"><span id="sort_button_2" class="sort_option">Date</span></a>
+		<a href="javascript: setSort(0)"><span id="sort_button_0" class="sort_option">Score</span></a>
+		<a href="javascript: setSort(1)"><span id="sort_button_1" class="sort_option">Title</span></a>
+		<a href="javascript: setSort(2)"><span id="sort_button_2" class="sort_option">Date</span></a>
 	</div>
 
-	<div class="filters_bar <?=$sort_bar_group_display?>">
+	<div class="filters_bar <?=$sort_bar_group_display?>" onload="ApplyFilter(0)">
 		<span class="sort_option_label">Filter:</span>
-		<!-- <a href="index.php"><span id="sort_button_0" class="sort_option">On Air</span></a> -->
 		<a href="javascript: filter_on_air();"><span id="filter_button_hide_on_air" class="sort_option">On Air</span></a>
 		<a href="javascript: filter_unconfirmed();"><span id="filter_button_hide_unconfirmed" class="sort_option">Unconfirmed</span></a>
 	</div>
@@ -544,7 +562,7 @@ function GetDateAsString($tv_show)
 
 var defaultSearchText = "Search by Title...";
 var movies_db_json = <? echo $movies_db_json . ";\n" ?>
-var sort_id = <? echo $sort_id ?>;
+var global_sort_id = <? echo $sort_id ?>;
 var global_hide_on_air = <?=$hide_on_air?>;
 var global_hide_unconfirmed = <?=$hide_unconfirmed?>;
 
@@ -695,7 +713,7 @@ function InitSortButtons()
 	{
 		var sort_button = $("#sort_button_" + i);
 		var color = "rgba(139, 198, 63, 0.3)";
-		if (i == sort_id) {
+		if (i == global_sort_id) {
 			color = "rgba(139, 198, 63, 0.9)";
 			sort_button.css('background-color', color);
 		}
@@ -717,8 +735,6 @@ function Init()
 	SetDefaultSearchText();
 	UpdateSearchResultMessage(-1, "");
 	UpdateNoise();
-	InitSortButtons();
-	InitFilterButtons();
 }
 
 function GetPremiereDate()
@@ -804,27 +820,54 @@ function ToggleFilterValue(filter)
 		return 1;
 }
 
-function ApplyFilter(hide_on_air, hide_unconfirmed)
+function EncodeFilter(hide_on_air, hide_unconfirmed, sort_id)
 {
-	document.getElementById("filters_form_hide_on_air").value = hide_on_air;
-	document.getElementById("filters_form_hide_unconfirmed").value = hide_unconfirmed;
-	document.getElementById("filters_form").submit();
+	var filter = sort_id;
+	if (hide_on_air == 1)
+		filter |= (1 << 7);
+	if (hide_unconfirmed == 1)
+		filter |= (1 << 6);
+
+	return filter;
+}
+
+// function ApplyFilter(hide_on_air, hide_unconfirmed)
+// {
+// 	document.getElementById("filters_form_hide_on_air").value = hide_on_air;
+// 	document.getElementById("filters_form_hide_unconfirmed").value = hide_unconfirmed;
+// 	document.getElementById("filters_form").submit();
+// }
+
+function ApplyFilter(filter)
+{
+	window.open("?f=" + filter, "_self");
 }
 
 function filter_on_air()
 {
-	ApplyFilter(ToggleFilterValue(global_hide_on_air), global_hide_unconfirmed);
+	var filter = EncodeFilter(ToggleFilterValue(global_hide_on_air), global_hide_unconfirmed, global_sort_id);
+	ApplyFilter(filter);
 }
 
 function filter_unconfirmed()
 {
-	ApplyFilter(global_hide_on_air, ToggleFilterValue(global_hide_unconfirmed));
+	var filter = EncodeFilter(global_hide_on_air, ToggleFilterValue(global_hide_unconfirmed), global_sort_id);
+	ApplyFilter(filter);
+}
+
+function setSort(sort_id)
+{
+	var filter = EncodeFilter(global_hide_on_air, global_hide_unconfirmed, sort_id);
+	ApplyFilter(filter);
 }
 
 // window.addEventListener("scroll", function (event) {
 //     var scroll = this.scrollY;
 //     console.log(scroll)
 // });
+
+InitSortButtons();
+InitFilterButtons();
 
 </script>
 
