@@ -525,6 +525,12 @@ function GetDateAsString($tv_show)
 
 	<div id="no_results_message" class="search_reslut">No results found for "<span id="no_results_phrase"></span>"</div>
 
+	<div class="<?=$show_in_single_mode?>" style="position:absolute; margin:10px;">
+		<a href="./">
+			<< Go back
+		</a>
+	</div>
+
 	<div class="main_tv_show_container">
 		<? echo $main_tv_shows_html ?>
 	</div>
@@ -533,16 +539,10 @@ function GetDateAsString($tv_show)
 		<? echo $tv_shows_html ?>
 	</div>
 
-	<div class="<?=$show_in_single_mode?>" style="margin-top: 50px">
-		<a href="./">
-			Show entire list.
-		</a>
-	</div>
-
-	<!-- <div class="share_bar">
-		<div class="fb-share-button share_element" data-href="http://showwhen.com/<?=$global_title_id?>" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fshowwhen.com%2F<?=$global_title_id?>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+	<div class="share_bar_large <?=$show_in_single_mode?>">
+		<div class="fb-share-button share_element" data-href="http://showwhen.com/<?=$global_title_id?>" data-size="large" data-layout="button"></div>
 		<div class="share_element"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-url="http://showwhen.com/<?=$global_title_id?>" data-hashtags="showwhen" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js"></script></div>
-	</div> -->
+	</div>
 
 	<div style="height: 30px"></div>
 

@@ -447,9 +447,9 @@
 	color: gray;
 }
 
-@media screen and (min-width: 1000px)
+@media screen and (min-width: 700px)
 {
-	@media screen and (max-height: 579px)
+	@media screen and (max-height: 590px)
 	{
 		.large_tile
 		{
@@ -458,7 +458,7 @@
 		}
 	}
 
-	@media screen and (min-height: 580px) and (max-height: 649px)
+	@media screen and (min-height: 590px) and (max-height: 664px)
 	{
 		.large_tile
 		{
@@ -467,7 +467,7 @@
 		}
 	}
 
-	@media screen and (min-height: 650px)
+	@media screen and (min-height: 664px)
 	{
 		.large_tile
 		{
