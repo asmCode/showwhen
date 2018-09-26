@@ -462,6 +462,7 @@ function GetDateAsString($tv_show)
 	</script>
 
 	<meta charset="UTF-8">
+	<meta property="description" content="<?=$page_title?>" />
 	<meta property="og:type" content= "website" />
     <meta property="og:url" content="<?=$og_url?>"/>
     <meta property="og:site_name" content="Show When" />
