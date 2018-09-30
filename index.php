@@ -518,7 +518,7 @@ function GetDateAsString($tv_show)
 		<a href="javascript: setSort(2)"><span id="sort_button_2" class="sort_option">Date</span></a>
 	</div>
 
-	<div class="filters_bar <?=$sort_bar_group_display?>" onload="ApplyFilter(0)">
+	<div class="filters_bar <?=$sort_bar_group_display?> hide" onload="ApplyFilter(0)">
 		<span class="sort_option_label">Filter:</span>
 		<a href="javascript: filter_on_air();"><span id="filter_button_hide_on_air" class="sort_option">On Air</span></a>
 		<a href="javascript: filter_unconfirmed();"><span id="filter_button_hide_unconfirmed" class="sort_option">Unconfirmed</span></a>
