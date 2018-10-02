@@ -80,7 +80,11 @@ function SortByScore($a, $b)
 	if ($a["imdb_score"] == null)
 		return 1;
 
-	return sign((float)($b["imdb_score"]) - (float)($a["imdb_score"]));
+	$result = sign((float)($b["imdb_score"]) - (float)($a["imdb_score"]));
+	if ($result == 0.0)
+		return SortByName($a, $b);
+
+	return $result;
 }
 
 function SimplifyTitle($title)
