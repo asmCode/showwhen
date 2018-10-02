@@ -19,6 +19,19 @@
 	}
 }
 
+.more_tv_shows_container
+{
+	position: relative;
+	margin-top: 20px;
+	width: 100%;
+	/* background-color: #AA1919; */
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
 .main_tv_show_bg
 {
 	position: relative;

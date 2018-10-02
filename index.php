@@ -218,9 +218,12 @@ $sort_bar_group_display = "";
 $search_bar_group_display = "";
 $hide_in_single_mode = "";
 $show_in_single_mode = "hide";
+$global_additional_shows = array();
 
 if ($only_mode)
 {
+	$global_additional_shows = GetAdditionalTvShows($only);
+
 	$global_title_id = $only;
 
 	$sort_bar_group_display = "hide";
@@ -257,6 +260,23 @@ if ($only_mode)
 	}
 }
 
+function GetAdditionalTvShows($title_id)
+{
+	$additional = array("game-of-thrones", "house-of-cards", "the-man-in-the-high-castle", "vikings");
+
+	$result = array();
+	for ($i = 0; $i < count($additional); $i++)
+	{
+		if ($additional[$i] != $title_id)
+			$result[] = $additional[$i];
+
+		if (count($result) == 3)
+			break;
+	}
+
+	return $result;
+}
+
 function IsOnAir($tv_show)
 {
 	if (isset($tv_show["is_on_air"]) && $tv_show["is_on_air"] == true)
@@ -267,6 +287,15 @@ function IsOnAir($tv_show)
 
 	if (is_numeric($tv_show["timestamp"]))
 		return (Integer)$tv_show["timestamp"] / 1000 < $current_timestamp;
+}
+
+function array_value_exists($value, $array)
+{
+	for ($i = 0; $i < count($array); $i++)
+		if ($array[$i] == $value)
+			return true;
+
+	return false;
 }
 
 for ($i = 0; $i < count($movies_db); $i++)
@@ -283,9 +312,19 @@ for ($i = 0; $i < count($movies_db); $i++)
 
 	$title_id = SimplifyTitle($tv_show["title"]);
 
+	$single_mode_tv_show = false;
+
 	if ($only_mode)
 	{
-		if ($only != $title_id)
+		// echo $title_id . "<br>";
+		// echo $global_additional_shows[0] . "<br>";
+		// echo $global_additional_shows[1] . "<br>";
+		// echo $global_additional_shows[2] . "<br>";
+		// echo "sssssssssssss: " . (array_value_exists($title_id, $global_additional_shows) ? "true" : "false") . "<br>";
+
+		$single_mode_tv_show = $only == $title_id;
+
+		if (!$single_mode_tv_show && !array_value_exists($title_id, $global_additional_shows))
 			continue;
 	}
 
@@ -349,7 +388,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 		$element_html = str_replace("__IMDB_SCORE_DISPLAY__", "none", $element_html);
 	}
 
-	if ($only_mode)
+	if ($only_mode && $single_mode_tv_show)
 	{
 		$element_html = str_replace("__SHARE_ICON_DISPLAY__", "none", $element_html);
 		$element_html = str_replace("__ONLY_MODE_URL_POINTER_EVENTS__", "none", $element_html);		
@@ -386,10 +425,10 @@ for ($i = 0; $i < count($movies_db); $i++)
 	else
 		$element_html = str_replace("__CONFIRMED_DISPLAY__", "none", $element_html);
 
-	if ($is_featured)
-		$main_tv_shows_html .= $element_html;
+	if ($only_mode && !$single_mode_tv_show)
+		$more_tv_shows_html .= $element_html;
 	else
-		$tv_shows_html .= $element_html;
+		$main_tv_shows_html .= $element_html;
 }
 
 function GetWatchLogo($tv_show)
@@ -543,6 +582,22 @@ function GetDateAsString($tv_show)
 	<div class="share_bar_large <?=$show_in_single_mode?>">
 		<div class="fb-share-button share_element" data-href="http://showwhen.com/<?=$global_title_id?>" data-size="large" data-layout="button"></div>
 		<div class="share_element"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-url="http://showwhen.com/<?=$global_title_id?>" data-hashtags="showwhen" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js"></script></div>
+	</div>
+
+	<div class="more_popular_bar <?=$show_in_single_mode?>">
+		<div class="more_popular_text">
+			MORE TV SHOWS
+		</div>
+	</div>
+
+	<div class="more_tv_shows_container">
+		<? echo $more_tv_shows_html ?>
+	</div>
+
+	<div class="whow_entire_list <?=$show_in_single_mode?>"">
+		<a href="./">
+			SHOW THE ENTIRE LIST OF TV SHOWS
+		</a>
 	</div>
 
 	<div style="height: 30px"></div>
