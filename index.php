@@ -205,7 +205,7 @@ function GenerateShareImageIfNeeded($title_id, $bg_filename, $days_left, $approx
 	return $file_name;
 }
 
-$og_image = "http://showwhen.com/img/web_image.jpg";
+$og_image = "http://showwhen.com/img/web_image_v3.jpg";
 $og_url = "http://showwhen.com/";
 $og_title = "When is the next season of my favorite TV Show?";
 $og_description = "";
