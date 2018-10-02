@@ -12,7 +12,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 21,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt0944947/",
 			"episodes": 6,
 			"title": "Game of Thrones",
 			"is_on_air": false,
@@ -23,6 +22,7 @@ $movies_db_json = '
 			"month": 4,
 			"period": "",
 			"season": 8,
+			"imdb_url": "https://www.imdb.com/title/tt0944947/",
 			"timestamp": 1555905600000
 		},
 		{
@@ -34,7 +34,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt4574334/?ref_=ttep_ep_tt",
 			"episodes": 8,
 			"title": "Stranger Things",
 			"is_on_air": false,
@@ -45,6 +44,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "Summer",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt4574334/?ref_=ttep_ep_tt",
 			"timestamp": 1564988400000
 		},
 		{
@@ -56,7 +56,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 21,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt1520211/",
 			"episodes": 16,
 			"title": "The Walking Dead",
 			"is_on_air": false,
@@ -67,6 +66,7 @@ $movies_db_json = '
 			"month": 10,
 			"period": "",
 			"season": 9,
+			"imdb_url": "https://www.imdb.com/title/tt1520211/",
 			"timestamp": 1538971200000
 		},
 		{
@@ -78,7 +78,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 21,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt2306299/",
 			"episodes": 10,
 			"title": "Vikings",
 			"is_on_air": false,
@@ -89,6 +88,7 @@ $movies_db_json = '
 			"month": 11,
 			"period": "",
 			"season": "5 part II",
+			"imdb_url": "https://www.imdb.com/title/tt2306299/",
 			"timestamp": 1543467600000
 		},
 		{
@@ -100,7 +100,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 20,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt0898266/",
 			"episodes": 24,
 			"title": "The Big Bang Theory",
 			"is_on_air": false,
@@ -111,6 +110,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 12,
+			"imdb_url": "https://www.imdb.com/title/tt0898266/",
 			"timestamp": 1537844400000
 		},
 		{
@@ -122,7 +122,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 20,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt0413573/",
 			"episodes": 24,
 			"title": "Grey\'s Anatomy",
 			"is_on_air": false,
@@ -133,6 +132,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 15,
+			"imdb_url": "https://www.imdb.com/title/tt0413573/",
 			"timestamp": 1538103600000
 		},
 		{
@@ -144,7 +144,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt4052886/",
 			"episodes": 10,
 			"title": "Lucifer",
 			"is_on_air": false,
@@ -155,6 +154,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "early",
 			"season": 4,
+			"imdb_url": "https://www.imdb.com/title/tt4052886/",
 			"timestamp": 1554102000000
 		},
 		{
@@ -166,7 +166,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt2085059/",
 			"episodes": 6,
 			"title": "Black Mirror",
 			"is_on_air": false,
@@ -177,6 +176,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "early",
 			"season": 5,
+			"imdb_url": "https://www.imdb.com/title/tt2085059/",
 			"timestamp": 1554102000000
 		},
 		{
@@ -188,7 +188,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 21,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt1586680/?ref_=ttep_ep_tt",
 			"episodes": 12,
 			"title": "Shameless",
 			"is_on_air": true,
@@ -199,6 +198,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 9,
+			"imdb_url": "https://www.imdb.com/title/tt1586680/?ref_=ttep_ep_tt",
 			"timestamp": 1536552000000
 		},
 		{
@@ -210,7 +210,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 21,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt2741602/",
 			"episodes": 22,
 			"title": "The Blacklist",
 			"is_on_air": false,
@@ -221,6 +220,7 @@ $movies_db_json = '
 			"month": 1,
 			"period": "",
 			"season": 6,
+			"imdb_url": "https://www.imdb.com/title/tt2741602/",
 			"timestamp": 1547614800000
 		},
 		{
@@ -232,7 +232,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 21,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt2442560/",
 			"episodes": 6,
 			"title": "Peaky Blinders",
 			"is_on_air": false,
@@ -243,6 +242,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "Spring",
 			"season": 5,
+			"imdb_url": "https://www.imdb.com/title/tt2442560/",
 			"timestamp": 1557115200000
 		},
 		{
@@ -254,7 +254,6 @@ $movies_db_json = '
 			"year": 2020,
 			"hour": 21,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt0475784/",
 			"episodes": 10,
 			"title": "Westworld",
 			"is_on_air": false,
@@ -265,6 +264,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "early",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt0475784/",
 			"timestamp": 1585800000000
 		},
 		{
@@ -276,7 +276,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt1837492/",
 			"episodes": 13,
 			"title": "13 Reasons Why",
 			"is_on_air": false,
@@ -287,6 +286,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "Spring",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt1837492/",
 			"timestamp": 1557039600000
 		},
 		{
@@ -298,7 +298,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 22,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt2575988/",
 			"episodes": 8,
 			"title": "Silicon Valley",
 			"is_on_air": false,
@@ -309,6 +308,7 @@ $movies_db_json = '
 			"month": 5,
 			"period": "",
 			"season": 6,
+			"imdb_url": "https://www.imdb.com/title/tt2575988/",
 			"timestamp": 1557982800000
 		},
 		{
@@ -320,7 +320,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 0,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt1856010/",
 			"episodes": 8,
 			"title": "House of Cards",
 			"is_on_air": false,
@@ -331,6 +330,7 @@ $movies_db_json = '
 			"month": 11,
 			"period": "",
 			"season": 6,
+			"imdb_url": "https://www.imdb.com/title/tt1856010/",
 			"timestamp": 1541142000000
 		},
 		{
@@ -342,7 +342,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt3609352/",
 			"episodes": 13,
 			"title": "Grace and Frankie",
 			"is_on_air": false,
@@ -353,6 +352,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "early",
 			"season": 5,
+			"imdb_url": "https://www.imdb.com/title/tt3609352/",
 			"timestamp": 1554102000000
 		},
 		{
@@ -364,7 +364,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 21,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt1632701/",
 			"episodes": 6,
 			"title": "Suits",
 			"is_on_air": false,
@@ -375,6 +374,7 @@ $movies_db_json = '
 			"month": 3,
 			"period": "",
 			"season": "8 part II",
+			"imdb_url": "https://www.imdb.com/title/tt1632701/",
 			"timestamp": 1552708800000
 		},
 		{
@@ -386,7 +386,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt2261227",
 			"episodes": 8,
 			"title": "Altered Carbon",
 			"is_on_air": false,
@@ -397,6 +396,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "late",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt2261227",
 			"timestamp": 1569826800000
 		},
 		{
@@ -408,7 +408,6 @@ $movies_db_json = '
 			"year": 2020,
 			"hour": 22,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt4288182/",
 			"episodes": 10,
 			"title": "Atlanta",
 			"is_on_air": false,
@@ -419,6 +418,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "early",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt4288182/",
 			"timestamp": 1585803600000
 		},
 		{
@@ -430,7 +430,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 21,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt5555260/",
 			"episodes": 18,
 			"title": "This is Us",
 			"is_on_air": true,
@@ -441,6 +440,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt5555260/",
 			"timestamp": 1537934400000
 		},
 		{
@@ -452,7 +452,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt6548228/",
 			"episodes": 10,
 			"title": "Castle Rock",
 			"is_on_air": false,
@@ -463,6 +462,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "Summer",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt6548228/",
 			"timestamp": 1564988400000
 		},
 		{
@@ -474,7 +474,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 0,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt5580146/?ref_=ttep_ep_tt",
 			"episodes": 10,
 			"title": "Maniac",
 			"is_on_air": true,
@@ -485,6 +484,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 1,
+			"imdb_url": "https://www.imdb.com/title/tt5580146/?ref_=ttep_ep_tt",
 			"timestamp": 1537513200000
 		},
 		{
@@ -496,7 +496,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt1312171/",
 			"episodes": 10,
 			"title": "The Umbrella Academy",
 			"is_on_air": false,
@@ -507,6 +506,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "early",
 			"season": 1,
+			"imdb_url": "https://www.imdb.com/title/tt1312171/",
 			"timestamp": 1554102000000
 		},
 		{
@@ -518,7 +518,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 20,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt4643084/",
 			"episodes": 10,
 			"title": "Counterpart",
 			"is_on_air": false,
@@ -529,6 +528,7 @@ $movies_db_json = '
 			"month": 1,
 			"period": "",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt4643084/",
 			"timestamp": 1546833600000
 		},
 		{
@@ -540,7 +540,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 21,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt2708480/?ref_=ttep_ep_tt",
 			"episodes": 10,
 			"title": "The Terror",
 			"is_on_air": false,
@@ -551,6 +550,7 @@ $movies_db_json = '
 			"month": 3,
 			"period": "",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt2708480/?ref_=ttep_ep_tt",
 			"timestamp": 1552708800000
 		},
 		{
@@ -562,7 +562,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 20,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt0096697/",
 			"episodes": 22,
 			"title": "The Simpsons",
 			"is_on_air": false,
@@ -573,6 +572,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 30,
+			"imdb_url": "https://www.imdb.com/title/tt0096697/",
 			"timestamp": 1538362800000
 		},
 		{
@@ -584,7 +584,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 22,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt4158110/",
 			"episodes": 12,
 			"title": "Mr. Robot",
 			"is_on_air": false,
@@ -595,6 +594,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "",
 			"season": 4,
+			"imdb_url": "https://www.imdb.com/title/tt4158110/",
 			"timestamp": 1562043600000
 		},
 		{
@@ -606,7 +606,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 21,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt0182576/",
 			"episodes": 20,
 			"title": "Family Guy",
 			"is_on_air": false,
@@ -617,6 +616,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 17,
+			"imdb_url": "https://www.imdb.com/title/tt0182576/",
 			"timestamp": 1538366400000
 		},
 		{
@@ -628,7 +628,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt4922804/",
 			"episodes": 10,
 			"title": "3%",
 			"is_on_air": false,
@@ -639,6 +638,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt4922804/",
 			"timestamp": 1561964400000
 		},
 		{
@@ -650,7 +650,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt4786824/",
 			"episodes": 10,
 			"title": "The Crown",
 			"is_on_air": false,
@@ -661,6 +660,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "early",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt4786824/",
 			"timestamp": 1554102000000
 		},
 		{
@@ -672,7 +672,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt2372162/?ref_=ttep_ep_tt",
 			"episodes": 13,
 			"title": "Orange is the New Black",
 			"is_on_air": false,
@@ -683,6 +682,7 @@ $movies_db_json = '
 			"month": 7,
 			"period": "",
 			"season": 7,
+			"imdb_url": "https://www.imdb.com/title/tt2372162/?ref_=ttep_ep_tt",
 			"timestamp": 1563174000000
 		},
 		{
@@ -694,7 +694,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 12,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt8714904/?ref_=nv_sr_1",
 			"episodes": 10,
 			"title": "Narcos",
 			"is_on_air": false,
@@ -705,6 +704,7 @@ $movies_db_json = '
 			"month": 11,
 			"period": "",
 			"season": 4,
+			"imdb_url": "https://www.imdb.com/title/tt8714904/?ref_=nv_sr_1",
 			"timestamp": 1542398400000
 		},
 		{
@@ -716,7 +716,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt5651844/?ref_=ttep_ep_tt",
 			"episodes": 12,
 			"title": "Travelers",
 			"is_on_air": false,
@@ -727,6 +726,7 @@ $movies_db_json = '
 			"month": 12,
 			"period": "",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt5651844/?ref_=ttep_ep_tt",
 			"timestamp": 1544860800000
 		},
 		{
@@ -738,7 +738,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt5674718/?ref_=nv_sr_1",
 			"episodes": 8,
 			"title": "Cable Girls",
 			"is_on_air": false,
@@ -749,6 +748,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "middle",
 			"season": 4,
+			"imdb_url": "https://www.imdb.com/title/tt5674718/?ref_=nv_sr_1",
 			"timestamp": 1559372400000
 		},
 		{
@@ -760,7 +760,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt6656238/",
 			"episodes": 8,
 			"title": "The Rain",
 			"is_on_air": false,
@@ -771,6 +770,7 @@ $movies_db_json = '
 			"month": 1,
 			"period": "",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt6656238/",
 			"timestamp": 1547539200000
 		},
 		{
@@ -782,7 +782,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 20,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt4016454/?ref_=ttep_ep_tt",
 			"episodes": 23,
 			"title": "Supergirl",
 			"is_on_air": false,
@@ -793,6 +792,7 @@ $movies_db_json = '
 			"month": 10,
 			"period": "",
 			"season": 4,
+			"imdb_url": "https://www.imdb.com/title/tt4016454/?ref_=ttep_ep_tt",
 			"timestamp": 1539572400000
 		},
 		{
@@ -804,7 +804,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 20,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt3107288/?ref_=ttep_ep_tt",
 			"episodes": 23,
 			"title": "The Flash",
 			"is_on_air": false,
@@ -815,6 +814,7 @@ $movies_db_json = '
 			"month": 10,
 			"period": "",
 			"season": 5,
+			"imdb_url": "https://www.imdb.com/title/tt3107288/?ref_=ttep_ep_tt",
 			"timestamp": 1539140400000
 		},
 		{
@@ -826,7 +826,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": "1899-12-31T06:30:00.000Z",
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt5037914/",
 			"episodes": 8,
 			"title": "The Crashing",
 			"is_on_air": false,
@@ -837,6 +836,7 @@ $movies_db_json = '
 			"month": 1,
 			"period": "",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt5037914/",
 			"timestamp": 1547539200000
 		},
 		{
@@ -848,7 +848,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt2357547/",
 			"episodes": 13,
 			"title": "Marvel\'s Jessica Jones",
 			"is_on_air": false,
@@ -859,6 +858,7 @@ $movies_db_json = '
 			"month": 11,
 			"period": "",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt2357547/",
 			"timestamp": 1573804800000
 		},
 		{
@@ -870,7 +870,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 23,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt6078096/",
 			"episodes": 10,
 			"title": "High Maintenance",
 			"is_on_air": false,
@@ -881,6 +880,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "early",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt6078096/",
 			"timestamp": 1554184800000
 		},
 		{
@@ -892,7 +892,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 22,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt6294706/",
 			"episodes": 10,
 			"title": "The Chi",
 			"is_on_air": false,
@@ -903,6 +902,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt6294706/",
 			"timestamp": 1562043600000
 		},
 		{
@@ -914,17 +914,17 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 22,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt3288518/",
 			"episodes": 12,
 			"title": "Younger",
 			"is_on_air": false,
-			"watch_logo": "paramount",
+			"watch_logo": "tv_land",
 			"featured": true,
 			"thumbnail": "younger.jpg",
 			"on_air_extra": "every Thursday",
 			"month": "",
 			"period": "Spring",
 			"season": 6,
+			"imdb_url": "https://www.imdb.com/title/tt3288518/",
 			"timestamp": 1557118800000
 		},
 		{
@@ -936,7 +936,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 22,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt3468798/",
 			"episodes": 10,
 			"title": "Baskets",
 			"is_on_air": false,
@@ -947,6 +946,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "",
 			"season": 4,
+			"imdb_url": "https://www.imdb.com/title/tt3468798/",
 			"timestamp": 1562043600000
 		},
 		{
@@ -958,7 +958,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 22,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt7660850/",
 			"episodes": 10,
 			"title": "Succesion",
 			"is_on_air": false,
@@ -969,6 +968,7 @@ $movies_db_json = '
 			"month": 6,
 			"period": "",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt7660850/",
 			"timestamp": 1560661200000
 		},
 		{
@@ -980,7 +980,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt5707802/",
 			"episodes": 10,
 			"title": "Dear White People",
 			"is_on_air": false,
@@ -991,6 +990,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "early Summer",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt5707802/",
 			"timestamp": 1561100400000
 		},
 		{
@@ -1002,7 +1002,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 21,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt4270492/",
 			"episodes": 12,
 			"title": "Billions",
 			"is_on_air": false,
@@ -1013,6 +1012,7 @@ $movies_db_json = '
 			"month": 4,
 			"period": "",
 			"season": 4,
+			"imdb_url": "https://www.imdb.com/title/tt4270492/",
 			"timestamp": 1555387200000
 		},
 		{
@@ -1024,7 +1024,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt5853176/",
 			"episodes": 13,
 			"title": "The Good Fight",
 			"is_on_air": false,
@@ -1035,6 +1034,7 @@ $movies_db_json = '
 			"month": 3,
 			"period": "",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt5853176/",
 			"timestamp": 1552633200000
 		},
 		{
@@ -1046,7 +1046,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 0,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt5071412/?ref_=nv_sr_1",
 			"episodes": 10,
 			"title": "Ozark",
 			"is_on_air": true,
@@ -1057,6 +1056,7 @@ $movies_db_json = '
 			"month": 8,
 			"period": "",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt5071412/?ref_=nv_sr_1",
 			"timestamp": 1535698800000
 		},
 		{
@@ -1068,7 +1068,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 0,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt3322310/",
 			"episodes": 10,
 			"title": "Iron Fist",
 			"is_on_air": true,
@@ -1079,6 +1078,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt3322310/",
 			"timestamp": 1536303600000
 		},
 		{
@@ -1090,7 +1090,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 0,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt3398228/",
 			"episodes": 12,
 			"title": "BoJack Horseman",
 			"is_on_air": true,
@@ -1101,6 +1100,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 5,
+			"imdb_url": "https://www.imdb.com/title/tt3398228/",
 			"timestamp": 1536908400000
 		},
 		{
@@ -1112,7 +1112,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 0,
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt4635282/",
 			"episodes": 8,
 			"title": "The OA",
 			"is_on_air": false,
@@ -1123,6 +1122,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "early",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt4635282/",
 			"timestamp": 1554102000000
 		},
 		{
@@ -1134,7 +1134,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 0,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt6495756/?ref_=fn_al_tt_1",
 			"episodes": 15,
 			"title": "Ingobernable",
 			"is_on_air": true,
@@ -1145,6 +1144,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt6495756/?ref_=fn_al_tt_1",
 			"timestamp": 1536908400000
 		},
 		{
@@ -1156,7 +1156,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 0,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt1740299/",
 			"episodes": 10,
 			"title": "The Man in The High Castle",
 			"is_on_air": false,
@@ -1167,6 +1166,7 @@ $movies_db_json = '
 			"month": 10,
 			"period": "",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt1740299/",
 			"timestamp": 1538722800000
 		},
 		{
@@ -1178,7 +1178,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 22,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt0472954",
 			"episodes": 10,
 			"title": "It\'s Always Sunny in Philadelphia",
 			"is_on_air": true,
@@ -1189,6 +1188,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 13,
+			"imdb_url": "https://www.imdb.com/title/tt0472954",
 			"timestamp": 1536210000000
 		},
 		{
@@ -1200,7 +1200,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": 22,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt2356777",
 			"episodes": 8,
 			"title": "True Detective",
 			"is_on_air": false,
@@ -1211,6 +1210,7 @@ $movies_db_json = '
 			"month": 1,
 			"period": "",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt2356777",
 			"timestamp": 1547618400000
 		},
 		{
@@ -1222,7 +1222,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": 22,
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt8421350/?ref_=fn_al_tt_1",
 			"episodes": 13,
 			"title": "Manifest",
 			"is_on_air": true,
@@ -1233,6 +1232,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 1,
+			"imdb_url": "https://www.imdb.com/title/tt8421350/?ref_=fn_al_tt_1",
 			"timestamp": 1537851600000
 		},
 		{
@@ -1244,7 +1244,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": "1899-12-31T04:30:00.000Z",
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt1561755/?ref_=ttep_ep_tt",
 			"episodes": 10,
 			"title": "Bob\'s Burger",
 			"is_on_air": false,
@@ -1255,6 +1254,7 @@ $movies_db_json = '
 			"month": 9,
 			"period": "",
 			"season": 9,
+			"imdb_url": "https://www.imdb.com/title/tt1561755/?ref_=ttep_ep_tt",
 			"timestamp": 1538290800000
 		},
 		{
@@ -1266,7 +1266,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": "1900-01-19T08:00:00.000Z",
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt7016936/?ref_=ttep_ep_tt",
 			"episodes": 9,
 			"title": "Killing Eve",
 			"is_on_air": false,
@@ -1277,6 +1276,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "Spring",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt7016936/?ref_=ttep_ep_tt",
 			"timestamp": 1557039600000
 		},
 		{
@@ -1288,7 +1288,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": "1899-12-30T08:00:00.000Z",
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt5788792/",
 			"episodes": 10,
 			"title": "Marvelous Mrs. Maisel",
 			"is_on_air": false,
@@ -1299,6 +1298,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "Fall",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt5788792/",
 			"timestamp": 1541404800000
 		},
 		{
@@ -1310,7 +1310,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": "1899-12-31T06:30:00.000Z",
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt5348176/",
 			"episodes": 8,
 			"title": "Barry",
 			"is_on_air": false,
@@ -1321,6 +1320,7 @@ $movies_db_json = '
 			"month": 3,
 			"period": "",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt5348176/",
 			"timestamp": 1552633200000
 		},
 		{
@@ -1332,7 +1332,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": "1899-12-30T08:00:00.000Z",
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt5675620/",
 			"episodes": 13,
 			"title": "The Punisher",
 			"is_on_air": false,
@@ -1343,6 +1342,7 @@ $movies_db_json = '
 			"month": 10,
 			"period": "early",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt5675620/",
 			"timestamp": 1539586800000
 		},
 		{
@@ -1354,7 +1354,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": "1900-01-20T08:00:00.000Z",
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt1796960/",
 			"episodes": 12,
 			"title": "Homeland",
 			"is_on_air": false,
@@ -1365,6 +1364,7 @@ $movies_db_json = '
 			"month": 6,
 			"period": "",
 			"season": 8,
+			"imdb_url": "https://www.imdb.com/title/tt1796960/",
 			"timestamp": 1560582000000
 		},
 		{
@@ -1376,7 +1376,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": "1899-12-30T08:00:00.000Z",
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt5834204/",
 			"episodes": 13,
 			"title": "The Handmaid’s Tale",
 			"is_on_air": false,
@@ -1387,6 +1386,7 @@ $movies_db_json = '
 			"month": 5,
 			"period": "",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt5834204/",
 			"timestamp": 1557903600000
 		},
 		{
@@ -1398,7 +1398,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": "1899-12-31T07:05:00.000Z",
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt0121955/",
 			"episodes": 10,
 			"title": "South Park",
 			"is_on_air": false,
@@ -1409,6 +1408,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "",
 			"season": 23,
+			"imdb_url": "https://www.imdb.com/title/tt0121955/",
 			"timestamp": 1561964400000
 		},
 		{
@@ -1420,7 +1420,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": "1900-01-20T08:00:00.000Z",
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt3920596",
 			"episodes": 7,
 			"title": "Big Little Lies",
 			"is_on_air": false,
@@ -1431,6 +1430,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt3920596",
 			"timestamp": 1561964400000
 		},
 		{
@@ -1442,7 +1442,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": "1899-12-30T08:00:00.000Z",
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt5011816/",
 			"episodes": 10,
 			"title": "Sneaky Pete",
 			"is_on_air": false,
@@ -1453,6 +1452,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "Spring",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt5011816/",
 			"timestamp": 1557039600000
 		},
 		{
@@ -1464,7 +1464,6 @@ $movies_db_json = '
 			"year": 2019,
 			"hour": "1899-12-30T08:00:00.000Z",
 			"confirmed": false,
-			"imdb_url": "https://www.imdb.com/title/tt5290382/",
 			"episodes": 8,
 			"title": "Midhunter",
 			"is_on_air": false,
@@ -1475,6 +1474,7 @@ $movies_db_json = '
 			"month": "",
 			"period": "",
 			"season": 2,
+			"imdb_url": "https://www.imdb.com/title/tt5290382/",
 			"timestamp": 1561964400000
 		},
 		{
@@ -1486,7 +1486,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": "1899-12-30T08:00:00.000Z",
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt3322312/",
 			"episodes": 13,
 			"title": "Daredevil",
 			"is_on_air": false,
@@ -1497,6 +1496,7 @@ $movies_db_json = '
 			"month": 10,
 			"period": "",
 			"season": 3,
+			"imdb_url": "https://www.imdb.com/title/tt3322312/",
 			"timestamp": 1539932400000
 		},
 		{
@@ -1508,7 +1508,6 @@ $movies_db_json = '
 			"year": 2018,
 			"hour": "1900-01-21T08:00:00.000Z",
 			"confirmed": true,
-			"imdb_url": "https://www.imdb.com/title/tt7414406/",
 			"episodes": 13,
 			"title": "All American",
 			"is_on_air": false,
@@ -1519,6 +1518,7 @@ $movies_db_json = '
 			"month": 10,
 			"period": "",
 			"season": 1,
+			"imdb_url": "https://www.imdb.com/title/tt7414406/",
 			"timestamp": 1539154800000
 		}
 	]
