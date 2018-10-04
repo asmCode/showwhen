@@ -2,5 +2,5 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 
 RewriteRule (sfb)/([0-9a-z-]+)/?$ ?only=$2&utm_source=social&utm_medium=fb-manual-link&utm_campaign=$2 [NC,L]
-RewriteRule (sfb)/?$ ?utm_source=social&utm_medium=fb-manual-link&utm_campaign=show-when [NC,L]
+RewriteRule (sfb)/?$ ?utm_source=social&utm_medium=fb-manual-link&utm_campaign=show-when [QSA,NC,L]
 RewriteRule ^([0-9a-z-]+)/?$ ?only=$1 [NC,L]
