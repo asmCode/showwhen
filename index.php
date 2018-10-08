@@ -558,7 +558,7 @@ function GetDateAsString($tv_show)
 				<div class="filters_section_sort">
 					<div class="filters_section_title">Sort by</div>
 					<div class="filters_section_sort_buttons">
-						<div class="filters_button">Score</div>
+						<div class="filters_button filters_checked">Score</div>
 						<div class="filters_button">Title</div>
 						<div class="filters_button">Date</div>
 					</div>
@@ -568,7 +568,7 @@ function GetDateAsString($tv_show)
 					<div class="filters_section_title">Filters</div>
 					<div class="filters_section_filters_options">
 						<div class="filters_option">
-							<div class="filter_checkbox_square"></div>
+							<div class="filter_checkbox_square filters_checked"></div>
 							<div class="filter_checkbox_label">On Air</div>
 						</div>
 						<div class="filters_option">

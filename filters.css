@@ -96,6 +96,29 @@
 	text-align: center;
 	margin-left: 6px;
 	margin-right: 6px;
+	cursor: default;
+}
+
+.filters_button:hover
+{
+	border-color: #8CC63F;
+	color: #8CC63F;
+}
+
+.filters_button:active
+{
+	border-color: rgb(190, 231, 136);
+	color: rgb(190, 231, 136);
+}
+
+.filters_button_label
+{
+	/* background-color: #138636; */
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	font-size: 11px;
+	text-align: center;
 }
 
 .filters_option
@@ -106,11 +129,32 @@
 	flex-direction: row;
 	justify-content: flex-start;
 
-	width: 100%;
-	height: 17px;
+	width: 170px;
+	height: 15px;
 	vertical-align: bottom;
 	text-align: left;
 	margin-bottom: 5px;
+	cursor: default;
+}
+
+.filters_option:hover > .filter_checkbox_square
+{
+	border-color: #8CC63F;
+}
+
+.filters_option:hover > .filter_checkbox_label
+{
+	color: #8CC63F;
+}
+
+.filters_option:active > .filter_checkbox_square
+{
+	border-color: rgb(190, 231, 136);
+}
+
+.filters_option:active > .filter_checkbox_label
+{
+	color: rgb(190, 231, 136);
 }
 
 .filter_checkbox_square
@@ -122,6 +166,7 @@
 	left: 0px;
 	border-style: solid;
 	border-width: 1px;
+	box-sizing: border-box;
 }
 
 .filter_checkbox_label
@@ -129,12 +174,26 @@
 	/* background-color: #bd8b20; */
 
 	top: 0px;
-	line-height: 17px;
-	height: 17px;
+	line-height: 15px;
+	height: 15px;
 	left: 24px;
 	font-size: 11px;
 	width: 100px;
 	margin-left: 5px;
+}
+
+.filters_checked
+{
+	border-color: #8CC63F;
+	background-color: #8CC63F;
+}
+
+.filter_checkbox_square.filters_checked
+{
+	background-image: url(img/checkbox_mark.png);
+	background-size: 90%;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .search_bar_group
