@@ -526,6 +526,7 @@ function GetDateAsString($tv_show)
 	<title><?=$page_title?></title>
 	<link rel="icon" type="image/png" href="http://showwhen.com/img/icon.png">
 	<link rel="stylesheet" type="text/css" href="/style.css?v=7" />
+	<link rel="stylesheet" type="text/css" href="/filters.css?v=7" />
 	<link rel="stylesheet" type="text/css" href="/tv_show.css?v=7" />
 	<link rel="stylesheet" type="text/css" href="/main_tv_show.css?v=7" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -550,11 +551,48 @@ function GetDateAsString($tv_show)
 			<img id="header_title" src="/img/title.png" alt="header">
 		</a>
 		<div class="header_subtitle text_green">WHEN IS THE NEXT SEASON OF MY FAVORITE TV SHOW?</div>
-		<div class="search_bar_group <?=$search_bar_group_display?>">
-			<form action="javascript:void(0);">
-				<input id="search" type="search" class="search_bar" value="Search by Title...">
-			</form>
-			<img class="mag" src="/img/mag.png" alt="mag">
+
+		<div class="search_and_filters">
+		
+			<div class="filters_panel">
+				<div class="filters_section_sort">
+					<div class="filters_section_title">Sort by</div>
+					<div class="filters_section_sort_buttons">
+						<div class="filters_button">Score</div>
+						<div class="filters_button">Title</div>
+						<div class="filters_button">Date</div>
+					</div>
+				</div>
+				<div class="filters_separator"></div>
+				<div class="filters_section_filters">
+					<div class="filters_section_title">Filters</div>
+					<div class="filters_section_filters_options">
+						<div class="filters_option">
+							<div class="filter_checkbox_square"></div>
+							<div class="filter_checkbox_label">On Air</div>
+						</div>
+						<div class="filters_option">
+							<div class="filter_checkbox_square"></div>
+							<div class="filter_checkbox_label">Unconfirmed</div>
+						</div>
+						<div class="filters_option">
+							<div class="filter_checkbox_square"></div>
+							<div class="filter_checkbox_label">Confirmed</div>
+						</div>
+					</div>
+				</div>
+				<div class="filters_section_control_buttons">					
+					<div class="filters_button">Reset</div>
+					<div class="filters_button">Apply</div>
+				</div>
+			</div>
+
+			<div class="search_bar_group <?=$search_bar_group_display?>">
+				<form action="javascript:void(0);">
+					<input id="search" type="search" class="search_bar" value="Search by Title...">
+				</form>
+				<img class="mag" src="/img/mag.png" alt="mag">
+			</div>
 		</div>
 	</div>
 	
