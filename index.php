@@ -583,8 +583,8 @@ function GetDateAsString($tv_show)
 					</div>
 				</div>
 				<div class="filters_section_control_buttons">					
-					<div class="filters_button">Reset</div>
-					<div class="filters_button">Apply</div>
+					<div id="filters_button_reset" class="filters_button">Reset</div>
+					<div id="filters_button_apply" class="filters_button">Apply</div>
 				</div>
 			</div>
 
@@ -975,6 +975,7 @@ InitSortButtons();
 InitFilterButtons();
 
 var filtersPanel = new FiltersPanel($("#filters_panel"));
+filtersPanel.SetApplyCallback(function(val) {console.log(val);});
 filtersPanel.SetFilters(2, 0, 0, 0);
 
 </script>

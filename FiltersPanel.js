@@ -7,6 +7,9 @@ class FiltersPanel
       this.filterUncon = true;
       this.filterCon = true;
 
+      this.resetCallback = null;
+      this.applyCallback = null;
+
       this.panelRoot = panelRoot;
       this.buttonScore = $(panelRoot).find("#filters_button_sort_score");
       this.buttonTitle = $(panelRoot).find("#filters_button_sort_title");
@@ -28,6 +31,9 @@ class FiltersPanel
       this.filters_option_on_air.click(function() { self.SetOnAir(!self.filterOnAir); });
       this.filters_option_uncon.click(function() { self.SetUncon(!self.filterUncon); });
       this.filters_option_con.click(function() { self.SetCon(!self.filterCon); });
+
+      $(panelRoot).find("#filters_button_reset").click(function() { self.OnResetClicked(); });
+      $(panelRoot).find("#filters_button_apply").click(function() { self.OnApplyClicked(); });
     }
 
     RefreshView()
@@ -87,6 +93,31 @@ class FiltersPanel
     SetCon(value)
     {
       this.filterCon = value;
+      this.RefreshView();
+    }
+
+    SetApplyCallback(applyCallback)
+    {
+      this.applyCallback = applyCallback;
+    }
+
+    OnResetClicked()
+    {
+      this.Reset();
+    }
+
+    OnApplyClicked()
+    {
+      if (this.applyCallback != null)
+        this.applyCallback("apply");
+    }
+
+    Reset()
+    {
+      this.sortBy = 0;
+      this.filterOnAir = true;
+      this.filterUncon = true;
+      this.filterCon = true;
       this.RefreshView();
     }
 }
