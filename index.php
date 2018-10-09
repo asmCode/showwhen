@@ -522,6 +522,7 @@ function GetDateAsString($tv_show)
 	<meta name="twitter:card" content="summary_large_image">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="FiltersPanel.js"></script>
 
 	<title><?=$page_title?></title>
 	<link rel="icon" type="image/png" href="http://showwhen.com/img/icon.png">
@@ -554,29 +555,29 @@ function GetDateAsString($tv_show)
 
 		<div class="search_and_filters">
 		
-			<div class="filters_panel">
+			<div id="filters_panel" class="filters_panel">
 				<div class="filters_section_sort">
 					<div class="filters_section_title">Sort by</div>
 					<div class="filters_section_sort_buttons">
-						<div class="filters_button filters_checked">Score</div>
-						<div class="filters_button">Title</div>
-						<div class="filters_button">Date</div>
+						<div id="filters_button_sort_score" class="filters_button">Score</div>
+						<div id="filters_button_sort_title" class="filters_button">Title</div>
+						<div id="filters_button_sort_date" class="filters_button">Date</div>
 					</div>
 				</div>
 				<div class="filters_separator"></div>
 				<div class="filters_section_filters">
 					<div class="filters_section_title">Filters</div>
 					<div class="filters_section_filters_options">
-						<div class="filters_option">
-							<div class="filter_checkbox_square filters_checked"></div>
+						<div id="filters_option_on_air" class="filters_option">
+							<div id="filters_checkbox_on_air" class="filter_checkbox_square filters_checked"></div>
 							<div class="filter_checkbox_label">On Air</div>
 						</div>
-						<div class="filters_option">
-							<div class="filter_checkbox_square"></div>
+						<div id="filters_option_uncon" class="filters_option">
+							<div id="filters_checkbox_unconfirmed" class="filter_checkbox_square"></div>
 							<div class="filter_checkbox_label">Unconfirmed</div>
 						</div>
-						<div class="filters_option">
-							<div class="filter_checkbox_square"></div>
+						<div id="filters_option_con" class="filters_option">
+							<div id="filters_checkbox_confirmed" class="filter_checkbox_square"></div>
 							<div class="filter_checkbox_label">Confirmed</div>
 						</div>
 					</div>
@@ -972,6 +973,9 @@ function setSort(sort_id)
 
 InitSortButtons();
 InitFilterButtons();
+
+var filtersPanel = new FiltersPanel($("#filters_panel"));
+filtersPanel.SetFilters(2, 0, 0, 0);
 
 </script>
 
