@@ -10,12 +10,14 @@ $movies_db = $movies_db["tv_shows"];
 $main_tv_shows_html = '';
 $tv_shows_html = '';
 
+$hide_confirmed = 0;
 $hide_unconfirmed = 0;
 $hide_on_air = 0;
 $sort_id = 0;
 
 function DecodeFilterValue()
 {
+	global $hide_confirmed;
 	global $hide_unconfirmed;
 	global $hide_on_air;
 	global $sort_id;
@@ -27,10 +29,12 @@ function DecodeFilterValue()
 
 	$mask_on_air = 1 << 7;
 	$mask_unconfirmed = 1 << 6;
+	$mask_confirmed = 1 << 5;
 	$mask_sort_id = 0x0F;
 
 	$hide_on_air = ($filter & $mask_on_air) == $mask_on_air ? 1 : 0;
 	$hide_unconfirmed = ($filter & $mask_unconfirmed) == $mask_unconfirmed ? 1 : 0;
+	$hide_confirmed = ($filter & $mask_confirmed) == $mask_confirmed ? 1 : 0;
 	$sort_id = (int)($filter & $mask_sort_id);
 }
 
@@ -306,12 +310,12 @@ for ($i = 0; $i < count($movies_db); $i++)
 {
 	$tv_show = $movies_db[$i];
 
-	$is_confirmed = isset($tv_show["confirmed"]) && $tv_show["confirmed"] == true;
-	if ($hide_unconfirmed && !$is_confirmed)
-		continue;
-
 	$is_on_air = IsOnAir($tv_show);
-	if ($hide_on_air && $is_on_air)
+	$is_confirmed = isset($tv_show["confirmed"]) && $tv_show["confirmed"] == true;
+
+	if (($hide_on_air && $is_on_air) ||	
+		(!$is_on_air && $hide_unconfirmed && !$is_confirmed) ||
+		(!$is_on_air && $hide_confirmed && $is_confirmed))
 		continue;
 
 	$title_id = SimplifyTitle($tv_show["title"]);
@@ -975,8 +979,7 @@ InitSortButtons();
 InitFilterButtons();
 
 var filtersPanel = new FiltersPanel($("#filters_panel"));
-filtersPanel.SetApplyCallback(function(val) {console.log(val);});
-filtersPanel.SetFilters(2, 0, 0, 0);
+filtersPanel.SetApplyCallback(function(filter) { ApplyFilter(filter); });
 
 </script>
 

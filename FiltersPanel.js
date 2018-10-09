@@ -34,6 +34,8 @@ class FiltersPanel
 
       $(panelRoot).find("#filters_button_reset").click(function() { self.OnResetClicked(); });
       $(panelRoot).find("#filters_button_apply").click(function() { self.OnApplyClicked(); });
+
+      this.RefreshView();
     }
 
     RefreshView()
@@ -109,7 +111,7 @@ class FiltersPanel
     OnApplyClicked()
     {
       if (this.applyCallback != null)
-        this.applyCallback("apply");
+        this.applyCallback(this.EncodeFilters());
     }
 
     Reset()
@@ -119,5 +121,34 @@ class FiltersPanel
       this.filterUncon = true;
       this.filterCon = true;
       this.RefreshView();
+    }
+
+    SetFiltersFromCode(code)
+    {
+      var mask_on_air = 1 << 7;
+      var mask_unconfirmed = 1 << 6;
+      var mask_confirmed = 1 << 5;
+      var mask_sort_by = 0x0F;
+    
+      this.filterOnAir = (code & mask_on_air) != mask_on_air;
+      this.filterUncon = (code  & mask_unconfirmed) != mask_unconfirmed;
+      this.filterCon = (code & mask_confirmed) != mask_confirmed;
+      this.sortBy = code & mask_sort_by;
+
+      this.RefreshView();
+    }
+
+    EncodeFilters()
+    {
+      var filter = this.sortBy;
+
+      if (!this.filterOnAir)
+        filter |= (1 << 7);
+      if (!this.filterUncon)
+        filter |= (1 << 6);
+      if (!this.filterCon)
+        filter |= (1 << 5);
+
+      return filter;
     }
 }
