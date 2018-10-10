@@ -192,6 +192,11 @@
 	background-color: #8CC63F;
 }
 
+.button_default
+{
+	background: linear-gradient(to bottom, rgba(140, 198, 63, 0.0) 20%, rgba(140, 198, 63, 0.4));
+}
+
 .filter_checkbox_square.filters_checked
 {
 	background-image: url(img/checkbox_mark.png);

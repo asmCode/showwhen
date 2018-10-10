@@ -590,7 +590,7 @@ function GetDateAsString($tv_show)
 				</div>
 				<div class="filters_section_control_buttons">					
 					<div id="filters_button_reset" class="filters_button">Reset</div>
-					<div id="filters_button_apply" class="filters_button">Apply</div>
+					<div id="filters_button_apply" class="filters_button button_default">Apply</div>
 				</div>
 			</div>
 
