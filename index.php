@@ -10,6 +10,7 @@ $movies_db = $movies_db["tv_shows"];
 $main_tv_shows_html = '';
 $tv_shows_html = '';
 
+$global_filter = 0;
 $hide_confirmed = 0;
 $hide_unconfirmed = 0;
 $hide_on_air = 0;
@@ -21,21 +22,22 @@ function DecodeFilterValue()
 	global $hide_unconfirmed;
 	global $hide_on_air;
 	global $sort_id;
+	global $global_filter;
 
 	if (!isset($_GET["f"]) || !is_numeric($_GET["f"]))
 		return;
 
-	$filter = (int)$_GET["f"];
+	$global_filter = (int)$_GET["f"];
 
 	$mask_on_air = 1 << 7;
 	$mask_unconfirmed = 1 << 6;
 	$mask_confirmed = 1 << 5;
 	$mask_sort_id = 0x0F;
 
-	$hide_on_air = ($filter & $mask_on_air) == $mask_on_air ? 1 : 0;
-	$hide_unconfirmed = ($filter & $mask_unconfirmed) == $mask_unconfirmed ? 1 : 0;
-	$hide_confirmed = ($filter & $mask_confirmed) == $mask_confirmed ? 1 : 0;
-	$sort_id = (int)($filter & $mask_sort_id);
+	$hide_on_air = ($global_filter & $mask_on_air) == $mask_on_air ? 1 : 0;
+	$hide_unconfirmed = ($global_filter & $mask_unconfirmed) == $mask_unconfirmed ? 1 : 0;
+	$hide_confirmed = ($global_filter & $mask_confirmed) == $mask_confirmed ? 1 : 0;
+	$sort_id = (int)($global_filter & $mask_sort_id);
 }
 
 DecodeFilterValue();
@@ -674,6 +676,7 @@ var movies_db_json = <? echo $movies_db_json . ";\n" ?>
 var global_sort_id = <? echo $sort_id ?>;
 var global_hide_on_air = <?=$hide_on_air?>;
 var global_hide_unconfirmed = <?=$hide_unconfirmed?>;
+var global_filter = <?=$global_filter?>;
 
 /* Sorting tv_shows by the timestamp (It works!)
 movies_db_json.tv_shows.sort(function(a, b)
@@ -979,6 +982,7 @@ InitSortButtons();
 InitFilterButtons();
 
 var filtersPanel = new FiltersPanel($("#filters_panel"));
+filtersPanel.SetFiltersFromCode(global_filter);
 filtersPanel.SetApplyCallback(function(filter) { ApplyFilter(filter); });
 
 </script>
