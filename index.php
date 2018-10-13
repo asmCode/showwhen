@@ -677,6 +677,7 @@ var movies_db_json = <? echo $movies_db_json . ";\n" ?>
 var global_sort_id = <? echo $sort_id ?>;
 var global_hide_on_air = <?=$hide_on_air?>;
 var global_hide_unconfirmed = <?=$hide_unconfirmed?>;
+var global_hide_confirmed = <?=$hide_confirmed?>;
 var global_filter = <?=$global_filter?>;
 
 /* Sorting tv_shows by the timestamp (It works!)
@@ -933,13 +934,15 @@ function ToggleFilterValue(filter)
 		return 1;
 }
 
-function EncodeFilter(hide_on_air, hide_unconfirmed, sort_id)
+function EncodeFilter(hide_on_air, hide_unconfirmed, hide_confirmed, sort_id)
 {
 	var filter = sort_id;
 	if (hide_on_air == 1)
 		filter |= (1 << 7);
 	if (hide_unconfirmed == 1)
 		filter |= (1 << 6);
+	if (hide_confirmed == 1)
+		filter |= (1 << 5);
 
 	return filter;
 }
@@ -958,19 +961,19 @@ function ApplyFilter(filter)
 
 function filter_on_air()
 {
-	var filter = EncodeFilter(ToggleFilterValue(global_hide_on_air), global_hide_unconfirmed, global_sort_id);
+	var filter = EncodeFilter(ToggleFilterValue(global_hide_on_air), global_hide_unconfirmed, global_hide_confirmed, global_sort_id);
 	ApplyFilter(filter);
 }
 
 function filter_unconfirmed()
 {
-	var filter = EncodeFilter(global_hide_on_air, ToggleFilterValue(global_hide_unconfirmed), global_sort_id);
+	var filter = EncodeFilter(global_hide_on_air, ToggleFilterValue(global_hide_unconfirmed), global_hide_confirmed, global_sort_id);
 	ApplyFilter(filter);
 }
 
 function setSort(sort_id)
 {
-	var filter = EncodeFilter(global_hide_on_air, global_hide_unconfirmed, sort_id);
+	var filter = EncodeFilter(global_hide_on_air, global_hide_unconfirmed, global_hide_confirmed, sort_id);
 	ApplyFilter(filter);
 }
 

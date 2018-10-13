@@ -6,6 +6,7 @@ class FiltersPanel
       this.filterOnAir = true;
       this.filterUncon = true;
       this.filterCon = true;
+      this.initialFilterCode = this.EncodeFilters();
 
       this.resetCallback = null;
       this.applyCallback = null;
@@ -22,6 +23,7 @@ class FiltersPanel
       this.chbxOnAir = $(panelRoot).find("#filters_checkbox_on_air");
       this.chbxUnconfirmed = $(panelRoot).find("#filters_checkbox_unconfirmed");
       this.chbxConfirmed = $(panelRoot).find("#filters_checkbox_confirmed");
+      this.filterButton = $(".filter_button");
 
       var self = this;
       this.buttonScore.click(function() { self.SetSortBy(0); });
@@ -31,11 +33,19 @@ class FiltersPanel
       this.filters_option_on_air.click(function() { self.SetOnAir(!self.filterOnAir); });
       this.filters_option_uncon.click(function() { self.SetUncon(!self.filterUncon); });
       this.filters_option_con.click(function() { self.SetCon(!self.filterCon); });
+      this.filterButton.click(function() { self.OnFilterButton(); });
 
       $(panelRoot).find("#filters_button_reset").click(function() { self.OnResetClicked(); });
       $(panelRoot).find("#filters_button_apply").click(function() { self.OnApplyClicked(); });
 
+      this.Hide();
+
       this.RefreshView();
+    }
+
+    IsVisible()
+    {
+      return this.panelRoot.is(":visible");
     }
 
     RefreshView()
@@ -110,6 +120,8 @@ class FiltersPanel
 
     OnApplyClicked()
     {
+      this.Hide();
+
       if (this.applyCallback != null)
         this.applyCallback(this.EncodeFilters());
     }
@@ -125,6 +137,8 @@ class FiltersPanel
 
     SetFiltersFromCode(code)
     {
+      this.initialFilterCode = code;
+
       var mask_on_air = 1 << 7;
       var mask_unconfirmed = 1 << 6;
       var mask_confirmed = 1 << 5;
@@ -150,5 +164,34 @@ class FiltersPanel
         filter |= (1 << 5);
 
       return filter;
+    }
+
+    OnFilterButton()
+    {
+      // If we are closing the panel using filter button, then we need to revert any changes made on the filters.
+      if (this.IsVisible())
+        this.SetFiltersFromCode(this.initialFilterCode);
+
+      this.TogglePanel();
+    }
+
+    TogglePanel()
+    {
+      if (this.IsVisible()) {
+        this.Hide();
+      }
+      else
+        this.Show();
+    }
+
+    Show()
+    {
+      this.initialFilterCode = this.EncodeFilters();
+      this.panelRoot.show();
+    }
+    
+    Hide()
+    {
+      this.panelRoot.hide();
     }
 }
