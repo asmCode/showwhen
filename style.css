@@ -188,16 +188,6 @@ a
     display: none;
 }
 
-.mag
-{
-	position: absolute;
-	width: auto;
-	height: 60%;
-	right: 6px;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
 .footer
 {
 	background-color:#2e2e2e;

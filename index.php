@@ -599,6 +599,7 @@ function GetDateAsString($tv_show)
 					<input id="search" type="search" class="search_bar" value="Search by Title...">
 				</form>
 				<img class="mag" src="/img/mag.png" alt="mag">
+				<div class="filter_button"></div>
 			</div>
 		</div>
 	</div>

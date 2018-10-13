@@ -7,7 +7,7 @@
 	margin-top: 12px;
 	background: linear-gradient(to bottom, rgb(51, 51, 51), #666666);
 	position: absolute;
-	width: 100%;
+	width: 99.4%;
 	height: auto;
 
 	border-style: solid;
@@ -197,6 +197,43 @@
 	background: linear-gradient(to bottom, rgba(140, 198, 63, 0.0) 20%, rgba(140, 198, 63, 0.4));
 }
 
+.filter_button
+{
+	position: absolute;
+	right: 0px;
+	width: 24px;
+	height: 24px;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: #8CC63F;
+
+	background-image: url(img/filters_icon.png);
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 3px;
+}
+
+.filter_button:hover
+{
+	background-color: rgb(204, 241, 156);
+}
+
+.filter_button:active
+{
+	background-color: #8CC63F;
+}
+
+.mag
+{
+	position: absolute;
+	width: auto;
+	height: 60%;
+	right: 30px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
 .filter_checkbox_square.filters_checked
 {
 	background-image: url(img/checkbox_mark.png);
@@ -233,7 +270,7 @@
 {
 	position: absolute;
 	left: 0px;
-	right: 0px;
+	width: 174px;
 	top: 0px;
 	bottom: 0px;
 
