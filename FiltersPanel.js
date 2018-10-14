@@ -38,6 +38,7 @@ class FiltersPanel
       $(panelRoot).find("#filters_button_reset").click(function() { self.OnResetClicked(); });
       $(panelRoot).find("#filters_button_apply").click(function() { self.OnApplyClicked(); });
 
+      this.panelRoot.css("display", "flex");
       this.Hide();
 
       this.RefreshView();

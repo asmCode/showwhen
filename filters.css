@@ -1,7 +1,8 @@
 .filters_panel
 {
 	z-index: -1;
-	display: flex;
+	/* Panel is hidden by default. */
+	display: none;
 	flex-direction: column;
 
 	margin-top: 12px;
