@@ -528,6 +528,7 @@ function GetDateAsString($tv_show)
 	<meta name="twitter:card" content="summary_large_image">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/Analytics.js"></script>
 	<script src="FiltersPanel.js"></script>
 
 	<title><?=$page_title?></title>
@@ -620,7 +621,7 @@ function GetDateAsString($tv_show)
 	<div id="no_results_message" class="search_reslut">No results found for "<span id="no_results_phrase"></span>"</div>
 
 	<div class="<?=$show_in_single_mode?>" style="position:absolute; margin:10px;">
-		<a href="./">
+		<a href="./" onclick="Analytics.TrackGoBack(); return true;">
 			<< Go back
 		</a>
 	</div>
@@ -649,7 +650,7 @@ function GetDateAsString($tv_show)
 	</div>
 
 	<div class="whow_entire_list <?=$show_in_single_mode?>"">
-		<a href="./">
+		<a href="./" onclick="Analytics.TrackShowEntireList(); return true;">
 			SHOW THE ENTIRE LIST OF TV SHOWS
 		</a>
 	</div>

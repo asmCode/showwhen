@@ -120,6 +120,8 @@ class FiltersPanel
 
     OnApplyClicked()
     {
+      Analytics.TrackFilterApply(this.sortBy, this.filterOnAir, this.filterUncon, this.filterCon);
+
       this.Hide();
 
       if (this.applyCallback != null)
@@ -186,6 +188,8 @@ class FiltersPanel
 
     Show()
     {
+      Analytics.TrackFilterOpen();
+
       this.initialFilterCode = this.EncodeFilters();
       this.panelRoot.show();
     }
