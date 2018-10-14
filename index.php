@@ -605,12 +605,12 @@ function GetDateAsString($tv_show)
 		</div>
 	</div>
 	
-	<div class="sort_bar <?=$sort_bar_group_display?>">
+	<!-- <div class="sort_bar <?=$sort_bar_group_display?>">
 		<span class="sort_option_label">Sort by:</span>
 		<a href="javascript: setSort(0)"><span id="sort_button_0" class="sort_option">Score</span></a>
 		<a href="javascript: setSort(1)"><span id="sort_button_1" class="sort_option">Title</span></a>
 		<a href="javascript: setSort(2)"><span id="sort_button_2" class="sort_option">Date</span></a>
-	</div>
+	</div> -->
 
 	<div class="filters_bar <?=$sort_bar_group_display?> hide" onload="ApplyFilter(0)">
 		<span class="sort_option_label">Filter:</span>
@@ -620,7 +620,7 @@ function GetDateAsString($tv_show)
 
 	<div id="no_results_message" class="search_reslut">No results found for "<span id="no_results_phrase"></span>"</div>
 
-	<div class="<?=$show_in_single_mode?>" style="position:absolute; margin:10px;">
+	<div class="<?=$show_in_single_mode?>" style="position:absolute; margin:10px; z-index:1">
 		<a href="./" onclick="Analytics.TrackGoBack(); return true;">
 			<< Go back
 		</a>

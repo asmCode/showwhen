@@ -311,13 +311,13 @@ a
 
 @media screen and (max-width: 850px)
 {
-	.search_bar_group
+	/* .search_bar_group
 	{
 		width: 270px;
 		left: 50%;
 		transform: translateX(-50%);
-		bottom: 10px;
-	}
+		bottom: 0px;
+	} */
 
 	#header_title
 	{
@@ -334,12 +334,6 @@ a
 		font-weight: bold;
 		width: 100%;
 		top: 65px;
-	}
-
-	.search_bar
-	{
-		font-size: 16px;
-		width: 240px;
 	}
 }
 
