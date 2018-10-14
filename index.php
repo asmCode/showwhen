@@ -649,7 +649,7 @@ function GetDateAsString($tv_show)
 		<? echo $more_tv_shows_html ?>
 	</div>
 
-	<div class="whow_entire_list <?=$show_in_single_mode?>"">
+	<div class="whow_entire_list <?=$show_in_single_mode?>">
 		<a href="./" onclick="Analytics.TrackShowEntireList(); return true;">
 			SHOW THE ENTIRE LIST OF TV SHOWS
 		</a>
