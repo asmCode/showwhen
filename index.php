@@ -620,9 +620,9 @@ function GetDateAsString($tv_show)
 
 	<div id="no_results_message" class="search_reslut">No results found for "<span id="no_results_phrase"></span>"</div>
 
-	<div class="<?=$show_in_single_mode?>" style="position:absolute; margin:10px; z-index:1">
-		<a href="./" onclick="Analytics.TrackGoBack(); return true;">
-			<< Go back
+	<div class="<?=$show_in_single_mode?>" style="position:absolute; margin:10px; margin-top:2px; z-index:1;">
+		<a href="./" onclick="Analytics.TrackGoBack(); return true;" style="color:#bbbbbb;">
+			&lt;&lt; Go back
 		</a>
 	</div>
 
