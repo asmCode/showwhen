@@ -565,7 +565,7 @@ function GetDateAsString($tv_show)
 <div class="main_canvas">
 	<div id="header">
 		<div id="header_gradient"></div>
-		<a href="./">
+		<a href="/">
 			<img id="header_title" src="/img/title.png" alt="header">
 		</a>
 		<div class="header_subtitle text_green">WHEN IS THE NEXT SEASON OF MY FAVORITE TV SHOW?</div>
@@ -631,7 +631,7 @@ function GetDateAsString($tv_show)
 	<div id="no_results_message" class="search_reslut">No results found for "<span id="no_results_phrase"></span>"</div>
 
 	<div class="<?=$show_in_single_mode?>" style="position:absolute; margin:10px; margin-top:2px; z-index:1;">
-		<a href="./" onclick="Analytics.TrackGoBack(); return true;" style="color:#bbbbbb;">
+		<a href="/" onclick="Analytics.TrackGoBack(); return true;" style="color:#bbbbbb;">
 			&lt;&lt; Go back
 		</a>
 	</div>
@@ -660,7 +660,7 @@ function GetDateAsString($tv_show)
 	</div>
 
 	<div class="whow_entire_list <?=$show_in_single_mode?>">
-		<a href="./" onclick="Analytics.TrackShowEntireList(); return true;">
+		<a href="/" onclick="Analytics.TrackShowEntireList(); return true;">
 			SHOW THE ENTIRE LIST OF TV SHOWS
 		</a>
 	</div>
