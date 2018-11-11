@@ -176,7 +176,11 @@ function GenerateShareImage($file_name, $bg_filename, $days_left, $approx, $on_a
 		$text = "ON AIR";
 	else
 	{
-		$text = $days_left . " Days Left";
+		if ($days_left > 0)
+			$text = $days_left . " Days Left";
+		else
+			$text = "Today";
+			
 		if ($approx)
 			$text = "~" . $text;
 	}
