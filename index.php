@@ -550,10 +550,10 @@ function GetDateAsString($tv_show)
 
 	<title><?=$page_title?></title>
 	<link rel="icon" type="image/png" href="http://showwhen.com/img/icon.png">
-	<link rel="stylesheet" type="text/css" href="css//style.css?v=8" />
-	<link rel="stylesheet" type="text/css" href="css//filters.css?v=8" />
-	<link rel="stylesheet" type="text/css" href="css//tv_show.css?v=8" />
-	<link rel="stylesheet" type="text/css" href="css//main_tv_show.css?v=8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css?v=8" />
+	<link rel="stylesheet" type="text/css" href="css/filters.css?v=8" />
+	<link rel="stylesheet" type="text/css" href="css/tv_show.css?v=8" />
+	<link rel="stylesheet" type="text/css" href="css/main_tv_show.css?v=8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body onload="Init();">
