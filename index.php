@@ -546,7 +546,7 @@ function GetDateAsString($tv_show)
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/Analytics.js"></script>
-	<script src="FiltersPanel.js"></script>
+	<script src="js/FiltersPanel.js"></script>
 
 	<title><?=$page_title?></title>
 	<link rel="icon" type="image/png" href="http://showwhen.com/img/icon.png">
