@@ -213,7 +213,7 @@
 	transform: translateY(-50%);
 	background-color: #8CC63F;
 
-	background-image: url(img/filters_icon.png);
+	background-image: url(/img/filters_icon.png);
 	background-size: 80%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -242,7 +242,7 @@
 
 .filter_checkbox_square.filters_checked
 {
-	background-image: url(img/checkbox_mark.png);
+	background-image: url(/img/checkbox_mark.png);
 	background-size: 90%;
 	background-repeat: no-repeat;
 	background-position: center;
