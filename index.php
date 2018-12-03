@@ -353,23 +353,25 @@ for ($i = 0; $i < count($movies_db); $i++)
 		$element_html = $tv_show_template;
 
 	$episodes = trim((string)$tv_show["episodes"]);
-	if (strlen($episodes) == 0)
-		$episodes = "";
-	else
-		$episodes .= " Episodes";
 
 	$timestamp = $tv_show["timestamp"];
 	if ($is_featured && is_numeric($timestamp))
-		$updateTimeCode .= sprintf("UpdateTime(%d, \"movie_id_%d\");\n", $timestamp, $tv_show["id"]);
+		$updateTimeCode .= sprintf("UpdateTime(%d, \"movie_id_%d\", %d);\n", $timestamp, $tv_show["id"], $i);
 
 	$season = $tv_show["season"];
 	$day = $tv_show["day"];
 	$month = $tv_show["month"];
 	$year = $tv_show["year"];
+	// $status = $tv_show["status"];
+	$status = "canceled";
 	$timeLeft = GetDaysLeft($timestamp);
 	$timeLeftUnits = "days";
 	if ($timeLeft == null)
 		$timeLeftUnits = "";
+
+	$seasonAndEpisodes = "Season " . strval($season);
+	if ($status != "canceled" && $episodes > 0)
+		$seasonAndEpisodes .= " (" . strval($episodes) . " Episodes)";
 
 	$score = $tv_show["imdb_score"];
 	if ($score !== "")
@@ -387,8 +389,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 	$element_html = str_replace("__ID__", $tv_show["id"], $element_html);
 	$element_html = str_replace("__TITLE__", $tv_show["title"], $element_html);
 	$element_html = str_replace("__ONLY_MODE_URL__", $only_mode_url, $element_html);
-	$element_html = str_replace("__SEASON__", $season, $element_html);
-	$element_html = str_replace("__EPISODES__", $episodes, $element_html);
+	$element_html = str_replace("__SEASON_AND_EPISODES__", $seasonAndEpisodes, $element_html);
 	$element_html = str_replace("__DATE__", GetDateAsString($tv_show), $element_html);
 	$element_html = str_replace("__IMDB_SCORE__", $score, $element_html);
 	$element_html = str_replace("__IMDB_URL__", $tv_show["imdb_url"], $element_html);
@@ -430,16 +431,21 @@ for ($i = 0; $i < count($movies_db); $i++)
 	else
 		$element_html = str_replace("__APPROX_DISPLAY__", "none", $element_html);
 
-	if ($is_on_air)
-	{
-		$element_html = str_replace("__COUNTER_DISPLAY__", "none", $element_html);
-		$element_html = str_replace("__ON_AIR_DISPLAY__", "unset", $element_html);
-	}
+
+	$counterDisplay = "none";
+	$onAirDisplay = "none";
+	$canceledDisplay = "none";
+
+	if ($status == "canceled")
+		$canceledDisplay = "unset";
+	else if ($is_on_air)
+		$onAirDisplay = "unset";
 	else
-	{
-		$element_html = str_replace("__COUNTER_DISPLAY__", "unset", $element_html);
-		$element_html = str_replace("__ON_AIR_DISPLAY__", "none", $element_html);
-	}
+		$counterDisplay = "unset";
+
+	$element_html = str_replace("__COUNTER_DISPLAY__", $counterDisplay, $element_html);
+	$element_html = str_replace("__ON_AIR_DISPLAY__", $onAirDisplay, $element_html);
+	$element_html = str_replace("__CANCELED_DISPLAY__", $canceledDisplay, $element_html);
 
 	if ($is_confirmed)
 		$element_html = str_replace("__CONFIRMED_DISPLAY__", "unset", $element_html);
@@ -882,7 +888,7 @@ function pad(n, width, z) {
 
 <? echo $updateTimeCode; ?>
 
-function UpdateTime(timestamp, movie_id)
+function UpdateTime(timestamp, movie_id, movie_index)
 {
 	var debug_time_diff = 0;
 	// var m = 100 * 10 * 60; // minute
@@ -893,7 +899,7 @@ function UpdateTime(timestamp, movie_id)
 
 	var timestamp_diff = timestamp - (Date.now() + debug_time_diff);
 
-	if (timestamp_diff < 0)
+	if (timestamp_diff < 0 && movies_db_json.tv_shows[movie_index].status === "countdown")
 	{
 		$("#" + movie_id + "_on_air").css('display', 'unset');
 		$("#" + movie_id + "_counter").css('display', 'none');
@@ -930,7 +936,7 @@ function UpdateTime(timestamp, movie_id)
 	
 	setTimeout(function()
 	{
-		UpdateTime(timestamp, movie_id);
+		UpdateTime(timestamp, movie_id, movie_index);
 	},
 	1000);
 }

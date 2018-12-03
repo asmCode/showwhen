@@ -11,7 +11,7 @@ $main_tv_show_template = '
         <a href="__ONLY_MODE_URL__" style="pointer-events: __ONLY_MODE_URL_POINTER_EVENTS__">
             <div class="title_and_season_group">
                 <div class="main_tv_show_title text_green">
-                    <div class="main_tv_show_season_number">Season __SEASON__ (__EPISODES__)</div>
+                    <div class="main_tv_show_season_number">__SEASON_AND_EPISODES__</div>
                     __TITLE__
                 </div>
             </div>
@@ -40,6 +40,11 @@ $main_tv_show_template = '
                 <div class="main_tv_show_info_section_separator_on_air"></div>
                 <div class="main_tv_show_on_air" style="display: unset">ON AIR</div>
                 <div class="main_tv_show_on_air_extra" style="display: unset">__ON_AIR_EXTRA__</div>
+            </div>
+
+            <!-- CANCELED -->
+            <div id="movie_id___ID___canceled" class="on_air_group on_air_date" style="display: __CANCELED_DISPLAY__">
+                <div class="main_tv_show_on_air" style="display: unset">CANCELED</div>
             </div>
             
             <div class="main_tv_show_date_source_placeholder">

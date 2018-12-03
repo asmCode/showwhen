@@ -1628,7 +1628,7 @@ $movies_db_json = '
 			"source_url": "https://ew.com/tv/2018/05/08/fargo-season-4-2020-2/",
 			"year": 2020,
 			"hour": 20,
-			"episodes": 10,
+			"episodes": 0,
 			"timestamp": 1587006000000
 		},
 		{
