@@ -362,7 +362,7 @@ for ($i = 0; $i < count($movies_db); $i++)
 	if ($is_featured && is_numeric($timestamp))
 		$updateTimeCode .= sprintf("UpdateTime(%d, \"movie_id_%d\");\n", $timestamp, $tv_show["id"]);
 
-	$season = (int)$tv_show["season"];
+	$season = $tv_show["season"];
 	$day = $tv_show["day"];
 	$month = $tv_show["month"];
 	$year = $tv_show["year"];
